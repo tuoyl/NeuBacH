@@ -193,17 +193,40 @@ def _is_in_good_interval(Ti, GTIs):
             return True
     return False
 
+def _process_obsid(args):
+    obsid, datadir = args
+    print(f"Starting {obsid}")  # Debugging output
+    outfile = f"out/dataset/dataset_{obsid}.csv"
+    if os.path.exists(outfile):
+        return f"{obsid} already processed."
+    organize_HE_smfov_data(datadir, obsid, outfile=outfile)
+    return f"{obsid} processed."
+
 if __name__ == "__main__":
     import glob
-    ehkfiles = glob.glob("/Volumes/hxmt/DataHub/HXMT/BKGTraining/HE/HXMT_P*EHK*")[:]
+    from concurrent.futures import ProcessPoolExecutor
+    import multiprocessing
+    multiprocessing.set_start_method('spawn')  # Ensures compatibility on various platforms
+
+
+
+    ehkfiles = glob.glob("/Volumes/hxmt/DataHub/HXMT/BKGTraining/HE/HXMT_P*EHK*")[163:]
     obsids = [os.path.basename(x).split('_')[1] for x in ehkfiles]
     datadir = "/Volumes/hxmt/DataHub/HXMT/BKGTraining/HE"
 
-    for obsid in obsids:
-        print(obsid)
-        outfile = f"out/dataset/dataset_{obsid}.csv"
-        if os.path.exists(outfile):continue
-        data = organize_HE_smfov_data(datadir,
-                                      obsid,
-                                      outfile=f"out/dataset/dataset_{obsid}.csv")
+    # Create a list of arguments for the process_obsid function
+    args = [(obsid, datadir) for obsid in obsids]
+
+    with multiprocessing.Pool() as pool:
+        results = list(tqdm(pool.imap(_process_obsid, args), total=len(obsids), desc="Processing ObsIDs"))
+
+
+
+#    for obsid in obsids:
+#        print(obsid)
+#        outfile = f"out/dataset/dataset_{obsid}.csv"
+#        if os.path.exists(outfile):continue
+#        data = organize_HE_smfov_data(datadir,
+#                                      obsid,
+#                                      outfile=f"out/dataset/dataset_{obsid}.csv")
 
