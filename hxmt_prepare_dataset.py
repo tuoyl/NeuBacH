@@ -43,7 +43,9 @@ def organize_HE_smfov_data(datadir, obsid, outfile=None):
     for file in file_recipes:
         print(f"Checking files...{file}")
         if not os.path.exists(file):
-            raise IOError(f"{evtfile} does not exists")
+            print(f"{evtfile} does not exists")
+            return
+            #raise IOError(f"{evtfile} does not exists")
 
     # Load Event file
     hdulist = fits.open(evtfile)
@@ -192,8 +194,16 @@ def _is_in_good_interval(Ti, GTIs):
     return False
 
 if __name__ == "__main__":
-#    data = organize_HE_smfov_data("/Volumes/hxmt/DataHub/HXMT/BKGTraining/HE",
-#                           "P010129300101", "out/hxmt_dataset.csv")
-    data = organize_HE_smfov_data("/Volumes/hxmt/DataHub/HXMT/BKGTraining/HE",
-                           "P010129300102", "out/P010129300102.csv")
+    import glob
+    ehkfiles = glob.glob("/Volumes/hxmt/DataHub/HXMT/BKGTraining/HE/HXMT_P*EHK*")[:]
+    obsids = [os.path.basename(x).split('_')[1] for x in ehkfiles]
+    datadir = "/Volumes/hxmt/DataHub/HXMT/BKGTraining/HE"
+
+    for obsid in obsids:
+        print(obsid)
+        outfile = f"out/dataset/dataset_{obsid}.csv"
+        if os.path.exists(outfile):continue
+        data = organize_HE_smfov_data(datadir,
+                                      obsid,
+                                      outfile=f"out/dataset/dataset_{obsid}.csv")
 
