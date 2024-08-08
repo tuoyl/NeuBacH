@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import numpy as np
+import glob
 from tqdm import tqdm
 from astropy.io import fits
 from tatpulsar.utils.functions import cal_event_gti
@@ -13,6 +14,10 @@ FEATURE = ['SAT_X', 'SAT_Y', 'SAT_Z', 'SAT_ALT', 'SAT_LON', 'SAT_LAT', 'ELV', 'D
            "TH_HE_PHODet_15", "TH_HE_PHODet_16", "TH_HE_PHODet_17",
            "TH_HE_PM_0", "TH_HE_PM_1", "TH_HE_PM_2",
            'Cnt_PM_0', 'Cnt_PM_1', 'Cnt_PM_2',
+           "HE_Cnt_VetoDet_0", "HE_Cnt_VetoDet_1", "HE_Cnt_VetoDet_2", "HE_Cnt_VetoDet_3", "HE_Cnt_VetoDet_4",
+           "HE_Cnt_VetoDet_5", "HE_Cnt_VetoDet_6", "HE_Cnt_VetoDet_7", "HE_Cnt_VetoDet_8", "HE_Cnt_VetoDet_9",
+           "HE_Cnt_VetoDet_10", "HE_Cnt_VetoDet_11", "HE_Cnt_VetoDet_12", "HE_Cnt_VetoDet_13", "HE_Cnt_VetoDet_14",
+           "HE_Cnt_VetoDet_15", "HE_Cnt_VetoDet_16", "HE_Cnt_VetoDet_17",
            'HV_HE_PHODet_0', 'HV_HE_PHODet_1', 'HV_HE_PHODet_2', 'HV_HE_PHODet_3', 'HV_HE_PHODet_4',
            'HV_HE_PHODet_5', 'HV_HE_PHODet_6', 'HV_HE_PHODet_7', 'HV_HE_PHODet_8', 'HV_HE_PHODet_9',
            'HV_HE_PHODet_10', 'HV_HE_PHODet_11', 'HV_HE_PHODet_12', 'HV_HE_PHODet_13', 'HV_HE_PHODet_14',
@@ -32,21 +37,33 @@ def organize_HE_smfov_data(datadir, obsid, outfile=None):
     channel_bins_normal = [f'NORMAL_COUNTS_CHANNEL_{i}' for i in range(chnum)]
 
     # Check Files
-    evtfile = os.path.join(datadir, f"{obsid}_HE_screen_RAW.fits")
-    EHKfile = os.path.join(datadir, f"HXMT_{obsid}_EHK_FFFFFF_V1_L1P.FITS")
-    attfile = os.path.join(datadir, f"HXMT_{obsid}_Att_FFFFFF_V1_L1P.FITS")
-    orbfile = os.path.join(datadir, f"HXMT_{obsid}_Orbit_FFFFFF_V1_L1P.FITS")
-    THfile  = os.path.join(datadir, f"HXMT_{obsid}_HE-TH_FFFFFF_V1_L1P.FITS")
-    PMfile  = os.path.join(datadir, f"HXMT_{obsid}_HE-PM_FFFFFF_V1_L1P.FITS")
-    ACfile  = os.path.join(datadir, f"HXMT_{obsid}_HE-Cnts_FFFFFF_V1_L1P.FITS")
-    HVfile  = os.path.join(datadir, f"HXMT_{obsid}_HE-HV_FFFFFF_V1_L1P.FITS")
-    file_recipes = [evtfile, EHKfile, attfile, orbfile, THfile, PMfile, HVfile]
+    evtfile = glob.glob(os.path.join(datadir, f"{obsid}_HE_screen_RAW.fits")                )
+    EHKfile = glob.glob(os.path.join(datadir, f"HXMT_{obsid}_EHK_FFFFFF_V?_L1P.FITS")       )
+    attfile = glob.glob(os.path.join(datadir, f"HXMT_{obsid}_Att_FFFFFF_V?_L1P.FITS")       )
+    orbfile = glob.glob(os.path.join(datadir, f"HXMT_{obsid}_Orbit_FFFFFF_V?_L1P.FITS")     )
+    THfile  = glob.glob(os.path.join(datadir, f"HXMT_{obsid}_HE-TH_FFFFFF_V?_L1P.FITS")     )
+    PMfile  = glob.glob(os.path.join(datadir, f"HXMT_{obsid}_HE-PM_FFFFFF_V?_L1P.FITS")     )
+    ACfile  = glob.glob(os.path.join(datadir, f"HXMT_{obsid}_HE-Cnts_FFFFFF_V?_L1P.FITS")   )
+    HVfile  = glob.glob(os.path.join(datadir, f"HXMT_{obsid}_HE-HV_FFFFFF_V?_L1P.FITS")     )
+    file_recipes = [evtfile, EHKfile, attfile, orbfile, THfile, PMfile, ACfile, HVfile]
     for file in file_recipes:
-        print(f"Checking files...{file}")
-        if not os.path.exists(file):
-            print(f"{evtfile} does not exists")
+        if file == []:
             return
-            #raise IOError(f"{evtfile} does not exists")
+        else:
+            print(file)
+    evtfile = evtfile[-1]
+    EHKfile = EHKfile[-1]
+    attfile = attfile[-1]
+    orbfile = orbfile[-1]
+    THfile  = THfile[-1]
+    PMfile  = PMfile[-1]
+    ACfile  = ACfile[-1]
+    HVfile  = HVfile[-1]
+        #print(f"Checking files...{file}")
+        #if not os.path.exists(file):
+        #    print(f"{evtfile} does not exists")
+        #    return
+        #    #raise IOError(f"{evtfile} does not exists")
 
     # Load Event file
     hdulist = fits.open(evtfile)
@@ -174,7 +191,7 @@ def organize_HE_smfov_data(datadir, obsid, outfile=None):
 
     # Telescope STATUS
     for det in range(18):
-        data[f"TH_HE_PHODet_{det}"] = TH_HE_PHODet_all[det] # Temperature of Phoswich   
+        data[f"TH_HE_PHODet_{det}"] = TH_HE_PHODet_all[det] # Temperature of Phoswich
         data[f"HV_PHODet_{det}"] = HV_PHODet_all[det]
     for det in range(3):
         data[f"TH_HE_PM_{det}"] = TH_HE_PM_all[det]
@@ -219,7 +236,6 @@ def _process_obsid(args):
     return f"{obsid} processed."
 
 if __name__ == "__main__":
-    import glob
     from concurrent.futures import ProcessPoolExecutor
     import multiprocessing
     multiprocessing.set_start_method('spawn')  # Ensures compatibility on various platforms
