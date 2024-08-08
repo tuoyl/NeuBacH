@@ -38,6 +38,7 @@ def organize_HE_smfov_data(datadir, obsid, outfile=None):
     orbfile = os.path.join(datadir, f"HXMT_{obsid}_Orbit_FFFFFF_V1_L1P.FITS")
     THfile  = os.path.join(datadir, f"HXMT_{obsid}_HE-TH_FFFFFF_V1_L1P.FITS")
     PMfile  = os.path.join(datadir, f"HXMT_{obsid}_HE-PM_FFFFFF_V1_L1P.FITS")
+    ACfile  = os.path.join(datadir, f"HXMT_{obsid}_HE-Cnts_FFFFFF_V1_L1P.FITS")
     HVfile  = os.path.join(datadir, f"HXMT_{obsid}_HE-HV_FFFFFF_V1_L1P.FITS")
     file_recipes = [evtfile, EHKfile, attfile, orbfile, THfile, PMfile, HVfile]
     for file in file_recipes:
@@ -89,6 +90,13 @@ def organize_HE_smfov_data(datadir, obsid, outfile=None):
     Cnt_PM_1= hdulist['HE_Cnt_PM'].data['Cnt_PM_1']
     Cnt_PM_2= hdulist['HE_Cnt_PM'].data['Cnt_PM_2']
 
+    # Load Anti-Coincidence Detectors
+    hdulist = fits.open(ACfile)
+    time_ac = hdulist['HE_Cnt_VetoDet'].data['Time']
+    VetoDet_all = []
+    for i in range(18):
+        VetoDet_all.append(hdulist['HE_Cnt_VetoDet'].data[f'Cnt_VetoDet_{int(i)}'])
+
     # Load HV file
     hdulist = fits.open(HVfile)
     time_hv = hdulist['HE_HV_PHODet'].data['Time']
@@ -129,6 +137,9 @@ def organize_HE_smfov_data(datadir, obsid, outfile=None):
 
 
     data = {
+            # Incorporate MET
+            'MET' : time_ehk,
+
             ## Satellite Location & Pointing Angle
             "SAT_X": SAT_X,
             "SAT_Y": SAT_Y,
@@ -154,7 +165,12 @@ def organize_HE_smfov_data(datadir, obsid, outfile=None):
             "Cnt_PM_0": Cnt_PM_0,
             "Cnt_PM_1": Cnt_PM_1,
             "Cnt_PM_2": Cnt_PM_2,
+
             }
+
+    ### Anti-Coincidence Detector Counts
+    for det in range(18):
+        data[f"Cnt_VetoDet_{det}"] = VetoDet_all[det]
 
     # Telescope STATUS
     for det in range(18):
@@ -194,9 +210,9 @@ def _is_in_good_interval(Ti, GTIs):
     return False
 
 def _process_obsid(args):
-    obsid, datadir = args
+    obsid, datadir, outfile = args
     print(f"Starting {obsid}")  # Debugging output
-    outfile = f"out/dataset/dataset_{obsid}.csv"
+    #outfile = f"out/dataset/dataset_{obsid}.csv"
     if os.path.exists(outfile):
         return f"{obsid} already processed."
     organize_HE_smfov_data(datadir, obsid, outfile=outfile)
@@ -208,25 +224,24 @@ if __name__ == "__main__":
     import multiprocessing
     multiprocessing.set_start_method('spawn')  # Ensures compatibility on various platforms
 
+    __version__ = '1.0'
 
 
-    ehkfiles = glob.glob("/Volumes/hxmt/DataHub/HXMT/BKGTraining/HE/HXMT_P*EHK*")[163:]
+    ehkfiles = glob.glob("/Volumes/hxmt/DataHub/HXMT/BKGTraining/HE/HXMT_P*EHK*")[:]
     obsids = [os.path.basename(x).split('_')[1] for x in ehkfiles]
     datadir = "/Volumes/hxmt/DataHub/HXMT/BKGTraining/HE"
 
     # Create a list of arguments for the process_obsid function
-    args = [(obsid, datadir) for obsid in obsids]
+    args = [(obsid, datadir, f"out/dataset/dataset_{obsid}_v{__version__}.csv") for obsid in obsids]
 
     with multiprocessing.Pool() as pool:
         results = list(tqdm(pool.imap(_process_obsid, args), total=len(obsids), desc="Processing ObsIDs"))
 
-
-
 #    for obsid in obsids:
 #        print(obsid)
-#        outfile = f"out/dataset/dataset_{obsid}.csv"
+#        outfile = f"out/dataset/dataset_{obsid}_v{__version__}.csv"
 #        if os.path.exists(outfile):continue
 #        data = organize_HE_smfov_data(datadir,
 #                                      obsid,
-#                                      outfile=f"out/dataset/dataset_{obsid}.csv")
+#                                      outfile=outfile)
 
