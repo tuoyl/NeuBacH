@@ -2,6 +2,7 @@
 Version logs:
     V1.0: incorporate the mission time (MET) and anti-coincidence detector
     V2.0: calculate the time fraction for each one-sec dataset
+    V3.0: Keep the data piece that process the empty spectrum for blind detector (The counts are zero, but the data is valid)
 """
 import os
 import pandas as pd
@@ -72,6 +73,8 @@ def organize_LE_data(datadir, obsid, outfile=None, fov='small'):
     time_event = hdulist['LEEvt'].data['TIME']
     pi_event   = hdulist['LEEvt'].data['PI']
     detid_event= hdulist['LEEvt'].data['Det_ID']
+    if time_event.size == 0:
+        return
 
     # Load EHK file
     hdulist = fits.open(EHKfile)
@@ -194,12 +197,13 @@ def organize_LE_data(datadir, obsid, outfile=None, fov='small'):
     for chn_i, bin_name in enumerate(channel_bins_normal):
         data[bin_name] = np.asarray(cnt_normal[:, chn_i])
 
-    ## Exclude those data pieces out of GTI (GTI was the minimum filtering on the raw data)
-    ## If spectrum of normal detector or blind detector is empty, then skip the corresponding data slice
-    mask = np.all(cnt_blind == np.zeros(chnum), axis=1) + np.all(cnt_normal == np.zeros(chnum), axis=1)
-    masked_data = {}
-    for key, value in data.items():
-        masked_data[key] = value[~mask]
+    # NOTE: Do not discard those data piece with 0 blind detector spectrum (otherwise the exposure would be underestimated)
+    ### Exclude those data pieces out of GTI (GTI was the minimum filtering on the raw data)
+    ### If spectrum of normal detector or blind detector is empty, then skip the corresponding data slice
+    #mask = np.all(cnt_blind == np.zeros(chnum), axis=1) + np.all(cnt_normal == np.zeros(chnum), axis=1)
+    #masked_data = {}
+    #for key, value in data.items():
+    #    masked_data[key] = value[~mask]
 
     if outfile:
         df = pd.DataFrame(masked_data)
@@ -416,7 +420,7 @@ if __name__ == "__main__":
     import multiprocessing
     multiprocessing.set_start_method('spawn')  # Ensures compatibility on various platforms
 
-    __version__ = '2.0'
+    __version__ = '3.0'
 
 
 #    ehkfiles = sorted(glob.glob("/Volumes/hxmt/DataHub/HXMT/BKGTraining/HE/HXMT_P*EHK*")[:1])
@@ -438,7 +442,7 @@ if __name__ == "__main__":
 #                                      obsid,
 #                                      outfile=outfile)
 
-## ------------ LE ------------    
+## ------------ LE ------------
     ehkfiles = sorted(glob.glob("/Volumes/svom/DataHub/HXMT/BKGTraining/LE/HXMT_P*EHK*")[:])
     obsids = [os.path.basename(x).split('_')[1] for x in ehkfiles]
     datadir = "/Volumes/svom/DataHub/HXMT/BKGTraining/LE"
