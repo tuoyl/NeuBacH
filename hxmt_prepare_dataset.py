@@ -208,7 +208,7 @@ def organize_LE_data(datadir, obsid, outfile=None, fov='small'):
     if outfile:
         df = pd.DataFrame(masked_data)
         df.to_csv(outfile, index=False)
-    return masked_data
+    return
 
 def organize_HE_smfov_data(datadir, obsid, outfile=None):
     """
