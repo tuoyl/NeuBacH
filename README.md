@@ -15,9 +15,9 @@ This document outlines the current status and the upcoming milestones of the pro
 
 | Status | Milestone | Goals | ETA |
 | :---: | :--- | :---: | :---: |
-| 🚀 | **[Implement BERT-based Background Model for LE](#implement-LE-background-model)** | 2 / 5 | Aug 16 2024 |
-| 🚀 | **[Implement BERT-based Background Model for ME](#implement-ME-background-model)** | 2 / 5 | Aug 17 2024 |
-| 🚀 | **[Implement BERT-based Background Model for HE](#implement-HE-background-model)** | x / x | TBD |
+| ❌ | **[Implement BERT-based Background Model for LE](#implement-LE-background-model)** | 2 / 5 | Aug 16 2024 |
+| ❌ | **[Implement BERT-based Background Model for ME](#implement-ME-background-model)** | 2 / 5 | Aug 17 2024 |
+| ✅ | **[Implement BERT-based Background Model for HE](#implement-HE-background-model)** | x / x | TBD |
 | 🚀 | **[Data Preprocessing Pipeline](#data-preprocessing-pipeline)** | 0 / 2 | Late Sep 2024 |
 | 🚀 | **[Model Validation for Scientific Observations](#model-vaidation-for-scientific-observaations)** | 0 / 3 | Early Oct 2024 |
 | 🚀 | **[Integration with HXMT Data Analysis Framework](#integration-hxmt-data-analysis)** | 0 / 3 | TBD |
