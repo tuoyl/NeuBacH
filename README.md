@@ -1,7 +1,7 @@
 # NeuBacH
 Neu (new/neural network) BAckground model for Hxmt
 
-you could download the fine-tuned model nad the testing dataset here: https://zenodo.org/records/17476734?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjI4ODAyNjg4LTExMzUtNDQ4Ny1hZjEwLWY0MjYxNDM1NmEzMyIsImRhdGEiOnt9LCJyYW5kb20iOiJkNTk2Y2MwNjhjYjRkODA4ZDdmYWU3Zjk1NDczOGYwYyJ9.ONn6HJfQ-Rm3lrzBg1wEz3lRZGo2gkepeQg4kp3DRKnDDPfxMzt-yk-xJEQnKF7ZjVT3J8XemUIq2CLYSHOyXg
+You can download the fine-tuned model and the testing dataset from Zenodo (record 17476734): https://zenodo.org/records/17476734
 
 NeuBacH is a novel project aimed at enhancing the accuracy of background modeling for the Hard X-ray Modulation Telescope (HXMT). Leveraging the power of neural networks, specifically the BERT architecture, NeuBacH is designed to train the background model for each telescope on board HXMT and produce a more precise background spectra. The training process incorporates all available information provided on board HXMT, including the status of the telescope (high-voltage settings, particle monitor count rate), the geomagnetic environment (South Atlantic Anomaly (SAA) presence, elevation angle, satellite position, cosmic ray background, etc.), and the spectrum of the blind detector. This new model capitalizes on the state-of-the-art transformer architecture to significantly improve the accuracy and reliability of background noise characterization in X-ray astronomy.
 
