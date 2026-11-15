@@ -1,32 +1,33 @@
 # NeuBacH
-Neu (new/neural network) BAckground model for Hxmt
 
-You can download the fine-tuned model and the testing dataset from Zenodo (record 17476734): https://zenodo.org/records/17476734
+**Neu**ral **Bac**kground model for Insight-**H**XMT: a physics-informed, data-driven
+background model that produces background spectra and light curves for pointed
+observations of the HE, ME and LE telescopes.
 
-NeuBacH is a novel project aimed at enhancing the accuracy of background modeling for the Hard X-ray Modulation Telescope (HXMT). Leveraging the power of neural networks, specifically the BERT architecture, NeuBacH is designed to train the background model for each telescope on board HXMT and produce a more precise background spectra. The training process incorporates all available information provided on board HXMT, including the status of the telescope (high-voltage settings, particle monitor count rate), the geomagnetic environment (South Atlantic Anomaly (SAA) presence, elevation angle, satellite position, cosmic ray background, etc.), and the spectrum of the blind detector. This new model capitalizes on the state-of-the-art transformer architecture to significantly improve the accuracy and reliability of background noise characterization in X-ray astronomy.
+This repository is being rebuilt as version 2. The design and the literature it
+rests on are documented (in Chinese) in:
 
-# NeuBacH - Roadmap
+- [docs/plan.md](docs/plan.md) — technical plan, milestones and open questions
+- [docs/literature.md](docs/literature.md) — survey of the HXMT instruments and
+  background, background models of other missions, and machine-learning methods
 
-This document outlines the current status and the upcoming milestones of the project.
+## Status
 
-*Updated: Thu, 15 Aug 2024*
+| Component | State |
+| --- | --- |
+| Evaluation in the convention of the official background papers (`neubach.eval`) | implemented, tested |
+| Activation-state features from the irradiation history (`neubach.physics`) | implemented (fixed time constants), tested |
+| Data pipeline, models, product tools | planned, see the milestones in the plan |
 
-## NeuBacH
+## Install and test
 
-#### Milestone Summary
+```bash
+pip install -e ".[dev]"
+pytest
+```
 
-| Status | Milestone | Goals | ETA |
-| :---: | :--- | :---: | :---: |
-| ❌ | **[Implement BERT-based Background Model for LE](#implement-LE-background-model)** | 2 / 5 | Aug 16 2024 |
-| ❌ | **[Implement BERT-based Background Model for ME](#implement-ME-background-model)** | 2 / 5 | Aug 17 2024 |
-| ✅ | **[Implement BERT-based Background Model for HE](#implement-HE-background-model)** | x / x | TBD |
-| 🚀 | **[Data Preprocessing Pipeline](#data-preprocessing-pipeline)** | 0 / 2 | Late Sep 2024 |
-| 🚀 | **[Model Validation for Scientific Observations](#model-vaidation-for-scientific-observaations)** | 0 / 3 | Early Oct 2024 |
-| 🚀 | **[Integration with HXMT Data Analysis Framework](#integration-hxmt-data-analysis)** | 0 / 3 | TBD |
-| 🚀 | **[Final Evaluation and Publishing](#final-evaluation-model-publishing)** | 0 / 2 | Dec 2024 |
+## Version 1
 
-#### Implement BERT-based Background Model for LE
-
-> This milestone focuses on developing and implementing a BERT-based model to accurately predict background spectra for the Low Energy (LE) detector on HXMT.
-
-🚀 &nbsp;**OPEN** &nbsp;&nbsp;📉 &nbsp;&nbsp;**2 / 5** goals completed **(40%)** &nbsp;&nbsp;📅 &nbsp;&nbsp;**Tue Sep 30 2024**
+The first attempt, a transformer regressor over 32 s windows for HE, is kept
+unchanged in [`legacy/`](legacy/) for reference. Its fine-tuned model and test
+set are on Zenodo: https://zenodo.org/records/17476734

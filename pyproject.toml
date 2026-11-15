@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neubach"
+version = "2.0.0.dev0"
+description = "Physics-informed, data-driven background model for Insight-HXMT"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+data = ["astropy>=5.3", "pandas>=2.0", "pyarrow>=14"]
+train = ["torch>=2.2", "lightgbm>=4.0"]
+dev = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
