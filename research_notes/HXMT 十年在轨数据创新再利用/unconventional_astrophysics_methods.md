@@ -15,7 +15,7 @@
 
 ### Cited Findings
 - [confirmed in literature] 2017-06-15 发射；主带 1–250 keV，全天监测 0.2–3 MeV；观测模式为 pointing、scanning、GRB — [Zhang et al. 2020, SCPMA 63, 249502, arXiv:1910.09613](https://arxiv.org/abs/1910.09613)
-- [confirmed in literature] 轨道高度 550 km、倾角 43° — [Yu et al. 2022, AMT 15, 3141](https://amt.copernicus.org/articles/15/3141/2022/)；导航论文给出半长轴 6922.88 km — [Zheng et al. 2019, arXiv:1908.01922](https://arxiv.org/pdf/1908.01922)
+- [confirmed in literature] 轨道高度 550 km、倾角 43°（来自检索摘要对大气掩食论文的概括，倾角数值本人未在原文逐字核对）— [Yu et al. 2022, AMT 15, 3141](https://amt.copernicus.org/articles/15/3141/2022/)；导航论文正文写明轨道高度 550 km、半长轴 6922.88 km — [Zheng et al. 2019, arXiv:1908.01922](https://arxiv.org/pdf/1908.01922)
 - [confirmed in literature] HE = 18 个 NaI(Tl)/CsI(Na) phoswich，单晶直径 190 mm、几何面积 283.5 cm²，总 ~5100 cm²；NaI 厚 3.5 mm、CsI 厚 40 mm；15 个窄视场 1.1°×5.7°、2 个宽视场 5.7°×5.7°、1 个用 2 mm 钽盖遮挡的 blocked 准直器；18 块塑闪反符合（HVT：顶 6 + 侧 12）；计时精度 <10 μs，单事件死时间 <10 μs，最大计数率 >30,000 cnts/s；"The mean effective area is about 1000 cm² for photons in ~200–3000 keV" — [Liu et al. 2020, arXiv:1910.04955](https://arxiv.org/abs/1910.04955)
 - [confirmed in literature] HE 每个 good event 数据包含：8 bit 能量、8 bit 脉冲宽度、18 bit HVT 标记、5 bit 通道号、2 bit 事件类型、19 bit 亚秒时间（2 μs 时钟）；18 个探测器分 3 组（每组 6 个，共用一个 PDAU），**同组探测器在事件处理期间（约 4–8 μs）的同时信号被丢弃** — [Liu et al. 2020, arXiv:1910.04955](https://arxiv.org/pdf/1910.04955)
 - [confirmed in literature] HE 三种工作模式：Normal（NaI 20–250 keV 准直观测 + CsI 40–800 keV 近全天监测）；Low Gain（CsI 约 0.2–3 MeV，"usually scheduled when the Insight-HXMT runs into the earth occultation"，即指向目标被地球遮挡时）；SAA（高压关闭，无科学数据）。NaI 事件取脉宽道 54–70，CsI 事件取 80–120（LGM 为 78–120）；累计死时间占比约 2%–6%；CsI 增益持续漂移，LGM 高压在 2017-07、2020-06、2021-10 调整过 — [Li X.-F. et al. 2023, "In-orbit performance of HE onboard Insight-HXMT in the first 5 years", arXiv:2302.03859](https://arxiv.org/abs/2302.03859)
@@ -78,7 +78,7 @@
 #### 想法 1：CsI 地球掩食台阶拟合 —— 0.2–3 MeV 全天监测与层析成像
 1. **一句话**：把 18 块 CsI 的全部事例按能段做成连续计数率，在已知源的地球临边升/落时刻拟合台阶，得到 Crab、Cyg X-1、亮黑洞暂现源等在 200 keV–3 MeV 的十年光变和平均谱，并用 66 天轨道进动做掩食层析成像。
 2. **原理与来源**：CGRO/BATSE EOT（Harmon et al. 2002, 2004）、Fermi-GBM EOT（Case et al. 2011；Wilson-Hodge et al. 2012）与 IDEOM 成像（Rodi et al. 2014）。[confirmed in literature]
-3. **利用的 HXMT 特性与适配度**：40 mm 厚 CsI、~1000 cm² 平均有效面积、全事例下传、无星上触发 [confirmed in literature]。在 >300 keV，GBM 的 NaI 很薄、BGO 只有两块，所以 HXMT/CsI 的有效面积应明显更大 [inference]；HXMT 指向观测时姿态惯性固定，源在载荷坐标系中的方向在一次观测内不变，比 Fermi 的摇摆扫天更利于台阶建模 [inference]。**不占优之处**：响应要穿过卫星结构，质量模型弥散达 ~30%，背向入射更差 [confirmed in literature]；<200 keV 基本不可用，所以它不是 GBM/BAT 的替代，只是 >200 keV 的补充 [inference]。
+3. **利用的 HXMT 特性与适配度**：40 mm 厚 CsI、~1000 cm² 平均有效面积、全事例下传、无星上触发 [confirmed in literature]。在 >300 keV，GBM 的 NaI 很薄、BGO 只有两块，所以 HXMT/CsI 的有效面积应明显更大 [inference]；HXMT 指向观测时姿态惯性固定，源在载荷坐标系中的方向在一次观测内不变，比 Fermi 的摇摆扫天更利于台阶建模 [inference]。**不占优之处**：响应要穿过卫星结构，质量模型弥散达 ~30%，背向入射更差 [confirmed in literature]；<200 keV 基本不可用，所以它不是 GBM/BAT 的替代，只是 >200 keV 的补充 [inference]。另外，沿准直器轴向（θ<6°）入射时 CsI 有效面积远大于离轴 [confirmed in literature，Luo et al. 2020]，所以**指向目标自身**的升/落台阶信噪比最高，可把 NaI 的 250 keV 上限延伸到 ~800 keV；但这些台阶恰好与 NG↔LG 模式切换同步，是最难处理的一类 [inference]。
 4. **数据**：HE Level-1 事例文件（按脉宽道 80–120 选 CsI 事例）、高压/模式状态、轨道与姿态文件 [confirmed in literature 关于选道]；地球遮挡段在公开数据中可得（Huang et al. 2022 使用过）[confirmed in literature]；是否所有 LG 段都随指向观测归档——未知。
 5. **查新**：检索 "Insight-HXMT Earth occultation technique CsI" 与 "Insight-HXMT GECAM Earth occultation all-sky monitoring hard X-ray sources CsI light curves" 均只返回大气密度工作与 GBM 先例，未见 HXMT/CsI 的 EOT 星表或 100 keV–MeV 长期光变 [confirmed in literature：检索未见]。GECAM 是否做过 EOT 未能查证。
 6. **可行性与量级估计**（本笔记计算）[inference]：
@@ -162,7 +162,7 @@ HXMT 团队已对 GW（O2+O3a，星表文中计 48 个）、高能中微子（41
 - [confirmed in literature] HXMT/HE 对 39 个 FRB 的搜索：从数秒到亚毫秒时标，检查了 "both individual and cumulative time profiles"，无信号；FRB 180916.J0158+65 的 1 s 上限 L_γ,iso<5.5×10⁴⁷ erg/s，其余多为 10⁴⁹–10⁵¹ erg/s，毫秒时标上限高约 100 倍 — [Guidorzi et al. 2020, A&A 637, A69, arXiv:2003.10889](https://arxiv.org/abs/2003.10889)
 - [confirmed in literature] 对 SGR 1935+2154 的 FAST 射电暴，HXMT 给出 1 s 时标 3σ 流量上限约 2.7×10⁻⁹（LE）至 4.5×10⁻⁹ erg cm⁻²（HE）— [GCN 27679](https://gcn.nasa.gov/circulars/27679)
 - [confirmed in literature] FRB 200428 的 X 射线暴由 HXMT 探测到双峰结构，HE 在该暴期间饱和 — [Ge et al. 2023, arXiv:2302.00176](https://ar5iv.labs.arxiv.org/html/2302.00176)
-- [confirmed in literature] GW 搜索覆盖 O2 与 O3a，无显著对应体；O4 期间仍以 GCN 形式逐事件报告（例如 S250223dk 的 targeted 搜索给出 ~4σ 的 1 s 候选体，"very preliminary"）— [Cai et al. 2021, arXiv:2109.12270](https://arxiv.org/abs/2109.12270)；[GCN 39508](https://gcn.nasa.gov/circulars/39508?page=25)
+- [confirmed in literature] GW 搜索覆盖 O2 与 O3a，无显著对应体；O4 期间仍以 GCN 形式逐事件报告（例如 S250223dk 的 targeted 搜索给出 ~4σ 的 1 s 候选体，"very preliminary"）— [Cai et al. 2021, arXiv:2109.12270](https://arxiv.org/abs/2109.12270)；[GCN 39508](https://gcn.nasa.gov/circulars/39508)
 - [confirmed in literature] IceCube 警报的逐事件上限（如 IceCube-190712A、IceCube-201209A：T0±100 s 内无 >3σ 超出）— [GCN 25066](https://gcn.nasa.gov/circulars/25066)；[GCN 29049](https://gcn.nasa.gov/circulars/29049)
 - [confirmed in literature] EP 暂现源 EPW20240219aa：无 blind 触发，targeted 亚阈值搜索在 T0+40 s 附近找到 ~50 s 的硬谱暂现信号（4 s 时标最显著），与 Fermi-GBM、Swift/BAT 一致 — [GCN 35785](https://gcn.nasa.gov/circulars/35785)
 - [confirmed in literature] 可供叠加的外部样本：CHIME/FRB 第一星表 536 个 FRB（2018-07-25 至 2019-07-01）— [CHIME/FRB Collaboration 2021, arXiv:2106.04352](https://arxiv.org/abs/2106.04352)；GWTC-4.0（O4 前段）— [LVK 2025, arXiv:2508.18082](https://arxiv.org/abs/2508.18082)；O3 的 GBM+BAT 联合分析 — [Fletcher et al., arXiv:2308.13666](https://arxiv.org/abs/2308.13666)
@@ -234,3 +234,263 @@ HXMT 团队已对 GW（O2+O3a，星表文中计 48 个）、高能中微子（41
 - 超长暴、TDE 喷流、X 射线闪等软/慢信号在 CsI（≳200 keV）中预期很弱；用准直望远镜空白天数据搜这些源的事件率未能估算（缺 LE 在典型 GTI 下的本底涨落数据）。
 - HXMT 与 GECAM/GBM 的联合亚阈值搜索是否已有系统论文——未查（配额耗尽）。
 
+---
+
+## 5. 十年尺度时域：Crab 的"闪烁"、脉冲星长期监测、CsI 全天脉冲折叠
+
+### Takeaway
+HXMT 已发表 Crab 脉冲轮廓长期演化与 glitch 前后轮廓/流量不变性的工作，但把 Crab 当作恒定标准烛光来定标，本次未检索到用 HXMT 独立检验星云流量百分级变化的论文。两个"把定标量变成信号"的做法值得做：用脉冲星脉冲流量作内禀参考测星云流量；把只用于质量模型定标的 CsI Crab 脉冲信号扩展成 MeV 脉冲星/磁星硬尾的十年监测。常规的自转/轨道演化研究不在此列。
+
+### Cited Findings
+- [confirmed in literature] Crab 星云硬 X 射线流量 2008-08 至 2010-08 下降约 7%（70 mCrab，15–50 keV，GBM 掩食法），Swift/BAT、RXTE/PCA、INTEGRAL/IBIS 独立证实；2005–2008 存在 ~3 年时标的相关变化（2007-04 极小）；100–500 keV 的下降"可能更大"；RXTE/PCA 的脉冲流量与自转减慢一致，因此变化归因于星云 — [Wilson-Hodge et al. 2011, ApJ 727, L40, arXiv:1010.2679](https://arxiv.org/abs/1010.2679)
+- [confirmed in literature] HXMT 把 Crab 的幂律模型（Γ=2.11，N=8.76）作为定标基准，并用 Crab 残差导出经验修正函数乘到有效面积上 — [Li X.-B. et al. 2020, arXiv:2003.06998](https://arxiv.org/pdf/2003.06998)
+- [confirmed in literature] 扫描巡天用 Crab 长期光变估计流量系统误差（LE 1.8%、ME 1.6%、HE 2.7%），并注明"due to the possible fluctuations of Crab"这是保守估计 — [Sai et al. 2020, arXiv:2003.07741](https://arxiv.org/pdf/2003.07741)
+- [confirmed in literature] Crab 两次 glitch（2017、2019）前后 X 射线轮廓不变：HXMT 27–200 keV 在 rms 0.47% 内、NICER 0.5–10 keV 在 0.28% 内 — [Zhang et al. 2022, ApJ 932, 11（ADS，检索摘要）](https://ui.adsabs.harvard.edu/abs/2022ApJ...932...11Z)
+- [confirmed in literature] Crab X 射线双峰间距长期漂移约 0.8°/世纪（多个中国卫星数据）— ["Long-term variations of X-ray pulse profiles for the Crab pulsar: data analysis and modeling", SCPMA 63, 109511 (2020)（ADS，检索摘要）](https://ui.adsabs.harvard.edu/abs/2020SCPMA..63j9511S/abstract)
+- [confirmed in literature] LE 观测 Crab：脉冲计数率 ~130 cnts/s，"本底"（含星云）~1200 cnts/s — [Zheng et al. 2019, arXiv:1908.01922](https://arxiv.org/pdf/1908.01922)
+- [confirmed in literature] "the stable pulse emission of Crab at hard X-rays can be detected with HXMT/CsI in various incident directions (θ, φ)"，被用来检验质量模型；论文把 "MeV-pulsars" 列为 HE 可监测对象；CsI 有效面积在 80–300 keV 随能量快速上升，且"the effective area at 6°<θ<90° is usually much smaller than that of θ<6°"（即沿准直器轴向入射时最大）— [Luo et al. 2020, arXiv:2005.01367](https://arxiv.org/pdf/2005.01367)
+- [confirmed in literature] COMPTEL 9 年数据给出 Crab 脉冲星 0.75–30 MeV 的能量分辨脉冲轮廓（主峰、次峰相隔 0.4 相位，有强桥辐射）— [Kuiper et al. 2001, A&A, arXiv:astro-ph/0109200](https://arxiv.org/abs/astro-ph/0109200)
+- [confirmed in literature] 磁星 4U 0142+61：INTEGRAL 总谱 Γ=0.93±0.06，探测到 229 keV，20–229 keV 流量 (15.01±0.82)×10⁻¹¹ erg cm⁻² s⁻¹；结合 SPI 首次给出谱拐折证据，峰值能量 228(+65/−41) keV；脉冲辐射测到 160 keV，脉冲谱 Γ=0.40±0.15 — [den Hartog et al. 2008, A&A, arXiv:0804.1640](https://arxiv.org/abs/0804.1640)
+- [confirmed in literature] Crab 是 HXMT 最合适的计时定标源，毫秒脉冲星对 HXMT 太暗 — [Tuo et al. 2022, arXiv:2109.04709](https://web3.arxiv.org/pdf/2109.04709)
+
+### Inferences
+#### 想法 7：以脉冲星脉冲流量为内禀参考的 Crab 星云流量十年监测（1–250 keV 同时）
+1. **一句话**：对每一次 Crab 定标观测测量"非脉冲（星云）流量 / 脉冲流量"之比及其能量依赖，独立检验星云百分级"闪烁"，而不依赖有效面积的绝对定标。
+2. **原理与来源**：Wilson-Hodge et al. 2011 用"脉冲流量随自转减慢平稳变化"论证变化来自星云 [confirmed in literature]；这里把同一逻辑反过来当测量方法——脉冲星与星云同时经过同一台仪器，响应漂移在比值中一阶抵消 [inference]。
+3. **适配度**：HXMT 的 Crab 观测是全任务最密集的定标数据，三台望远镜同时覆盖 1–250 keV，无堆积 [confirmed in literature 关于定标用途]。软 X 段 NICER 能做同样的事且光子更多，**HXMT 的独特性只在 10–250 keV 的同时覆盖**（Wilson-Hodge et al. 指出 >100 keV 的下降可能更大，至今缺少单一仪器的宽带验证）[inference]。
+4. **数据**：全部 Crab 指向观测（公开定标数据）、Jodrell/NICER 历表。
+5. **查新**：检索到的 HXMT Crab 长期工作是轮廓演化与 glitch 不变性；专门检索"HXMT Crab 星云流量变化"的查询因配额耗尽未执行，**查新不完整**。
+6. **可行性**（本笔记计算）[inference]：LE 脉冲 130 cts/s、非脉冲 1200 cts/s → 10 ks 曝光脉冲计数 1.3×10⁶，统计误差 ≈√(1.33×10⁷)≈3.6×10³，即比值单次精度 ~0.3%；而已知变化幅度为 ~3.5%/yr 量级。系统误差：(a) 星云项需要扣本底——HE 本底约为 Crab 计数的 30%–50%（假设），1% 的本底误差传到星云流量是 0.3%–0.5%，ME 更差，LE 用 blind 探测器最干净；(b) 脉冲星与星云谱形不同，增益漂移会通过能段边界产生二阶效应，需用窄能段并逐次重定标；(c) 脉冲流量自身的长期演化与 glitch 后变化（Zhang et al. 2022 给出 0.47% 的不变性上限，可作约束）；(d) 指向偏差对两者影响相同。
+7. **评分**：N4 / F5 / I3 —— 数据全是现成的定标数据，方法简单稳健；影响力中等（独立验证 + 首次给出同一仪器的宽带能量依赖）。
+
+#### 想法 8：CsI 全天脉冲折叠 —— MeV 脉冲星与磁星硬尾的十年监测
+1. **一句话**：不管卫星指向哪里，只要目标未被地球遮挡，就把 CsI 事例按已知历表折叠，得到 Crab 0.2–3 MeV 的十年脉冲轮廓/脉冲流量序列，并对 PSR B1509−58、磁星硬尾等做脉冲探测或上限。
+2. **原理与来源**：Fermi-GBM 对吸积脉冲星的全天脉冲监测思路（文献本次未取回）；COMPTEL 的 Crab MeV 轮廓（Kuiper et al. 2001）；磁星硬尾在 ~200–300 keV 的拐折问题（den Hartog et al. 2008）[confirmed in literature]。脉冲信号天然免疫于非准直探测器的本底建模问题。
+3. **适配度**：CsI 的 Crab 脉冲已被探测并用于定标 [confirmed in literature]，但未见科学利用。对"周期信号"而言没有成像能力不是缺点；十年里约一半时间可见目标，累计曝光 ~10⁸ s 量级，远超任何指向型软 γ 仪器对单个源的曝光 [inference]。沿准直器轴向的 CsI 有效面积远大于离轴 [confirmed in literature]，所以**指向观测期间的脉冲星还能额外得到 250–800 keV 的"准指向"脉冲谱** [inference]。局限：<200 keV 离轴不可用；SPI/IBIS 的信噪比（单位曝光）更高，HXMT 靠的是曝光量。
+4. **数据**：全任务 HE 事例文件中的 CsI 事例 + 轨道/姿态；射电或 X 射线历表（Jodrell、NICER、Fermi-LAT）。
+5. **查新**：Luo et al. 2020 证实 CsI Crab 脉冲仅用于质量模型检验；针对"CsI 脉冲星科学"的专门检索因配额耗尽未执行，**查新不完整**。
+6. **可行性**（本笔记计算）[inference]：
+   - 输入：A_eff=1000 cm²、B=4000 cts/s（200–600 keV，假设）、有效曝光 T=1.6×10⁸ s（十年的一半）。
+   - 5σ 脉冲计数率 = 5√(B/T) ≈0.025 cts/s → 2.5×10⁻⁵ ph cm⁻² s⁻¹ → 约 1.4×10⁻¹¹ erg cm⁻² s⁻¹（平均光子能量 350 keV）。
+   - Crab：若 200–600 keV 脉冲占总流量 20%（假设），CsI 中脉冲 ≈3 cts/s，~10⁴ s 即达 5σ，十年累计 S/N≈600 → 可按年甚至按月给出 MeV 段脉冲轮廓与流量，检验轮廓的长期演化和 glitch 响应是否延伸到 MeV。
+   - 4U 0142+61：把 INTEGRAL 总谱（Γ=0.93）不加拐折外推到 200–600 keV 是 ~3×10⁻¹⁰ erg cm⁻² s⁻¹；CsI 的十年脉冲灵敏度约为其 5%，因此即使探测不到，也能对拐折能量给出有约束力的上限。该源赤纬 +62°，靠近轨道极区，很少被地球遮挡 [inference]。
+   - 障碍：方向相关响应（每次指向不同）、CsI 增益漂移导致能段定义随时间变化、慢脉冲星（P~6–12 s）对本底红噪声更敏感、磁星计时噪声要求同期历表。
+7. **评分**：N4 / F4 / I4 —— 用的是"被当作屏蔽体的晶体 + 只用于定标的信号"，科学靶子（MeV 脉冲、磁星硬尾拐折）明确。
+
+**常规时域方向的判断** [inference]：自转/力矩历史、超轨道周期、轨道周期导数、自由进动搜索属于 HXMT 常规科学的延长线，除非与上面两种"非准直/自校准"手段结合，否则不符合"非常规"要求，未展开。
+
+### Gaps
+- 未取回 Fermi-GBM 脉冲星监测项目的文献（尝试的 arXiv 编号不对），该先例无 URL。
+- PSR B1509−58 等其他软 γ 脉冲星的 MeV 脉冲流量未在本次取回文献中核实，未给估算。
+- CsI 沿轴向（θ<6°）的有效面积数值在 Luo et al. 2020 Fig. 12 中，文本提取不到，需人工读图。
+- HXMT Crab 定标观测的次数与总曝光未查到。
+
+---
+
+## 6. 脉冲星导航与守时：做到了哪一步，还剩什么
+
+### Takeaway
+已发表的在轨验证是 2017-08-31 至 09-05 的 5 天 Crab 观测，用 SEPO 方法单星定轨到 10 km（3σ）；本次未检索到后续的多脉冲星或长期"脉冲星钟"工作。用户设想的几个剩余角度里，X–射电相位差长期变化与"类 PTA"数据集经量级估算都不可行，建议否决；可行的部分已并入想法 4（巨脉冲）与想法 8（CsI 折叠）。
+
+### Cited Findings
+- [confirmed in literature] 用 2017-08-31 至 09-05 的 Crab 观测、SEPO（Significance Enhancement of Pulse-profile with Orbit-dynamics）方法，三台望远镜分别定轨，位置 10 km（3σ）、速度 10 m/s（3σ）；HE/ME/LE 曝光约 180/190/120 ks；文中用 PSR B1821−24、B1509−58、J1811−1925 的轮廓做了仿真；同方法先在 POLAR/TG-2 上用 31 天 Crab 数据验证 — [Zheng et al. 2019, ApJS 244, 1, arXiv:1908.01922](https://arxiv.org/pdf/1908.01922)
+- [confirmed in literature] RXTE 八年监测：Crab X 射线主峰领先射电 344±40 μs（0.0102±0.0012 相位），主要误差是射电端 40 μs 系统误差（星际散射与设备定标）；无法区分该延迟是相位恒定还是时间恒定 — [Rots, Jahoda & Lyne 2004, ApJ 605, L129, arXiv:astro-ph/0403187](https://arxiv.org/abs/astro-ph/0403187)
+- [confirmed in literature] HXMT 计时定标因 Jodrell 历表 ~40 μs 的系统误差而改用准同时 NICER 观测建历表；HE/ME 的仪器延迟（0.156/0.335 μs）可忽略，能量依赖约 0.26 μs keV⁻¹；文中给出了 Crab 射电延迟随 X 射线能量的关系图 — [Tuo et al. 2022, arXiv:2109.04709](https://arxiv.org/pdf/2109.04709)
+
+### Inferences
+- [inference] **X–射电相位差的长期变化**：十年内 Crab 周期变化 ΔP/P≈0.4%（按 P≈33.8 ms、Ṗ≈4.2×10⁻¹³，记忆值），若延迟"相位恒定"，300 μs 的延迟只变 ~1 μs；即使把 RXTE（1996）接到 HXMT（2026），也只有 ~4 μs，远小于射电端 40 μs 的系统误差。否决。
+- [inference] **用 X 射线 ToA 反推 DM 变化**：X 射线 ToA 不受色散影响，HE 系统误差 12 μs，而 Crab 的 DM 变化在几百 MHz 可造成 100 μs 以上的延迟，原理上可测；但 Jodrell 自己就有双频 DM 修正，X 射线只能做一致性检查，科学增量小。列为低优先级。
+- [inference] **类 PTA 数据集**：Crab 计时噪声达毫秒量级，其他年轻脉冲星同样嘈杂，毫秒脉冲星对 HXMT 太暗 [confirmed in literature]。否决。
+- [inference] **不用指向的 CsI 脉冲星导航**：CsI 中 Crab 脉冲 ~3 cts/s、本底 ~4000 cts/s，5 天的轮廓显著性只有指向 HE 的 ~1%，定位误差将从 10 km 退化到 ~10³ km 量级。否决。
+
+### Gaps
+- 未能检索 2019 年之后 HXMT 是否发表多脉冲星导航、长期脉冲星钟稳定度的论文（配额耗尽）。
+- Crab 的 P、Ṗ 数值为记忆值，未在本次取回文献中核对。
+
+---
+
+## 7. 弥散辐射：CXB、地球反照、银河脊、弥散谱线
+
+### Takeaway
+HXMT 已发表 1.5–120 keV 的 CXB 谱（LE 用 blind 探测器、HE 用地球遮挡段作本底，只用了 2 个宽视场 HE 探测器），以及 LE 的银道面弥散本底图；ME/HE 的银河脊硬 X 射线剖面未检索到。最有潜力的非常规方向是把 LE 当作"大集光率 + CCD 级能量分辨"的弥散谱仪去找暗物质衰变线；CXB 偶极、511 keV/正电子素连续谱、Fermi/eROSITA 泡的硬 X 对应体经估算不可行。
+
+### Cited Findings
+- [confirmed in literature] HXMT 的 DXRB 谱（1.5–120 keV）：cut-off power law，Γ=1.40，归一化 9.57 ph cm⁻² s⁻¹ keV⁻¹ sr⁻¹（1 keV 处），截断能量 55 keV（已修正地球反照与大气辐射）；谱形与前人一致，但归一化除 HEAO-1 外都偏低 — [Huang et al. 2022, MNRAS 513, 4074, arXiv:2306.10114](https://arxiv.org/abs/2306.10114)
+- [confirmed in literature] 该工作的细节：HE 只用两个宽视场探测器；HE "blank-sky" 与 "Earth-occulted" 累计曝光 377 ks 与 187 ks（2021 年前的公开数据）；LE 有效曝光 117 ks；LE 用地球遮挡段作本底会有系统效应（疑似滤光片漏光），故改用 blind 探测器；遮挡段曝光短于 475 s 的被剔除以消除 40–45 keV 的本底偏差 — [Huang et al. 2022, arXiv:2306.10114](https://arxiv.org/pdf/2306.10114)
+- [confirmed in literature] LE 本底：7 keV 以下由弥散 X 射线本底主导，谱稳定、对天区依赖小；1 ks 谱的平均系统误差 1–7 keV 为 4.2%、1–10 keV 为 3.7% — [Liao et al. 2020, arXiv:2004.01432](https://arxiv.org/pdf/2004.01432)
+- [confirmed in literature] LE 银道面弥散本底：用三年银道面扫描数据做 1°×1° 像素图，谱与 RXTE/PCA 一致 — ["The Diffuse X-Ray Background of the Insight-HXMT/LE Telescope in the Galactic Plane", ApJS 260, 42 (2022)](https://www.scilit.net/article/655e9ab6c90e7ca46351779b691c5e3d)
+- [confirmed in literature] INTEGRAL 用地球掩过视场的调制测 5–100 keV 的 CXB，归一化比 HEAO-1 高 ~10%，并评估了反照、宇宙线致大气辐射、极光等污染 — [Churazov et al. 2007, A&A, arXiv:astro-ph/0608250](https://arxiv.org/abs/astro-ph/0608250)
+- [confirmed in literature] Swift/BAT 用不同地磁纬度的地球掩食数据同时测 15–200 keV 的 CXB 与地球反照谱，CXB 归一化比 HEAO-1 高 8±3% — [Ajello et al. 2008, ApJ, arXiv:0808.3377](https://arxiv.org/abs/0808.3377)
+- [confirmed in literature] 宇宙线致大气硬 X 射线辐射的 Monte Carlo：给出 25–300 keV 面亮度随能量、**太阳调制水平、地磁截止刚度**和天顶角的拟合公式；与 INTEGRAL 测量在 10% 内一致 — [Sazonov et al. 2007, MNRAS 377, 1726, arXiv:astro-ph/0608253](https://arxiv.org/abs/astro-ph/0608253)
+- [confirmed in literature] NuSTAR 用"侧孔杂散光在探测器上的空间调制"测 3–20 keV 的 CXB（~7 Ms 河外场），强度 2.8×10⁻¹¹ erg s⁻¹ cm⁻² deg⁻²，高于 HEAO-1、与 INTEGRAL 一致；各方向间的弥散与宇宙方差一致 — [Krivonos et al. 2021, MNRAS, arXiv:2011.11469](https://arxiv.org/abs/2011.11469)
+- [confirmed in literature] HEAO-1 A2 的 2–10 keV 偶极：与本星系群运动的 Compton-Getting 效应（幅度 0.0042）加剩余大尺度结构（0.0023–0.0085）一致 — [Scharf et al. 2000, ApJ, arXiv:astro-ph/9908187](https://arxiv.org/abs/astro-ph/9908187)
+- [confirmed in literature] INTEGRAL/IBIS 的硬 X 射线银河脊：17–60 keV 的经/纬度剖面与近红外恒星分布一致，总光度 (3.7±0.2)×10³⁷（erg/s），70–200 keV 除点源外无弥散辐射；IBIS 本底模型精度 ~1%–2% — [Krivonos et al. 2007, A&A, arXiv:astro-ph/0605420](https://arxiv.org/abs/astro-ph/0605420)；软 X 段的恒星起源论证 — [Revnivtsev et al. 2006, arXiv:astro-ph/0510050](https://arxiv.org/pdf/astro-ph/0510050)
+- [confirmed in literature] HXMT 银道面扫描四年灵敏度：2–6 keV 约 8.2×10⁻¹²、7–40 keV 约 4.21×10⁻¹¹、25–100 keV 约 2.78×10⁻¹¹ erg s⁻¹ cm⁻²；监测 >1300 个源，223 个 S/N>5 — [Wang et al. 2023, ApJS 265, 52, arXiv:2303.00360](https://arxiv.org/abs/2303.00360)
+- [confirmed in literature] 弥散暗物质衰变线的先例：Fermi-GBM 全天数据搜 10–25 keV 的 sterile neutrino 线（质量 20–50 keV）— [Ng et al. 2015, PRD 92, 043503, arXiv:1504.04027](https://arxiv.org/abs/1504.04027)；NuSTAR 银河核球场 5–20 keV（质量 10–40 keV）— [Roach et al. 2020, PRD 101, 103011, arXiv:1908.09037](https://arxiv.org/abs/1908.09037)；XMM-Newton >30 Ms 空白天数据否定 3.5 keV 线的暗物质解释 — [Dessert, Rodd & Safdi 2020, Science 367, 1465, arXiv:1812.06976](https://arxiv.org/abs/1812.06976)
+
+### Inferences
+#### 想法 9："三孔径差分 + 临边扫描"重测 CXB 归一化，并测地球反照/大气辐射的太阳周调制
+1. **一句话**：利用同一台 HE 里立体角为 0（blind）、6.3 deg²（窄）、32.5 deg²（宽）的三类探测器，把随立体角线性增长的天空信号与不随立体角变化的粒子本底分开；同时把十年里上万次目标掩食过程按 ELV 叠加，得到地球反照/大气辐射的临边增亮轮廓及其随地磁截止刚度和太阳活动周（2019 极小至 2024–25 极大）的变化。
+2. **原理与来源**：NuSTAR 的"空间调制"法（Krivonos et al. 2021）、INTEGRAL/BAT 的地球掩食法（Churazov et al. 2007；Ajello et al. 2008）、Sazonov et al. 2007 对太阳调制依赖的预言 [confirmed in literature]。
+3. **适配度**：HXMT 的窄准直视场扫过临边时能给出角分辨的反照轮廓，而 INTEGRAL/BAT 是宽视场积分；三类视场共存是 HXMT 的结构性特点 [inference]。但 HE 的 CXB 信号只占本底的百分之几，绝对归一化未必能胜过 BAT/INTEGRAL；**真正新的可测量是反照/大气分量的太阳周调制**，这需要跨越一个太阳活动周的同一仪器数据，HXMT 恰好具备 [inference]。
+4. **数据**：全部高银纬指向（不限于专门的空白天区提案）的 HE 事例与 EHK 文件（ELV、地磁截止刚度），均为常规公开产品。
+5. **查新**：Huang et al. 2022 只用 2 个宽视场探测器和 2021 年前的数据；未见十年更新或太阳周分析 [confirmed in literature：已有工作范围]。
+6. **可行性**（本笔记计算）[inference]：用 Huang et al. 的最佳拟合谱，20–100 keV 的 CXB 强度 ≈1.6 ph cm⁻² s⁻¹ sr⁻¹；假设探测效率 0.7，每个窄视场探测器 ≈0.6 cts/s、每个宽视场 ≈3.1 cts/s；15 个窄探测器合计的 CXB 计数约为 2 个宽探测器的 1.5 倍，却未被使用。十年数据使统计误差降到 1% 以下，极限在系统误差：(a) blind 探测器与其他探测器的能量分辨/本底谱不同（Huang et al. 已指出）——需要用深遮挡段逐探测器标定本底比；(b) 遮挡段与非遮挡段的地磁环境不同；(c) LG/NG 模式切换使遮挡段的 NaI 数据处于不同增益。太阳周调制：银河宇宙线流量在太阳极小/极大间变化 ~15%–20%（一般知识，未取文献），应能在叠加的大气辐射分量中看到。
+7. **评分**：N3 / F4 / I3。
+
+#### 想法 10：把 LE 当作大集光率弥散谱仪 —— 2–10 keV 暗物质衰变线（含 3.5 keV）搜寻
+1. **一句话**：叠加十年 LE 空白天、高银纬指向与银道面扫描中无亮源的时段，以 blind 探测器扣粒子本底，在 2–10 keV 搜寻银晕暗物质衰变的窄线，并利用不同指向的暗物质柱密度差异做"随 D 因子变化"的检验。
+2. **原理与来源**：Dessert et al. 2020（XMM 空白天）、Roach et al. 2020（NuSTAR 杂散光）、Ng et al. 2015（GBM 全天）[confirmed in literature]。弥散线灵敏度正比于 √(A·Ω·T)，而不是聚焦望远镜看重的角分辨。
+3. **适配度** [inference]：LE 窄视场 1.6°×6° 约 9.6 deg²，约 60 个开放 SCD（每个 4 cm²）；宽视场约 18 个。估算集光率 AΩ≈3×10³ cm² deg²（≈1 cm² sr），比聚焦望远镜在 3.5 keV 的集光率高一个量级以上（XMM、NuSTAR 杂散光的对比值为笔者估计，未核对文献）；LE 在 7 keV 以下本底由 CXB 主导 [confirmed in literature]，且能量分辨为 CCD 级。**如果仪器谱线与响应的系统误差可控，LE 在这个指标上确实优于现有聚焦望远镜**；劣势是 LE 的 GTI 短而碎、亮地球漏光、有效面积含经验修正。
+4. **数据**：LE 事例（含 blind 模块）、全部非银道面指向与扫描；公开性同常规数据。
+5. **查新**：针对 "Insight-HXMT sterile neutrino / dark matter decay line" 的检索因配额耗尽**未能执行**，这是本笔记中最需要补做的查新。
+6. **可行性**（本笔记计算）[inference]：
+   - 以 3.5 keV 线的典型参数（sin²2θ=5×10⁻¹¹，m_s=7.1 keV）和内银河中高纬方向的柱密度 5×10²² GeV cm⁻²（假设）为例：衰变率 1.2×10⁻²⁸ s⁻¹，线强度 ≈0.07 ph cm⁻² s⁻¹ sr⁻¹，在 LE 中 ≈0.07 cts/s；同一 150 eV 分辨元内 CXB 连续谱 ≈0.25 cts/s。
+   - 取本底为 CXB 的 2 倍、T=1 Ms：5σ 线强度极限 ≈3.5×10⁻³ ph cm⁻² s⁻¹ sr⁻¹，对应 sin²2θ≈2.5×10⁻¹²；若连续谱有 1% 的系统误差，极限约 3.6×10⁻¹²。
+   - 障碍：(a) LE 有效面积用 Crab 残差做了经验修正，任何窄的响应残差都会伪装成线或抹掉线，需用 Crab 与 blank-sky 的比值谱交叉检查；(b) 仪器荧光线（Li et al. 2020 列出 S、Ni/Cu/Zn 等）与大气 Ar 荧光的位置要避开；(c) LE 增益随温度变化；(d) 点源与银河脊热线（Fe、S、Ar、Ca）在低银纬的污染——应以 |b|>10° 为主样本。
+7. **评分**：N4（待查新）/ F3 / I4 —— 这是"空白天 + 盲探测器"由本底变信号的典型；能否成立取决于响应系统误差能否压到 1% 量级。
+
+#### 想法 11：银道面扫描叠加的 20–100 keV 银河脊（GRXE）纬度剖面与 P(D) 涨落分析
+1. **一句话**：把十年数千次银道面扫描中扣除已知点源 PSF 后的 ME/HE 残差按银纬叠加，得到硬 X 射线银河脊的纬度/经度剖面，并用残差涨落分布约束探测阈值以下的源计数。
+2. **原理与来源**：INTEGRAL/IBIS 把探测器总计数率当"准直器"来测 GRXE（Krivonos et al. 2007）；RXTE/PCA 扫描 [confirmed in literature]。
+3. **适配度**：HXMT 是真正的准直扫描仪器，方法自然；但 IBIS 已给出 17–60 keV 剖面和 70–200 keV 上限，**HXMT 不比 INTEGRAL 更合适，价值在于系统误差完全不同的独立确认**，以及与自家 LE 图的同仪器衔接 [inference]。
+4. **数据**：GPSS 扫描事例与团队的点源拟合结果（残差光变是否公开——未知）。
+5. **查新**：LE 已做（ApJS 260, 42）；ME/HE 未检索到 [confirmed in literature：检索未见]。
+6. **可行性** [inference]：若 GRXE 在 HE 窄视场内相当于 2–3 mCrab（笔者由软 X 面亮度外推的假设值），即 ~2–3 cts/s，对比 ~500 cts/s 的本底只有 0.5%，单次过脊（~1 min）S/N~1；十年 ~10⁴–10⁵ 次过脊在统计上足够，关键是点源扣除残差与地磁调制是否与银纬相关。弱源数（S/N<3 的监测源在 LE/ME/HE 各约 10³ 个，Sai et al. 2020）说明残差里确有大量阈下源可供 P(D) 分析。
+7. **评分**：N3 / F3 / I2。
+
+### Gaps
+- CXB 偶极与各向异性：Compton-Getting 幅度 0.42%，而 LE 单次 1 ks 的系统误差就有 ~4%，且高银纬指向的天区覆盖稀疏——判断不可行，但没有做正式的模拟。
+- 511 keV 线/正电子素连续谱/²⁶Al 相关连续谱：未取回 SPI 的流量文献；仅凭一般知识判断 CsI 的能量分辨无法把 511 keV 线与银心点源连续谱分开（见 §12）。
+- Fermi/eROSITA 泡的硬 X 射线对应体：没有找到预期面亮度的文献，无法定量。
+- XMM、NuSTAR、eROSITA、HaloSat 等在 3.5 keV 处的集光率对比值未核对文献；LE 在 3–4 keV 是否存在仪器特征未查。
+
+---
+
+## 8. 扫描巡天副产品：暂现源目录与"机动巡天"
+
+### Takeaway
+"slew survey"并非完全空白：团队的扫描管线已把扫描前后的机动段纳入，用来监测银道面外的源；论文还明说发现了若干"很短时标"的新 X 射线源候选体但未报道。指向之间的大机动是否被系统利用未能查证。对河外快暂现源，HXMT 的集光率不如 MAXI/EP，这个方向的定位应是"银道面内短时标硬暴的回收"。
+
+### Cited Findings
+- [confirmed in literature] "the sources out of the Galactic plane are also monitored as Insight-HXMT is in slew phase (attitude adjustment) before/after the scanning observation" — [Sai et al. 2020, arXiv:2003.07741](https://arxiv.org/pdf/2003.07741)
+- [confirmed in literature] "Several new X-ray source candidates are also discovered, some of which can be the X-ray transients with very short time scale, which need to be further confirmed and thus not reported here"；两年内 >1000 次扫描；单次扫描 5σ 灵敏度约 3/20/18 mCrab（LE/ME/HE）；光变中的异常峰用三种视场方向的峰是否同时/有无延迟来区分源与粒子事件 — [Sai et al. 2020, arXiv:2003.07741](https://arxiv.org/pdf/2003.07741)
+- [confirmed in literature] 四年星表（2017-06 至 2021-08）与 MAXI 联合给出长期光变，摘要未提暂现源搜索、机动数据或残差图 — [Wang et al. 2023, arXiv:2303.00360](https://arxiv.org/abs/2303.00360)
+
+### Inferences
+#### 想法 12：用"三视场判别"在扫描/机动/指向数据中回收短时标暂现源
+1. **一句话**：利用窄视场三个取向（相差 60°）+ 宽视场 + blind 探测器的同时响应，对 1–100 s 的短暴做真伪判别与粗定位，建立十年的银道面短暴目录（未触发的磁星短暴、I 型暴、SFXT 耀发），并复核团队未报道的候选体。
+2. **原理与来源**：RXTE/PCA 银心扫描、XMM slew survey、MAXI 的思路（先例文献本次未取回）；判别逻辑：天体点源过视场给出宽度可预言的三角形响应，短于穿越时间的内禀暴在三组取向中同时出现且幅度比由准直器透过率决定，粒子事件则同时出现在 blind 探测器中 [inference]。
+3. **适配度**：HE 对 20–250 keV 短暴的面积与时间分辨很好，但瞬时视场只有几十 deg²。**对河外快 X 射线暂现源，LE 的集光率比宽视场监测器低两个量级以上，不占优**；优势只在银道面内高发生率的硬短暴和 ms 级计时 [inference]。
+4. **数据**：GPSS 与小天区扫描事例、指向间机动段事例（是否归档——未知）。
+5. **查新**：机动段已被部分使用（见上）；专门的 "HXMT slew survey" 检索因配额耗尽未执行，**查新不完整**。
+6. **可行性** [inference]：算法简单；事件率是主要未知数——没有找到 LE/HE 在机动段的本底涨落统计，无法给出可靠的期望数。建议先在已知活跃磁星所在扫描区做回收率测试。
+7. **评分**：N3 / F3 / I2。
+
+### Gaps
+- 指向之间机动的角速度、机动段数据是否下传并公开，未查到。
+- 团队"未报道的短时标候选体"的数量与性质未知。
+
+---
+
+## 9. 大面积、无堆积带来的计时技巧：高阶统计、亚毫秒变化、TNO 掩食
+
+### Takeaway
+这一组里没有找到值得推荐的新想法：TNO 掩 Sco X-1 的"干净重做"在 HXMT 上因计数率比 RXTE/PCA 低一个量级以上而不可行；强度干涉与量子引力"模糊"检验在物理量级上不成立；高阶统计量属于常规计时分析的延伸，且查新未完成。
+
+### Cited Findings
+- [confirmed in literature] RXTE/PCA 在 Sco X-1（典型计数率 ~10⁵ cts/s）光变中的毫秒级下陷最初（Chang et al. 2006）被解释为小 TNO 掩食；原作者的后续分析见 "Millisecond dips in the RXTE/PCA light curve of Sco X-1 and TNO occultation" — [Chang et al. 2007, MNRAS, arXiv:astro-ph/0701850](https://arxiv.org/pdf/astro-ph/0701850)
+- [confirmed in literature] 2007-06 至 2011-10 共 334 ks 的 RXTE/PCA Sco X-1 数据中没有找到确定的 TNO 掩食事件，给出 30–300 m 天体尺寸分布的上限 — [Chang, Liu & Chen 2013, MNRAS, "Search for serendipitous TNO occultation in X-rays", arXiv:1211.4650](https://arxiv.org/abs/1211.4650)
+- [confirmed in literature] 下陷由高能带电粒子事件在 PCA 中引起的电子学死时间产生，至多 10% 可能是 TNO 掩食，"it is a mistake to conclude that any TNOs have been detected" — [Jones et al. 2008, ApJ, arXiv:0710.0837](https://arxiv.org/abs/0710.0837)；更早的同结论短文 — [Jones et al. 2006, arXiv:astro-ph/0612129](https://ar5iv.arxiv.org/html/astro-ph/0612129)
+- [confirmed in literature] 2007-06 至 2009-10 的 RXTE/PCA 专项观测只找到一个可能的掩食事件，并给出百米级 TNO 与十米级主带小行星尺寸分布的上限 — [Chang, Liu & Chen 2011, MNRAS, arXiv:1009.2547](https://arxiv.org/abs/1009.2547)
+- [confirmed in literature] HE 单事件死时间通常 4–8 μs，高能带电粒子信号的死时间更长；每个 HED 有死时间计数器（步长 1/8 μs），每秒总死时间写入工程数据 — [Liu et al. 2020, arXiv:1910.04955](https://arxiv.org/pdf/1910.04955)
+
+### Inferences
+- [inference] **TNO 掩食重做（否决）**：按 open area 比例（LE 300 cm² 对 PCA ~6500 cm²，后者为记忆值）外推，LE 对 Sco X-1 约 4×10³ cts/s，加上 ME、HE 合计约 5 cts/ms，比 PCA 的 ~100 cts/ms 低 20 倍。2 ms 全遮挡的"零计数"概率为 e⁻¹⁰≈4.5×10⁻⁵，100 ks 内有 5×10⁷ 个 2 ms 窗，会出现 ~2×10³ 个纯统计假下陷；只有 ≳4 ms（≳100 m 天体）的下陷才可辨。再加上 LE 的 SCD 读出把到达时间抹开 ~1 ms。X 射线在 40 AU 处的 Fresnel 尺度约 30 m（4 keV），本来是 X 射线法的优势，但 HXMT 的光子数用不上它。HVT 标记与死时间计数器确实能把粒子事件造成的下陷识别出来（这是 RXTE 所缺的），但这只是"更干净"，不是"更灵敏"。
+- [inference] **强度干涉/HBT（否决）**：X 射线的相干时间约为 h/ΔE，对 keV 带宽是 10⁻¹⁸ s 量级，而 HE 时间分辨 2 μs，简并参数低十几个量级。
+- [inference] **量子引力/Lorentz 破缺（否决）**：keV–MeV 光子的能量杠杆远小于 TeV 观测，没有竞争力。
+- [speculation] **高阶统计量（bispectrum/bicoherence）与硬 X 射线 Fourier 域混响**：HE 无堆积、死时间小，技术上合适，但这属于常规计时科学的延伸，且未能查新。
+
+### Gaps
+- HXMT 对 Sco X-1 的实际计数率与累计曝光未查到，上面的数字是按面积比例外推的。
+- 未能检索 HXMT 数据上已有的 bicoherence、亚毫秒变化工作（配额耗尽）。
+
+---
+
+## 10. 相邻 HE 模块/ME 像素间 Compton 散射偏振测量
+
+### Takeaway
+事件级信息足以在离线做"跨组"探测器间的时间符合（2 μs 时间戳），但同组 6 个探测器的同时信号在星上就被丢弃，加上 18 个大晶体的几何对方位角采样很粗，量级估算给出的最小可探测偏振度对最亮的非饱和 GRB 也在 ~70% 左右。结论：不推荐作为主攻方向，可做一次一天量级的"跨组双事件率"实测来最终定论。
+
+### Cited Findings
+- [confirmed in literature] 每个 HE 事件带 5 bit 通道号与 19 bit、2 μs 刻度的亚秒时间；同组 HED 在事件处理期间的同时信号被丢弃；CsI 与 NaI 同时沉积的事件可由脉宽识别 — [Liu et al. 2020, arXiv:1910.04955](https://arxiv.org/pdf/1910.04955)
+- [confirmed in literature] INTEGRAL/IBIS 用 Compton 模式在 >200 keV 测到 Crab 的强线偏振，偏振角平行于脉冲星自转轴 — [Forot et al. 2008, ApJL, arXiv:0809.1292](https://arxiv.org/abs/0809.1292)
+- [confirmed in literature] AstroSat/CZTI 利用其支撑结构在 >100 keV 透明的特点做广角 GRB 监测，并在 100–300 keV 对首年最亮的 11 个 GRB 做了偏振测量（5 个 ≳3σ）— [Chattopadhyay et al. 2019, ApJ 884, 123, arXiv:1707.06595](https://arxiv.org/abs/1707.06595)
+- [confirmed in literature] 检索 "Insight-HXMT polarimetry Compton scattering HE detectors" 只返回发射前的 HXMT 偏振计概念论文（标题为 "X-ray polarimetry on-board HXMT" 与 "An X-ray Polarimeter for HXMT Mission"，内容未读），未见利用在轨 HE 数据做偏振的工作 — [arXiv:0810.2708](https://arxiv.org/pdf/0810.2708)；[arXiv:0709.3992](https://arxiv.org/pdf/0709.3992)
+
+### Inferences
+- [inference] **符合信息是否保留**：跨组（A–B、B–C、A–C）探测器对的双事件可以靠 2 μs 时间戳离线找回；同组对的第二次击中在星上丢失。三组在安装面上的空间分布（是否相邻扇区）未从文献文本中读出，决定了可用的相邻对数量。
+- [inference] **量级估计**：单个 CsI 本底 ~550 cts/s，取 4 μs 符合窗，每对探测器的偶然符合 ~1.2 s⁻¹。假设真 Compton 双事件占 GRB 计数的 ~1%（由"4 cm 厚晶体侧向散射到相邻晶体"的立体角粗估，是最不确定的输入）、调制因子 μ~0.2、可用相邻跨组对 ~20 对：对一个持续 10 s、CsI 总超出 2×10⁴ cts/s 的亮暴，S≈2000、B≈2200，MDP₉₉≈4.29√(S+B)/(μS)≈0.7。更亮的暴会饱和。对 Crab 这样的稳定源，双事件淹没在本底双事件中，只有借助脉冲相位才能分离，估算 MDP 仍在 ~50% 量级。
+- [inference] **判断**：INTEGRAL/IBIS、SPI 和 AstroSat/CZTI 有像素化探测面，明显更合适；HXMT 不占优。
+
+### Gaps
+- 没有 Geant4 级的双事件效率与调制因子，上述 1% 与 μ=0.2 均为假设；需要质量模型模拟或直接在存档数据中数跨组符合事件。
+- ME 像素间的 Compton 散射（5–30 keV，Si-PIN）截面极小，未做估算。
+
+---
+
+## 11. 多信使与跨卫星协同：三角定位、交叉定标、存档符合
+
+### Takeaway
+HXMT/CsI 已是 GRB 联合能谱分析与 GW/中微子/FRB 逐事件跟踪的常规成员；在这个方向上没有发现需要新方法的空白，剩下的是若干"查表型"存档核对（如 KM3-230213A、LHAASO 暂现源）以及 §3 的群体叠加。
+
+### Cited Findings
+- [confirmed in literature] GOLDEN 样本与 Fermi/GBM、Swift/BAT、GECAM 做联合能谱分析，HXMT 在高能端提供更好的约束 — [Song et al. 2022, arXiv:2203.00878](https://arxiv.org/abs/2203.00878)
+- [confirmed in literature] 交叉定标：10 个亮暴联合拟合，HXMT/CsI 相对其他仪器高 7.0±8.8% — [Luo et al. 2020, arXiv:2005.01367](https://arxiv.org/abs/2005.01367)
+- [confirmed in literature] HXMT 对 GW170817 有专文观测报告 — ["Insight-HXMT observations of the first binary neutron star merger GW170817", arXiv:1710.06065](https://arxiv.org/pdf/1710.06065)
+- [confirmed in literature] HXMT 与 GECAM-C 对 GRB 221009A 的联合观测已发表 — ["Insight-HXMT and GECAM-C observations of the brightest-of-all-time GRB 221009A", arXiv:2303.01203](https://arxiv.org/pdf/2303.01203)
+
+### Inferences
+- [inference] **时间三角定位**：CsI 的 2 μs 时间戳和 ~10 μs 级绝对计时不是瓶颈；瓶颈是基线。近地轨道卫星之间最长基线 ~1.3×10⁴ km（光行时 ~43 ms），对互相关精度 ~1 ms 的亮短暴，环带宽度约 1°–2°；与日地 L1 的探测器组合时可到 ~0.1° 量级。这是已有的行星际网络做法，HXMT 只是多一个节点。
+- [speculation] **存档符合查表**：对 KM3-230213A（2023-02-13）、LHAASO 报告的暂现事件、IceCube 高能警报总表，在 CsI 数据中各查 T0±数小时是低成本的例行工作；是否已有人做过——未查。UHECR 多重态没有可用的时间窗，否决。
+
+### Gaps
+- HXMT 是否正式加入 IPN、是否已有 Li-CCF 类联合定位论文——未能检索（配额耗尽）。
+- KM3-230213A 的原始论文未取回，事件时间为记忆值。
+
+---
+
+## 12. 考虑过但否决（或降级）的想法
+
+### Takeaway
+下列想法或者在量级上不成立，或者别的卫星明显更合适，或者已被团队做完；列出理由以免重复投入。
+
+### Cited Findings
+- [confirmed in literature] Sco X-1 毫秒下陷的仪器起源争议与 RXTE 的后续结果（334 ks 无确定事件）— [Jones et al. 2008, arXiv:0710.0837](https://arxiv.org/abs/0710.0837)；[Chang, Liu & Chen 2011, arXiv:1009.2547](https://arxiv.org/abs/1009.2547)；[Chang, Liu & Chen 2013, arXiv:1211.4650](https://arxiv.org/abs/1211.4650)
+- [confirmed in literature] CXB Compton-Getting 偶极幅度 0.0042 — [Scharf et al. 2000, arXiv:astro-ph/9908187](https://arxiv.org/abs/astro-ph/9908187)；LE 1 ks 谱系统误差 ~4% — [Liao et al. 2020, arXiv:2004.01432](https://arxiv.org/pdf/2004.01432)
+- [confirmed in literature] 70–200 keV 的银河脊除点源外无弥散辐射（IBIS）— [Krivonos et al. 2007, arXiv:astro-ph/0605420](https://arxiv.org/abs/astro-ph/0605420)
+- [confirmed in literature] Crab 掩食的大气密度反演已由团队完成并持续更新 — [Xue et al. 2023, arXiv:2211.00293](https://web3.arxiv.org/pdf/2211.00293)；[Zhang H.-H. et al. 2025, arXiv:2502.19678](https://arxiv.org/abs/2502.19678)
+- [confirmed in literature] TGF、太阳耀斑已在团队的暴分类中（四年 245 个 TGF、4 个太阳耀斑）— [Song et al. 2022, arXiv:2203.00878](https://arxiv.org/abs/2203.00878)
+
+### Inferences
+| 否决/降级的想法 | 理由 | 标签 |
+|---|---|---|
+| TNO/小天体掩 Sco X-1 的"干净重做" | HXMT 总计数率 ~5 cts/ms，比 RXTE/PCA 低 ~20 倍，2 ms 下陷被泊松涨落淹没；LE 读出抹开 ~1 ms；预期事件数 ≪1 | [inference] |
+| 强度干涉（HBT）式测量 | X 射线相干时间 ~10⁻¹⁸ s，对 2 μs 分辨毫无希望 | [inference] |
+| 量子引力"模糊"/Lorentz 破缺 | keV–MeV 能量杠杆不如 TeV 光子 | [inference] |
+| CXB 偶极/各向异性 | 信号 0.4%，LE 系统误差 ~4%，高银纬指向天区覆盖稀疏 | [inference] |
+| 用非准直 CsI 测 CXB | 地球始终挡住固定比例的天空，没有调制量；与反照简并 | [inference] |
+| 511 keV 线/正电子素连续谱/²⁶Al 连续谱 | CsI 能量分辨不足以分出 511 keV 线；掩食法在银心方向被硬态黑洞点源连续谱混淆；SPI 已远超 | [inference]（SPI 流量未取文献） |
+| Fermi/eROSITA 泡的硬 X 射线对应体 | 预期面亮度未知且应远低于 CXB；LE 空白天区覆盖不成图 | [speculation] |
+| 准直望远镜临边掩食做成像/拥挤场分解 | 大气边缘模糊 ~0.1°–0.2°，不如扫描 PSF 拟合 | [inference] |
+| 类 PTA 的 Crab 计时阵 | Crab 计时噪声毫秒级，MSP 对 HXMT 太暗 | [inference] |
+| X–射电相位差的长期变化 | 十年变化 ~1 μs，射电系统误差 40 μs | [inference] |
+| CsI 无指向脉冲星导航 | 轮廓显著性约为指向 HE 的 1%，定位退化到 ~10³ km | [inference] |
+| 引力透镜视差（picolensing，HXMT–GBM 流量比） | 近地基线 ~10⁴ km 远小于 GRB 源投影尺度所要求的基线；两星交叉定标误差 ~10% 已大于信号 | [inference]（先例文献未取回） |
+| 相邻模块 Compton 偏振 | 同组符合丢失、几何粗、MDP~70%（见 §10）；降级为一天量级的可行性实测 | [inference] |
+| SN 激波暴、TDE、磁星 glitch 的 CsI 叠加 | 预期辐射谱峰远低于 200 keV，CsI 不敏感 | [inference] |
+| 大气密度十年趋势、TGF 与雷电成协、SAA 演化 | 已由团队开展或属于地球物理/空间环境，不是天体物理新方法 | [inference] |
+
+### Gaps
+- 上表多数否决理由基于量级估算而非模拟；其中 picolensing、511 keV、泡状结构三项没有取回支撑文献。
+- 若后续补做查新发现 §7 想法 10（LE 弥散谱线）已有人发表，应将其移入本表"已做"类。
