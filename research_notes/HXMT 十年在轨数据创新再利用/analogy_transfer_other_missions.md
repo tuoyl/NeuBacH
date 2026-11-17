@@ -1,27 +1,28 @@
 # 类比迁移：其他空间任务的"非设计用途（off-label）"科学及其向 Insight-HXMT（慧眼）的可移植性评估
 
 > 调研日期：2026-11-17。标注约定：**[confirmed in literature]** = 本次检索/抓取到原始文献或其摘要；**[inference]** = 我基于已引文献做的推断或量级估算；**[speculation]** = 尚无文献支撑的设想。
-> 检索局限（重要）：本轮会话的 WebSearch 配额在约 70 次检索后被用尽（配额与其他并行研究员共享），之后只能对已知 arXiv/DOI/机构页面做定点抓取核实。因此（1）部分任务（HEAO-1、Konus-Wind、eROSITA、Kepler/TESS、WMAP、CSES、ASIM、XPNAV-1、LAXPC、Fermi-LAT ACD、AGILE-ACS 等）未能取得可核实的参考文献，已在 Gaps 中逐条列出，没有编造；（2）"Insight-HXMT + 关键词"的查新只覆盖了下文 KQ2 列出的方向，"未检索到"不等于"不存在"。
-> 关于 HXMT 参数的更正（来自文献而非记忆）：HE 为 18 个 NaI(Tl)/CsI(Na) phoswich，总面积约 5100 cm²，15 个 1.1°×5.7°、2 个 5.7°×5.7°、1 个遮挡（blind）[HE 仪器论文](https://arxiv.org/abs/1910.04955)；ME 54 个模块约 950 cm²，48 个 1°×4°（其中 3 个 blind）、6 个 4°×4°；LE 约 380 cm²，63 个 1.6°×6°（3 个 blind）、21 个 6°×6°（3 个 blind）、6 个 60°×2.5° [Huang et al. 2022](https://arxiv.org/abs/2306.10114)。粒子监测器（PM）阈值：电子 1 MeV（另一文写 1.5 MeV）、质子 20 MeV [Lu et al. 2020](https://arxiv.org/abs/1911.01594)；[Liao et al. 2023](https://arxiv.org/abs/2302.14459)。
+> 检索局限（重要）：本轮会话的 WebSearch 配额在我完成 58 次检索后被用尽（配额与其他并行研究员共享），之后只能对已知 arXiv/DOI/机构页面做定点抓取核实。因此（1）部分任务（HEAO-1、Konus-Wind、eROSITA、Kepler/TESS、WMAP、CSES、ASIM、XPNAV-1、LAXPC、Fermi-LAT ACD、AGILE-ACS 等）未能取得可核实的参考文献，已在 Gaps 中逐条列出，没有编造；（2）"Insight-HXMT + 关键词"的查新只覆盖了下文 KQ2 列出的方向，"未检索到"不等于"不存在"。
+> 关于 HXMT 参数的更正（来自文献而非记忆）：HE 为 18 个 NaI(Tl)/CsI(Na) phoswich，总面积约 5100 cm²，15 个 1.1°×5.7°、2 个 5.7°×5.7°、1 个遮挡（blind）[HE 仪器论文](https://arxiv.org/abs/1910.04955)；ME 54 个模块约 950 cm²，48 个 1°×4°（其中 3 个 blind）、6 个 4°×4°；LE 约 380 cm²，63 个 1.6°×6°（3 个 blind）、21 个 6°×6°（3 个 blind）、6 个 60°×2.5° [Huang et al. 2022](https://arxiv.org/abs/2306.10114)。粒子监测器（PM）阈值：电子 1 MeV（另两文写 1.5 MeV）、质子 20 MeV [Lu et al. 2020](https://arxiv.org/abs/1911.01594)；[Liao et al. 2023](https://arxiv.org/abs/2302.14459)。
+> 从 HE 仪器论文正文核实到的、对下文判断很关键的硬件事实 [confirmed in literature]：NaI(Tl) 厚 3.5 mm、CsI(Na) 厚 40 mm、单体直径 190 mm；CsI 的沉积能量范围正常模式约 40–600 keV、低增益模式（高压降到 1/5 增益并关闭自动增益）约 0.2–3 MeV，且"能量低于 200 keV 的光子很难穿透卫星结构到达 CsI"；反符合屏蔽（HVT）共 18 块 6.4 mm 厚塑料闪烁体（6 块顶部、12 块侧面，侧面每块约 1000 cm²），其计数率每秒记录一次；每个"好事件"的数据包含 8 bit 能量、8 bit 脉宽、18 bit 的 HVT 符合标记、探测器号与事件类型；3 台粒子监测器各是一个直径和高度均为 10 mm 的塑料闪烁体小圆柱。— [Liu et al. 2020, SCPMA, arXiv:1910.04955](https://arxiv.org/abs/1910.04955)
 
 ---
 
 ## KQ1：其他任务有哪些"off-label"科学案例？逐条能否移植到 HXMT？（按任务编目，共 67 例）
 
 ### Takeaway
-跨 30 多个任务共整理出 67 个有文献支撑的案例，"废数据变信号"的套路高度集中在六类：反符合屏蔽当全天监视器、粒子/本底数据当空间天气产品、地球当遮挡体或靶、空白天区/杂散光做基础物理、仪器伪迹（毛刺、活化线）当物理量、本底模型当发现工具。其中约三分之一 HXMT 已经做过（GRB/TGF/太阳耀斑/SAA/大气密度/脉冲星导航/CXB/PBH），真正尚属空白且 HXMT 具备硬件条件的集中在"粒子沉降与地磁暴响应""地球作为 X 射线靶""CsI 地球掩食监测""活化线核数据""本底模型残差搜索"几类。
+跨约 30 个任务共整理出 67 个有文献支撑的案例，"废数据变信号"的套路高度集中在六类：反符合屏蔽当全天监视器、粒子/本底数据当空间天气产品、地球当遮挡体或靶、空白天区/杂散光做基础物理、仪器伪迹（毛刺、活化线）当物理量、本底模型当发现工具。其中约四分之一 HXMT 已经做过（GRB/TGF/太阳耀斑/SAA/大气密度/脉冲星导航/CXB/PBH），真正尚属空白且 HXMT 具备硬件条件的集中在"粒子沉降与地磁暴响应""地球作为 X 射线靶""CsI 地球掩食监测""活化线核数据""本底模型残差搜索"几类。
 
 ### Cited Findings
 说明：每条"科学内容/数据类型"均为 **[confirmed in literature]**（括号内注明"检索摘要级"的表示只看到检索摘要而未打开原文）；"HXMT 判定"均为 **[inference]**，判定值为 Yes / Partly / No。
 
 **A. RXTE / BeppoSAX / CGRO-BATSE（老一代准直或全天探测器）**
 
-- **C01 RXTE（HEXTE 粒子监测器）→ SAA 强度与漂移**。用 1996–2007 年粒子监测器计数率（纯工程/保护数据）测得 SAA 西漂约 0.3°/yr，并有不规则跳变。— [Fürst et al. 2009, EPSL, arXiv:0902.2873](https://arxiv.org/abs/0902.2873)。**HXMT：Yes，已做一部分**（见 KQ2-H6，仅 2017–2019 两年）；43° 倾角覆盖整个 SAA，优于 RXTE 的 23°，可延长到近十年。
+- **C01 RXTE 粒子监测器（我记忆为 HEXTE 的粒子监测器，检索摘要只写"RXTE's particle monitor"）→ SAA 强度与漂移**。用 1996–2007 年粒子监测器计数率（纯工程/保护数据）测得 SAA 西漂约 0.3°/yr，并有不规则跳变。— [Fürst et al. 2009, EPSL, arXiv:0902.2873](https://arxiv.org/abs/0902.2873)。**HXMT：Yes，已做一部分**（见 KQ2-H6，仅 2017–2019 两年）；43° 倾角覆盖整个 SAA，优于 RXTE 的约 23°，可延长到近十年。
 - **C02 RXTE/PCA → Sco X-1 毫秒级 dip 被解释为百米级 TNO 掩食，后被证明主要是高能带电粒子事件造成的死时间伪迹**。— [Chang et al. 2007, arXiv:astro-ph/0701850](https://arxiv.org/abs/astro-ph/0701850)；反驳：[Jones et al., arXiv:astro-ph/0612129](https://arxiv.org/abs/astro-ph/0612129)；后续只剩 1 个可能事件：[Chang et al. 2010, arXiv:1009.2547](https://arxiv.org/abs/1009.2547)。**HXMT：No**（LE 约 380 cm²、ME 约 950 cm²，远小于 PCA，Sco X-1 计数率低一个量级以上）；但"粒子事件伪装成天体信号"的教训可直接移植（见 C21）。
 - **C03 RXTE/PCA 与 ARGOS/USA → X 射线掩星测中高层大气密度**。利用源进出地球掩食时的衰减段（通常被 GTI 剔除）。— [Determan et al. 2007, JGR 112, A06323（题录页）](https://earthref.org/ERR/112002)。**HXMT：Yes，已做**（KQ2-H8）。
 - **C04 RXTE/PCA 转动（slew）数据 → 3–20 keV 全天巡天 XSS**，294 个源。— [Revnivtsev et al. 2004, A&A 418, 927](https://arxiv.org/abs/astro-ph/0402414)。**HXMT：Partly，价值低**——HXMT 银道面扫描本身是设计目标；机动段数据若有，灵敏度（本底系统误差 1–3%）远逊于 Swift/BAT、INTEGRAL、eROSITA 现有巡天。
 - **C05 BeppoSAX/PDS 粒子监测器 → 低倾角 LEO 辐射环境、SAA 西漂约 0.4°/yr**。— [Campana et al. 2014, Exp. Astron. 37, 599](https://arxiv.org/abs/1405.0360)。**HXMT：Yes**（同 C01）。
-- **C06 BeppoSAX GRBM：PDS 的反符合侧屏蔽被当作 GRB 监视器**。— [Feroci et al. 1997, arXiv:astro-ph/9708168](https://arxiv.org/abs/astro-ph/9708168)。**HXMT：Yes，已做**（CsI 即同类，KQ2-H1）。
+- **C06 BeppoSAX GRBM：PDS 的四块 CsI(Na) 反符合侧屏蔽被当作 GRB 监视器**。— [Feroci et al. 1997, Proc. SPIE 3114, arXiv:astro-ph/9708168](https://arxiv.org/abs/astro-ph/9708168)。**HXMT：Yes，已做**（CsI 即同类，KQ2-H1）。
 - **C07 BATSE → 发现大气起源的 TGF**（为宇宙 GRB 设计的探测器看到了雷暴）。— Fishman et al. 1994, Science 264, 1313（题录见 [NASA NTRS 综述](https://ntrs.nasa.gov/api/citations/20120014488/downloads/20120014488.pdf)，检索摘要级）。**HXMT：Yes，已做**（KQ2-H4）。
 - **C08 BATSE 地球掩食技术（EOT）**：无成像的全天探测器靠源进出地平线的台阶做 20 keV–1 MeV 全天监测。— [Harmon et al. 2002, ApJS 138, 149](https://arxiv.org/abs/astro-ph/0109069)。**HXMT：Partly→值得做**（见 C11、KQ3-S4）。
 - **C09 BATSE 未触发暴目录**：离线重扫连续数据，新增 873 个未触发 GRB。— [Kommers et al. 2001（HEASARC 表）](https://heasarc.gsfc.nasa.gov/W3Browse/all/kommersgrb.html)。**HXMT：Yes，已做**（盲搜+定向搜索，KQ2-H2）。
@@ -31,7 +32,7 @@
 
 - **C11 GBM 地球掩食监测**：3 年监测 209 个源、探测到 99 个；100 keV 以上两年数据探测到 8 个源，Crab 与 Cyg X-1 在 300 keV 以上可见。— [Wilson-Hodge et al. 2012, ApJS 201, 33](https://arxiv.org/abs/1201.3585)；[Case et al. 2011, ApJ 729, 105](https://arxiv.org/abs/1009.4953)。**HXMT：Partly→入选**（KQ3-S4）。
 - **C12 GBM → 雷暴产生的正负电子束（TEB），511 keV 湮灭线**。— [Briggs et al. 2011, GRL 38, L02808（AGU 新闻稿）](https://news.agu.org/press-release/spacecraft-catches-thunderstorms-hurling-antimatter-into-space/)。**HXMT：Partly**——TGF 已做；CsI 能量分辨率差但面积大，TEB 是否已系统搜索未检索到。
-- **C13 GBM 全天本底谱 → 20–50 keV 惰性中微子暗物质衰变线上限**。— [Ng et al. 2015, PRD 92, 043503](https://arxiv.org/abs/1504.04027)。**HXMT：Partly**（见 KQ3-S9，坦率说不占优）。
+- **C13 GBM 全天本底谱 → 20–50 keV 惰性中微子暗物质衰变线上限**。— [Ng et al. 2015, PRD 92, 043503](https://arxiv.org/abs/1504.04027)。**HXMT：Partly**（见 KQ3-S12，坦率说不占优）。
 - **C14 GBM 暴谱 → femtolensing 约束 PBH；后被证明因源尺寸和波动光学效应而不成立**。— [Barnacka et al. 2012](https://arxiv.org/abs/1204.2056)；[Katz et al. 2018, JCAP 12, 005](https://arxiv.org/abs/1807.11495)。**HXMT：No**（方法本身已被推翻）。
 - **C15 GBM 本底模型变成发现工具**：神经网络预测本底 + 变点检测，找到触发目录之外的长而弱事件（DeepGRB）；物理本底模型用于超长暴。— [Crupi et al. 2023, Exp. Astron. 56, 421](https://arxiv.org/abs/2303.15936)；[Biltzinger et al. 2020, A&A 640, A8](https://arxiv.org/abs/2005.11219)。**HXMT：Yes→入选首位**（KQ3-S1；用户自己的 NeuBacH 就是这个起点）。
 - **C16 GBM 把"粒子沉降（particle precipitation）"作为一类触发事件分类**。— [Paciesas et al. 2012, GBM GRB Catalog（前两年）](https://arxiv.org/abs/1201.3099)。**HXMT：Yes→入选**（KQ3-S2）。
@@ -42,7 +43,7 @@
 **C. INTEGRAL**
 
 - **C20 SPI-ACS：512 kg BGO 反符合屏蔽当准全向 GRB 探测器**（约 0.8 个候选/天）。— [von Kienlin et al. 2003, A&A 411, L299](https://arxiv.org/abs/astro-ph/0308346)。**HXMT：Yes，已做**。
-- **C21 SPI-ACS 的"短尖峰"**：约 30 个/天、通常只占一个 50 ms bin，归因于高能宇宙线击中 BGO；作者也指出其中一部分可能是漏检的真 GRB。— [Savchenko, Neronov & Courvoisier 2012, A&A](https://arxiv.org/abs/1203.1344)。**HXMT：Yes→入选**（KQ3-S7）；HXMT 定向搜索论文已把"光变曲线中的 spike"当作假触发剔除 [Cai et al. 2021](https://arxiv.org/abs/2109.12270)，但未见把它当研究对象。
+- **C21 SPI-ACS 的"短尖峰"**：约 30 个/天、通常只占一个 50 ms bin，归因于高能宇宙线击中 BGO；作者也指出其中一部分可能是漏检的真 GRB。— [Savchenko, Neronov & Courvoisier 2012, A&A](https://arxiv.org/abs/1203.1344)。**HXMT：Yes→入选**（KQ3-S10）；HXMT 定向搜索论文已把"光变曲线中的 spike"当作假触发剔除 [Cai et al. 2021](https://arxiv.org/abs/2109.12270)，但未见把它当研究对象。
 - **C22 INTEGRAL 让地球穿过视场，用地球遮挡测 5–100 keV CXB**。— [Churazov et al. 2007, A&A 467, 529](https://arxiv.org/abs/astro-ph/0608250)；[Türler et al. 2010](https://arxiv.org/abs/1001.2110)。**HXMT：Yes，已做**（KQ2-H11），但留有明确的改进空间。
 - **C23 INTEGRAL 的 CXB 地球观测意外拍到极光硬 X 射线；2012 年的地球观测还被近地点穿越质子带后的活化污染**。— [ESA: INTEGRAL X-rays Earth's aurora](https://sci.esa.int/web/integral/-/57257-integral-x-rays-earths-aurora)；[Türler et al. 2013, arXiv:1302.6493](https://arxiv.org/abs/1302.6493)（检索摘要级）。**HXMT：Partly→入选**（KQ3-S3）。
 - **C24 INTEGRAL/IREM 与 XMM 辐射监测器的 16–19 年工程数据 → 数据驱动的辐射带电子模型 5DRBM-e**。— [Métrailler et al. 2019, Adv. Space Res. 64, 1701](https://arxiv.org/abs/1907.11029)。**HXMT：Partly**——LEO 只能采样 SAA 与外带内缘（L≲3），做不了全局模型，但可做 550 km 高度的长期经验图。
@@ -54,11 +55,11 @@
 - **C27 Swift/BAT 在三次安全模式期间地球穿过视场 → 15–200 keV CXB 与地球反照谱**。— [Ajello et al. 2008, ApJ 689, 666](https://arxiv.org/abs/0808.3377)。**HXMT：Yes/Partly**（已测 CXB；地球反照本身未作为研究对象，见 S3）。
 - **C28 Swift/BAT GUANO：把本来不下传的事件数据按需抢救下来做亚阈值搜索**。— [Tohuvavohu et al. 2020, ApJ](https://arxiv.org/abs/2005.01751)。**HXMT：Yes（天然具备）**——HXMT 全程下传事件数据，这是它相对 BAT 的固有优势。
 - **C29 Suzaku/WAM：HXD 的 BGO 反符合屏蔽当 50 keV–5 MeV 全天监视器**（每面约 800 cm²，约 140 GRB/年）。— [Yamaoka et al. 2009, PASJ 61, S35（DARTS 说明页）](https://data.darts.isas.jaxa.jp/pub/suzaku/wam-1.0/wam-grb/intro/wam_intro.html)（检索摘要级）。**HXMT：Yes，已做**。
-- **C30 Suzaku/XIS：检验弥散 X 射线本底是否随视线方向地磁场强度变化，以约束 ALP→光子转换**；99% 上限相当于 2–6 keV CXB 面亮度的 6–15%。— [Yamamoto et al. 2020, JCAP, arXiv:1906.04429](https://arxiv.org/abs/1906.04429)。**HXMT：Partly→入选**（KQ3-S8）。
+- **C30 Suzaku/XIS：检验弥散 X 射线本底是否随视线方向地磁场强度变化，以约束 ALP→光子转换**；99% 上限相当于 2–6 keV CXB 面亮度的 6–15%。— [Yamamoto et al. 2020, JCAP, arXiv:1906.04429](https://arxiv.org/abs/1906.04429)。**HXMT：Partly→入选**（KQ3-S11）。
 - **C31 Suzaku/XIS 与 Hitomi/HXI 的 Crab 掩食 → 70–200 km 大气密度；多任务合并得到 71–116 km 约 −5%/十年的长期趋势**。— [Katsuda et al. 2021, JGR 126, e28886](https://arxiv.org/abs/2103.07602)；[Katsuda et al. 2023, JGR 128, e2022JA030797](https://repository.kulib.kyoto-u.ac.jp/dspace/bitstream/2433/279487/1/2022JA030797.pdf)。**HXMT：Yes，已做**（H8）。
 - **C32 Suzaku → 地球磁鞘太阳风电荷交换（SWCX）C VI 线**。— [Fujimoto et al. 2007](https://arxiv.org/abs/astro-ph/0609308)。**HXMT：No**（SWCX 主线 <1 keV，LE 下限约 1 keV）。
 - **C33 Hitomi/HXI：在轨本底由 SAA 质子活化线主导，用作 Geant4 活化模拟的在轨验证**。— [Odaka et al. 2018](https://arxiv.org/abs/1804.00827)；[Hagino et al. 2018, HXI 在轨性能](https://arxiv.org/abs/1805.08344)。**HXMT：Yes→入选**（KQ3-S5）。
-- **C34 NuSTAR 的 0-bounce 杂散光（原为污染）→ 6–40 keV 惰性中微子最强上限**；11 年数据的再分析提到 40 keV 附近的边缘超出是已知仪器效应。— [Roach et al. 2023, PRD 107, 023009](https://arxiv.org/abs/2207.04572)；[Krivonos et al. 2024, arXiv:2405.17861](https://arxiv.org/abs/2405.17861)。**HXMT：Partly**（S9）。
+- **C34 NuSTAR 的 0-bounce 杂散光（原为污染）→ 6–40 keV 惰性中微子最强上限**；11 年数据的再分析提到 40 keV 附近的边缘超出是已知仪器效应。— [Roach et al. 2023, PRD 107, 023009](https://arxiv.org/abs/2207.04572)；[Krivonos et al. 2024, arXiv:2405.17861](https://arxiv.org/abs/2405.17861)。**HXMT：Partly**（S12）。
 - **C35 NuSTAR StrayCats：视场外 1–4° 亮源的杂散光被编成目录用于科学**（78 个源、436 个视场）。— [Grefenstette et al. 2021, ApJ 909, 30](https://arxiv.org/abs/2102.01236)。**HXMT：Partly**——对应物是大视场探测器与 LE 60°×2.5° 探测器里的"场外源污染"，可做亮源附带监测，但无成像，辨源困难。
 - **C36 NuSTAR 用侧孔径 CXB 在焦面上的空间调制测 3–20 keV CXB**（抓取摘要称比 HEAO-1 高"8 倍"，原文应为约 8%，需复核）。— [Krivonos et al. 2021, MNRAS 502, 3966](https://arxiv.org/abs/2011.11469)。**HXMT：Yes，已做**；HXMT 的等价手段是小/大/遮挡视场的差分。
 - **C37 NuSTAR 当太阳轴子望远镜**（g_aγ ≲ 7.3×10⁻¹² GeV⁻¹）及首批聚焦硬 X 射线太阳像。— [Ruz et al. 2025, PRL 135, 141001](https://arxiv.org/abs/2407.03828)；[Grefenstette et al. 2016, ApJ 826, 20](https://arxiv.org/abs/1605.09738)。**HXMT：No**（不能指向太阳）。
@@ -84,14 +85,14 @@
 
 - **C48 XMM 转动巡天 XMMSL1**（218 次 slew，约 14% 天区）。— [Saxton et al. 2008, A&A 480, 611](https://arxiv.org/abs/0801.3732)。**HXMT：Partly，价值低**（同 C04）。
 - **C49 XMM → SWCX 识别**。— [Snowden et al. 2004](https://arxiv.org/abs/astro-ph/0404354)；[Carter & Sembay 2008](https://arxiv.org/abs/0807.3624)。**HXMT：No**。
-- **C50 XMM X 射线本底的季节性变化 → 被解释为太阳轴子在地磁场中的转换（有争议）**。— [Fraser et al. 2014, MNRAS 445, 2146](https://arxiv.org/abs/1403.2436)。**HXMT：Partly**（并入 S8）。
+- **C50 XMM X 射线本底的季节性变化 → 被解释为太阳轴子在地磁场中的转换（有争议）**。— [Fraser et al. 2014, MNRAS 445, 2146](https://arxiv.org/abs/1403.2436)。**HXMT：Partly**（并入 S11）。
 - **C51 XMM MOS2 未曝光角落约 255 Ms（15 年）→ 非聚焦本底与 Chandra 本底代理量、EPIC 辐射监测器一致，来源是银河宇宙线**。— [Gastaldello et al. 2022, ApJ 928, 168](https://openaccess.inaf.it/bitstreams/9de1a801-f231-427e-a42a-1a94c8e30f7a/download)。**HXMT：Yes→入选**（S6；遮挡探测器就是"未曝光角落"）。
-- **C52 XMM 空白天区 → 否定 3.5 keV 线的暗物质解释；547 Ms 深度搜索 5–16 keV 衰变线**。— [Dessert et al. 2020, Science 367, 1465](https://arxiv.org/abs/1812.06976)；[Foster et al. 2021, PRL 127, 051101](https://arxiv.org/abs/2102.02207)。**HXMT：Partly**（S9）。
+- **C52 XMM 空白天区 → 否定 3.5 keV 线的暗物质解释；547 Ms 深度搜索 5–16 keV 衰变线**。— [Dessert et al. 2020, Science 367, 1465](https://arxiv.org/abs/1812.06976)；[Foster et al. 2021, PRL 127, 051101](https://arxiv.org/abs/2102.02207)。**HXMT：Partly**（S12）。
 - **C53 HST 25 年约 7.6 万幅暗场定标帧 → 12 亿条宇宙线径迹，看到 SAA、太阳周期调制与地磁场结构**。— [Miles et al. 2021, ApJ 918, 86](https://arxiv.org/abs/2006.00909)。**HXMT：Partly**——LE 的 SCD 不成像，无径迹；等价物是遮挡探测器与 ACD 计数率（S6）。
 - **C54 Gaia 焦面 106 块 CCD 当 L2 辐射监测器**，记录了 2017-09-10 X8.2 耀斑后的最大粒子通量。— [ESA Gaia: Cosmic Ray detections on Gaia CCDs](https://www.cosmos.esa.int/web/gaia/cosmic-ray-detections-on-gaia-ccds)；[Kirsch 2018 硕士论文](https://www.sternwarte.uni-erlangen.de/docs/theses/2018-10_Kirsch.pdf)。**HXMT：Partly**（同 C53）。
 - **C55 LISA Pathfinder 诊断用粒子探测器 → 银河宇宙线的重现性下降与 2016-08-02 Forbush 下降**。— [Armano et al. 2018, ApJ 854, 113](https://arxiv.org/abs/1802.09374)。**HXMT：Partly→入选**（S6）。
 - **C56 LISA Pathfinder → 54 次微流星体撞击的动量测量**。— [Thorpe et al. 2019, ApJ 883, 53](https://arxiv.org/abs/1905.02765)。**HXMT：No**（姿态测量精度差很多个量级）。
-- **C57 Planck/HFI 的宇宙线毛刺**：三类毛刺、来源定位到硅片衬底，毛刺率跟随宇宙线通量。— [Planck 2013 results X, A&A 571, A10](https://arxiv.org/abs/1303.5071)。**HXMT：Partly**（并入 S7）。
+- **C57 Planck/HFI 的宇宙线毛刺**：三类毛刺、来源定位到硅片衬底，毛刺率跟随宇宙线通量。— [Planck 2013 results X, A&A 571, A10](https://arxiv.org/abs/1303.5071)。**HXMT：Partly**（并入 S10）。
 
 **H. GPS / RHESSI / AGILE / NICER / 其他**
 
@@ -106,14 +107,15 @@
 - **C67（跨领域锚点）NaI(Tl) 晶体的宇宙线活化核素产额**：ANAIS 用两块 12.5 kg 晶体首次直接估计海平面产额（Te、I 同位素与 ²²Na）。— [Amaré et al. 2015, JCAP 02, 046](https://arxiv.org/abs/1411.0106)。**HXMT：Partly→入选**（S5）。
 
 ### Inferences
-- [inference] 67 例里按"废料类型"粗分：反符合/屏蔽数据 6 例，粒子监测与工程数据 12 例，地球遮挡/地球辐射 9 例，空白天区或杂散光做基础物理 10 例，仪器伪迹（毛刺、活化线、死时间、未曝光像元）9 例，转动/未触发/亚阈值副产品 7 例，其余为导航、公民科学、概念方案等。
-- [inference] HXMT 与原任务相比真正占优的硬件特征只有四条：（1）约 575 kg 的 CsI 分成 18 个独立读出模块并带 ACD 标记和微秒计时（比 SPI-ACS 的单路 50 ms 计数率信息多得多；质量按 5100 cm²×约 25 cm×4.51 g/cm³ 估算，CsI 厚度凭记忆，未核实）；（2）三个望远镜都有遮挡探测器，同时记录"纯粒子本底"；（3）43° 倾角介于 GECAM（29°）与 ISS（51.6°）之间，可达 L≈3；（4）全程事件数据下传、近十年同一仪器。其余方面（能量分辨率、成像、视场、能量上限）HXMT 多数不如原任务。
+- [inference] 67 例按"废料类型"大致落在七类：反符合/屏蔽数据、粒子监测与工程数据、地球遮挡与地球辐射、空白天区或杂散光做基础物理、仪器伪迹（毛刺、活化线、死时间、未曝光像元）、转动/未触发/亚阈值副产品，以及导航、公民科学和概念方案。数量最多的是"粒子监测与工程数据"和"空白天区做基础物理"两类。
+- [inference] HXMT 与原任务相比真正占优的硬件特征只有四条：（1）约 90 kg 的 CsI（5100 cm²×4 cm×4.51 g/cm³）分成 18 个独立读出模块，每个事件自带 18 路反符合标记和脉宽，计时到微秒量级——质量不如 SPI-ACS 的 512 kg BGO，但信息量远多于 SPI-ACS 的单路 50 ms 计数率；（2）三个望远镜都有遮挡探测器，同时记录"纯粒子本底"，另有总面积超过 1 m² 的塑料闪烁体反符合屏蔽逐秒计数；（3）43° 倾角介于 GECAM（29°）与 ISS（51.6°）之间，可达 L≈3；（4）全程事件数据下传、近十年同一仪器。其余方面（能量分辨率、成像、视场、能量上限）HXMT 多数不如原任务。
 - [inference] 最密集的"共同测试窗口"有三个：2017 年 9 月（X9.3 耀斑、DAMPE 的 Forbush 下降、Gaia 记录的质子事件，HXMT 当时正在观测 Crab）、2024-03-21 磁暴（GECAM 振荡沉降事件）、2024 年 5 月超级磁暴（CALET 看到 L≈2.2 的新电子带）。任何 HXMT 空间环境类想法都应先用这三个窗口验证。
 
 ### Gaps
 - 以下任务/类别因检索配额用尽**未取得可核实文献，未编入目录**：HEAO-1、HEAO-3 活化线、Konus-Wind、eROSITA（SWCX/滤光轮关闭数据）、Kepler/TESS（宇宙线与散射光）、WMAP、CSES、ASIM、XPNAV-1、AstroSat/LAXPC、AstroSat/CZTI 地球掩食（Singhal et al. 2021，凭记忆存在但未核实）、Fermi-LAT ACD、AGILE 反符合/ratemeter、RHESSI TGF（Smith et al. 2005）与 RHESSI GRB 偏振、Subaru-HSC/DECam/CREDO 宇宙线径迹、单粒子翻转当粒子监测器、轨道衰减反演热层密度、气辉、声化（sonification）。
 - RXTE/HEXTE 与 ASM、INTEGRAL/IBIS 没有找到独立于上述条目的 off-label 案例。
 - C07、C23（Türler 2013）、C29、C40、C45、C47（Space Weather 论文）只到检索摘要级或 DOI 级，正文未打开。
+- 判定中用到的其他任务轨道倾角（RXTE 约 23°、GECAM 约 29°、ISS 51.6°、Fermi 约 26°）以及 HXMT 的太阳规避角均凭记忆，未在本次检索中核实。
 
 ---
 
@@ -190,7 +192,7 @@ HXMT 团队已把"CsI 当全天 γ 监视器""掩食测大气""粒子监测器�
 1. 一句话：用 PM、ACD、CsI、三台望远镜遮挡探测器在低截止刚度段和 SAA 边缘的数据，建立 2017–2026 年带电粒子沉降事件目录。
 2. 原理与灵感：C16、C42、C47。
 3. HXMT 特征：43° 倾角、550 km 高度可达 L≈1.09/cos²(53°)≈3（假设地磁纬度最大约 53°），正好覆盖槽区和 2024 年 5 月后内移到 L≈2.2 的新电子带；多探测器、多能段可区分电子直接击中与轫致辐射。**坦率说 HXMT 不如 CALET/ISS（L 可达 4–6）适合研究外带 REP**，优势只在槽区/内带边缘、时间基线比 GECAM 长 3 年多、以及有遮挡探测器。
-4. 数据：PM 文件、事件文件中 GTI 之外的部分；SAA 内主探测器高压关闭，只有 PM 可用。公开产品是否含 PM/ACD 计数率：未知。
+4. 数据：PM 文件、反符合屏蔽（HVT）逐秒计数率、事件文件中 GTI 之外的部分；SAA 内主探测器高压关闭，只有 PM 可用。注意 PM 只是约 1 cm 的小闪烁体（磁赤道计数率仅 1.7–1.8 cts/s），真正统计量大的带电粒子通道是 12 块各约 1000 cm² 的侧面 HVT 加 6 块顶部 HVT [confirmed in literature：硬件；inference：其计数率应达每秒数千以上]。公开产品是否含 HVT/PM 计数率：未知。
 5. 查新：定向检索未发现 HXMT 同类论文。
 6. 可行性：先验证三个窗口（2024-03-21、2024-05 及其后数月、2017-09）；系统误差主要是活化余辉与真实沉降的区分（用遮挡探测器与 ACD 的时间结构）。可检验的预言：2024 年 5 月之后数月，HXMT 在 L≈2.2–3 的轨道段 PM（>1 MeV 电子）计数率应出现并缓慢衰减的增强。
 7. 产出可与 GECAM、CALET、MAXI/RBM 做多点联合。
@@ -207,8 +209,8 @@ HXMT 团队已把"CsI 当全天 γ 监视器""掩食测大气""粒子监测器�
 **S4（排名 4）CsI 地球掩食监测：200 keV 以上亮源的长期光变** — N3 / F3 / I3–4
 1. 一句话：把 BATSE/GBM 的掩食台阶法用到 HXMT/CsI，监测 Crab、Cyg X-1 及亮暂现源在 200 keV–3 MeV 的流量。
 2. 原理与灵感：C08、C11。
-3. HXMT 特征：CsI 总面积约 5100 cm²，比 GBM 的 BGO 大一个量级。量级估算 [inference]：Crab 在 200–800 keV 的光子流量约 0.02 ph cm⁻² s⁻¹（取 9.7E⁻²·¹），若有效面积 1000–4000 cm²，则台阶 20–80 cts/s；若 CsI 本底约 5000 cts/s（**未知，需实测**），单次台阶（两侧各 100 s）约 2–8σ，每天约 30 次台阶。**是否真的优于 GBM 取决于离轴响应与本底稳定性，目前不能断言**。
-4. 数据：CsI 事件数据（正常增益 40–800 keV、低增益 0.2–3 MeV）；增益模式的时间分配未知。
+3. HXMT 特征：CsI 几何面积约 5100 cm²，比 GBM 两块 BGO 的几何面积大一个量级（GBM 的 BGO 尺寸凭记忆，未核实）。量级估算 [inference]：Crab 在 200–600 keV 的光子流量约 0.02 ph cm⁻² s⁻¹（取 9.7E⁻²·¹ 幂律谱），若有效面积 1000–4000 cm²，则台阶 20–80 cts/s；若 CsI 本底约 5000 cts/s（**未知，需实测**），单次台阶（两侧各 100 s）约 2–8σ，每天约 30 次台阶。**是否真的优于 GBM 取决于离轴响应与本底稳定性，目前不能断言**。
+4. 数据：CsI 事件数据（沉积能量正常模式约 40–600 keV、低增益约 0.2–3 MeV）；增益模式的时间分配未知。仪器论文明确说低于 200 keV 的光子很难从侧后方穿透卫星结构到达 CsI，所以离轴源只能做 200 keV 以上。
 5. 查新：H15 表明 Crab 掩食台阶在 CsI 中已被用于响应评估；未检索到源监测目录。
 6. 可行性障碍：CsI 增益持续漂移（H14）；离轴响应依赖卫星质量模型（H3）；HXMT 频繁改变指向，响应随时间变；活化本底在台阶时间尺度上不平坦。
 7. 首个目标应是指向 Crab 时的在轴掩食，验证后再推广到离轴源。
@@ -216,7 +218,7 @@ HXMT 团队已把"CsI 当全天 γ 监视器""掩食测大气""粒子监测器�
 **S5（排名 5）活化线当核数据实验：NaI/CsI 在轨同位素产额与衰变曲线** — N4 / F3 / I3
 1. 一句话：用十年间数千次 SAA 穿越后的衰减曲线和长期累积，提取 NaI(Tl)/CsI(Na) 中各活化核素的产额，检验 Geant4 活化物理。
 2. 原理与灵感：C26、C33、C67。
-3. HXMT 特征：约 6.5 kg NaI 与数百 kg CsI（按面积×厚度估算，厚度凭记忆未核实）长期暴露于已知质子环境，18 个模块独立；**在"NaI/CsI 闪烁体 + 长基线"这一点上没有其他任务可比**，但能量分辨率远不如 SPI 的 Ge，线认证会有简并。
+3. HXMT 特征：约 6.5 kg NaI 与约 90 kg CsI（按 5100 cm²、3.5 mm 与 40 mm 厚度估算）长期暴露于已知质子环境，18 个模块独立；**在"NaI/CsI 闪烁体 + 长基线"这一点上没有其他任务可比**，但能量分辨率远不如 SPI 的 Ge，线认证会有简并。
 4. 数据：遮挡探测器谱、地球遮挡段谱、空白天区谱；H13b 已显示约 67 keV 线长期增长。
 5. 查新：H13、H13b 描述了现象并用经验折线拟合，未见逐核素分析（本次未能专门检索）。
 6. 可行性：需要 PM 给出每次穿越的质子注量；长寿命核素与增益漂移简并。[speculation] 结果对地面 NaI 暗物质实验（ANAIS、COSINE 等）的宇宙线活化模型有交叉检验价值，但空间质子谱与海平面中子谱不同，换算并不直接。
@@ -225,7 +227,7 @@ HXMT 团队已把"CsI 当全天 γ 监视器""掩食测大气""粒子监测器�
 **S6（排名 6）遮挡探测器 + PM + ACD 当十年宇宙线/辐射环境监测器** — N3 / F4 / I2–3
 1. 一句话：把遮挡探测器、PM、ACD 计数率整理成 2017–2026 年的均一化序列，研究 Forbush 下降、太阳调制、SAA 演化，并给出"空间天气 → X 射线本底"的经验传递函数。
 2. 原理与灵感：C01、C05、C43、C51、C53–C55、C59。
-3. HXMT 特征：三个能段同时有"纯粒子"通道。**作为宇宙线监测器 HXMT 不如中子堆、AMS-02、DAMPE**：H13 显示磁赤道 PM 计数率五年几乎不变；只有高纬段（截止刚度约 3–5 GV）才有可测调制，Forbush 下降幅度估计为极区中子堆的一半左右，即 2–8% [inference]。真正的独特产出是本底传递函数，对 eXTP 等后续任务有工程价值。
+3. HXMT 特征：三个能段同时有"纯粒子"通道，外加逐秒记录的 18 块反符合塑料闪烁体计数率。**作为宇宙线监测器 HXMT 不如中子堆、AMS-02、DAMPE**：H13 显示磁赤道 PM 计数率五年几乎不变；只有高纬段（截止刚度约 3–5 GV）才有可测调制，Forbush 下降幅度估计为极区中子堆的一半左右，即 2–8% [inference]。真正的独特产出是本底传递函数，对 eXTP 等后续任务有工程价值。
 4. 数据：同 S2。
 5. 查新：SAA 只做了头两年（H6）；Forbush/太阳调制未检索到。
 6. 可行性：统计上容易（HE 计数率数百 cts/s）；难点是轨道调制，需按相同地理网格逐日比较或用 NeuBacH 残差。首个测试：2017 年 9 月 8 日前后的 Forbush 下降（C43），当时 HXMT 在连续观测 Crab（H9）。
@@ -260,7 +262,7 @@ HXMT 团队已把"CsI 当全天 γ 监视器""掩食测大气""粒子监测器�
 1. 一句话：把被当作假触发剔除的 spike 做成目录，用 18 模块 + ACD + 脉宽信息区分宇宙线簇射与真正的亚毫秒 γ 暂现。
 2. 灵感：C21、C57、C02 的教训。
 3. HXMT 特征：SPI-ACS 只有单路 50 ms 计数率，无法判别尖峰本质；HXMT 的逐事件信息**确实更适合回答"尖峰里有没有真信号"**。但作为宇宙线物理仪器，HXMT 无电荷与径迹测量，远不如专用实验。
-4. 数据：事件数据中的 ACD 标记、脉宽、探测器号（H4 的数据格式说明了这些字段存在）。
+4. 数据：事件数据中的 18 bit 反符合标记、8 bit 脉宽、探测器号（仪器论文与 H4 的数据格式都确认这些字段逐事件下传）。
 5. 查新：H2 仅把它当噪声处理。
 6. 可行性：产出更可能是对极短暴率的上限和一套假触发分类器；[speculation] 沿模块依次触发的慢速重粒子搜索几何因子太小，不抱期望。
 
@@ -275,7 +277,7 @@ HXMT 团队已把"CsI 当全天 γ 监视器""掩食测大气""粒子监测器�
 **S12（排名 12）ME/LE/HE 的暗物质衰变线搜索** — N3–4 / F2 / I2
 1. 一句话：把准直望远镜当"大集光本领、无聚焦"的弥散线探测器，类比 NuSTAR 杂散光。
 2. 灵感：C13、C25、C34、C52。
-3. 是否更合适：**不**。量级估算 [inference]：ME 集光本领约 1.5 cm² sr，是 NuSTAR 0-bounce（约 0.02–0.04 cm² sr）的数十倍，但能量分辨率差约 7 倍、粒子本底占比高得多，净统计灵敏度至多与 NuSTAR 相当；LE 要追平 XMM 的 547 Ms 需要约 10 Ms 高质量空白天区曝光，而实际可用的只有亚 Ms 量级；HE 能段有 SPI 的 Ge 分辨率压制。
+3. 是否更合适：**不**。量级估算 [inference]：ME 集光本领约 1.5 cm² sr，是 NuSTAR 0-bounce（约 0.02–0.04 cm² sr，按每个焦面约 13 cm²、约 4.5 deg² 估算，这两个 NuSTAR 参数凭记忆、未核实）的数十倍，但能量分辨率差约 7 倍、粒子本底占比高得多，净统计灵敏度至多与 NuSTAR 相当；LE 要追平 XMM 的 547 Ms 需要约 10 Ms 高质量空白天区曝光，而实际可用的只有亚 Ms 量级；HE 能段有 SPI 的 Ge 分辨率压制。
 4. 数据：空白天区 + 高银纬弱源指向。
 5. 查新：HXMT 只有 PBH 连续谱约束（H12）。
 6. 可行性：ME 的 Ag 荧光线区、1–2% 的本底系统误差是硬限制；只有当遮挡探测器差分能把系统误差压到千分之几才有意义。保留在清单末尾，主要因为方法新、可作为 S1/S3 的副产品顺带得到。
