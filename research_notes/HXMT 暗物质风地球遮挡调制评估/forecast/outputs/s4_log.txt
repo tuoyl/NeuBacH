@@ -10,3 +10,8 @@ C       npar=   2520 r_eff full/node=0.2222/0.2213 r_plain full/node=0.1975/0.19
 C2      npar=   3477 r_eff full/node=0.2047/0.2034 r_plain full/node=0.1841/0.1829 deg(const) full=1.339 deg(known) node=1.089 recov(node)=0.998 toy-bkg eps full/node=-1.4e-04/+3.2e-05 [1.7 s]
 D       npar=   2635 r_eff full/node=0.2207/0.2203 r_plain full/node=0.1957/0.1952 deg(const) full=1.241 deg(known) node=1.006 recov(node)=0.998 toy-bkg eps full/node=-1.6e-04/+1.9e-05 [2.7 s]
 E       npar=  24325 r_eff full/node=0.2202/0.2198 r_plain full/node=0.1953/0.1948 deg(const) full=1.244 deg(known) node=1.008 recov(node)=0.997 toy-bkg eps full/node=-2.0e-04/-6.1e-06 [2.9 s]
+E180    npar=  48406 r_eff full/node=0.2193/0.2189 r_plain full/node=0.1944/0.1940 deg(const) full=1.249 deg(known) node=1.012 recov(node)=0.998 toy-bkg eps full/node=-2.0e-04/-5.9e-06 [2.9 s]
+E90     npar=  94193 r_eff full/node=0.2148/0.2146 r_plain full/node=0.1904/0.1902 deg(const) full=1.275 deg(known) node=1.033 recov(node)=0.997 toy-bkg eps full/node=-2.0e-04/-3.2e-06 [3.0 s]
+E66     npar= 127909 r_eff full/node=0.2198/0.2195 r_plain full/node=0.1949/0.1946 deg(const) full=1.247 deg(known) node=1.009 recov(node)=0.998 toy-bkg eps full/node=-1.5e-04/+3.9e-05 [3.1 s]
+E30     npar= 276950 r_eff full/node=0.1578/0.1581 r_plain full/node=0.1411/0.1414 deg(const) full=1.737 deg(known) node=1.401 recov(node)=0.992 toy-bkg eps full/node=-2.6e-04/+1.3e-05 [3.3 s]
+E10     npar= 822559 r_eff full/node=0.0611/0.0603 r_plain full/node=0.0546/0.0540 deg(const) full=4.482 deg(known) node=3.673 recov(node)=0.996 toy-bkg eps full/node=-6.6e-04/-1.4e-05 [3.8 s]
