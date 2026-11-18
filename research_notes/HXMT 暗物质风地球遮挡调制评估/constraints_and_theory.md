@@ -5,7 +5,7 @@
 - 截面约定（全文严格区分）：**contact**（记 σ_c）= 对所有原子核相同的"几何/接触"截面，文献中又叫 Model I、"no A⁴ scaling"、"per-nucleus"、"nucleon-independent"、"geometric"；**per_nucleon**（记 σ_n）= 自旋无关每核子截面，σ_A = A²(μ_A/μ_n)² σ_n，重暗物质时 → A⁴σ_n，文献中又叫 Model II。f ≡ ρ_χ/ρ_DM 为该成分占暗物质的比例，除特别说明外文献限制均假设 f = 1。
 - 单位换算：1 g = 5.61×10²³ GeV；1 cm²/g = 1.78×10⁻²⁴ cm²/GeV。
 - "图读"表示从论文图中数字化读出，精度约 ±0.3 dex（个别标 ±0.5 dex）。
-- 配套机读表：同目录 `existing_constraints.csv`（850 行，列为 label,convention,f,m_GeV,sigma_min_cm2,sigma_max_cm2,source_url,quality）。说明：(i) 517 行 quality=table 直接取自 Picker et al. 2026 公开数据仓库（Zenodo 10.5281/zenodo.21892125）的 f_DM(m,σ) 数组；(ii) "上不封顶"的 σ/m 型限制（gas cloud、CMB、MW satellites、Lyman-α）的 sigma_max 统一写成 1e-5 cm²，仅为作图上限，**不是物理边界**；(iii) quality=estimate 的行（IMP 7/8 的 contact 换算、XQC/Chicago 的 f<1 缩放、宇宙学限制的质量外推）是本笔记的量级推断；(iv) "Direct-detection union polygon"（CRESST 地表 + CDMS-I + DAMA + Chicago 等）只给了 f = 1，没有做 f 缩放。
+- 配套机读表：同目录 `existing_constraints.csv`（850 行，列为 label,convention,f,m_GeV,sigma_min_cm2,sigma_max_cm2,source_url,quality）。说明：(i) quality 三类分别为 table 520 行、figure_readoff 218 行、estimate 112 行；table 中 474 行直接取自 Picker et al. 2026 公开数据仓库（Zenodo 10.5281/zenodo.21892125）的 f_DM(m,σ) 数组与 DD 多边形，其余为论文表格或正文给出的数值；f 取 1、0.1、10⁻²、10⁻³、10⁻⁴、10⁻⁶、10⁻⁸ 七档（f < 1 的行只对有公开 f 依赖数据或可做简单通量缩放的限制给出）；(ii) "上不封顶"的 σ/m 型限制（gas cloud、CMB、MW satellites、Lyman-α）的 sigma_max 统一写成 1e-5 cm²，仅为作图上限，**不是物理边界**；(iii) quality=estimate 的行（IMP 7/8 的 contact 换算、XQC/Chicago 的 f<1 缩放、宇宙学限制的质量外推）是本笔记的量级推断；(iv) "Direct-detection union polygon"（CRESST 地表 + CDMS-I + DAMA + Chicago 等）只给了 f = 1，没有做 f 缩放；(v) label 中第一个" ("之前的短名相同的行是同一实验的不同版本（如 "Skylab plastic etch" 的 Picker 2026 与 Bhoonah 2021 两版、"Gas cloud heating" 的两版，二者相差约 5 倍），短名含 "superseded" 的是已被取代的旧版本（Starkman 时代的 Skylab、旧 mica），含 "IMP 7/8" 的 contact 行是未经同行评议结果的量级换算，作图时宜与其余限制区分线型。
 
 ---
 
@@ -61,8 +61,8 @@
 | Dark nuclei / ADM nugget（低于核密度） | 10³–10⁸ GeV（可更高） | 文献按 f = 1 讨论；质量函数低质量尾可给 f ≪ 1 | 几何 σ = πR²，dE/dx = ρσv² | 是（见第 4 节窗口 W1），但 f = 1 已被排除 |
 | Loosely bound composites | TeV 组分、N 很大 | f = 1 | 可保持 A⁴ 标度；单次反冲极软 | per-nucleon 约定下 HXMT 的 I/Cs 靶极有利（第 4 节） |
 | Dark quark nuggets | ≥ 10⁻⁷ g ≈ 6×10¹⁶ GeV | 1 | 几何 | 通量太低（调制搜索需 m ≲ 10¹² GeV） |
-| Macro / nuclearite / AQN | 开放窗口 ≥ 55 g | 1 | ρσv² 或湮灭 | 否，通量低 ≥ 13 个量级 |
-| SUSY Q-ball、带电 Planck 残骸 | 10¹²–10¹⁹ GeV | ≤ 1 | 类 nuclearite / 电离 | 否，MACRO 的通量限制强约 3 个量级 |
+| Macro / nuclearite / AQN | 开放窗口 ≥ 55 g ≈ 3×10²⁵ GeV | 1 | ρσv² 或湮灭 | 否，比调制搜索可及质量（≲ 10¹² GeV）高 ≥ 13 个量级 |
+| SUSY Q-ball、带电 Planck 残骸 | Q-ball 质量范围未从原文核对（凭记忆约 10¹² GeV 以上）；Planck 残骸 ~10¹⁹ GeV | ≤ 1 | 类 nuclearite / 电离 | 否，MACRO 的通量上限（5.5×10⁻⁴ m⁻² yr⁻¹）比 HXMT 约 4.5 m² yr 曝光所能达到的强约 3 个量级 |
 | Colored-DM hybrid SIMP | 12.5 TeV | ~10⁻⁴（10⁻³–10⁻⁵ 或更低） | 强子截面 | 见下条：按几何饱和算并不被大气挡住 |
 | Dark-photon 耦合费米子（McKeen） | 1–100 GeV | ≪ 1 | 每核子大截面，大气中热化 | HE 阈值够不着；LE/ME 硅探测器或可（窗口 W2） |
 | Sexaquark | ~2 GeV | 可为 1 | 强子型 | 否，动能 ~1 keV，远低于 HXMT 阈值 |
@@ -134,10 +134,10 @@
 - 【文献证实】Picker et al. 对宇宙学限制的态度：流体近似在其图的质量范围内成立，但这些限制"none ... were obtained with the intention of extending their limits to arbitrarily high masses"，故出于谨慎未画入图 1，而以 gas cloud 作为主要 ceiling — [Picker et al. 2026](https://arxiv.org/abs/2609.05626)
 - 【文献证实】银盘稳定性：σ_χN < 5×10⁻²⁴ (m_χ/GeV) cm²（Starkman et al.），更细致的研究要求 < 5×10⁻²⁵ (m_χ/GeV) cm²，均只考虑氢 — [Mack, Beacom & Bertone 2007, arXiv:0705.4298](https://arxiv.org/abs/0705.4298)
 - 【文献证实】地球热流：若暗物质被地球高效俘获并自湮灭，可在 ~1–10¹⁰ GeV 关闭天体物理限制与地下探测器之间的窗口 — [Mack et al. 2007](https://arxiv.org/abs/0705.4298)；但 s 波自湮灭截面 ≲ 10⁻⁴⁴ cm² 时地球与火星加热限制被解除 — [Bramante, Buchanan, Goodman & Lodhi 2020, arXiv:1909.11683](https://arxiv.org/abs/1909.11683)
-- 【文献证实】天体"存活"限制：不湮灭的重暗物质在太阳、木星、地球、月球核心积累并塌缩成黑洞，其存在排除例如 m_χ = 10⁷ GeV、σ_χn = 10⁻²⁴ cm²；m ≳ 10¹⁰ GeV 时黑洞蒸发，限制消失 — [Ray 2023, arXiv:2301.03625](https://arxiv.org/abs/2301.03625)
+- 【文献证实】天体"存活"限制（per-nucleon）：不湮灭的重暗物质在太阳、木星、地球、月球核心积累并塌缩成黑洞；作者称这些天体的存在"exclude σ_χn = 10⁻²⁴ cm² for m_χ = 10⁷ GeV, not ruled by any other probes"；上沿由漂移时间 ≤ 1 Gyr 决定，地球为 σ_χn ≤ 10⁻²¹ cm² (m_χ/10⁷ GeV)、太阳为 10⁻¹⁷ cm² (m_χ/10⁷ GeV)；m_χ ~ 10¹⁰ GeV 附近因新生黑洞 Hawking 蒸发而截断；并明确写道 IMP7/8 与 IMAX 的限制"are not based on detailed analyses in peer-reviewed papers, and therefore, are not shown" — [Ray 2023, arXiv:2301.03625](https://arxiv.org/abs/2301.03625)
 - 【文献证实】宇宙线传播（"reverse direct detection"）对轻暗物质-质子截面给出与宇宙学可比的独立限制 — [Cappiello, Ng & Beacom 2019, arXiv:1810.07705](https://arxiv.org/abs/1810.07705)
 - 【文献证实】更高质量的宏观限制（土星环、小行星、火流星、白矮星）位于 m ≳ 10¹⁴ GeV、σ ≳ 10⁻⁹ cm²，与 HXMT 区域无关 — [Picker et al. 2026](https://arxiv.org/abs/2609.05626)
-- 【文献证实】Snowmass 2021 白皮书图 2 并列 Model I（无 A 标度）与 Model II（A⁴）两幅约束图，其中 XQC 与 IMP 被归为"space-based experiments"；正文未把星载/气球探测列为未来方向，强调的是地下多次散射、机械传感器与古矿物 — [Carney et al. 2022, arXiv:2203.06508](https://arxiv.org/abs/2203.06508)
+- 【文献证实】Snowmass 2021 白皮书图 2 并列 Model I（无 A 标度）与 Model II（A⁴）两幅约束图，其中 XQC 与 IMP 被归为"space-based experiments"；对全文检索 satellite/balloon/space-based 只命中该图注，未见把星载或气球探测列为未来方向，总结强调的是地下多次散射、机械传感器与古矿物 — [Carney et al. 2022, arXiv:2203.06508](https://arxiv.org/abs/2203.06508)
 
 **基准质量处的排除区间表（f = 1）**
 
@@ -250,7 +250,7 @@
 ### Cited Findings
 - 【文献证实】条件 (i) 地球不透明：σ/m ≳ 10⁻³³ cm²/GeV 即满足 — [Cappiello et al. 2021](https://arxiv.org/abs/2008.10646)
 - 【文献证实】条件 (iii) 的统计判据：f_mod S_tot/√(S_tot + B) = 5，卫星轨道 f_mod ~ 75% — [Emken et al. 2019](https://arxiv.org/abs/1905.06348)
-- 【文献证实】HE 的参数（取自协调者任务书与前期笔记，本轮未重新核对原文）：18 个模块各 283.5 cm²，NaI 厚 3.5 mm、CsI 厚 40 mm，17 个非 blind 模块反符合后 30–300 keV 本底 538.6 counts/s — [Zhang J. et al. 2020, arXiv:2009.14489](https://arxiv.org/abs/2009.14489)
+- 【转引，本轮未核对原文】HE 的参数（取自协调者任务书与前期调研笔记）：18 个模块各 283.5 cm²，NaI 厚 3.5 mm、CsI 厚 40 mm，17 个非 blind 模块反符合后 30–300 keV 本底 538.6 counts/s — [Zhang J. et al. 2020, arXiv:2009.14489](https://arxiv.org/abs/2009.14489)
 - 【文献证实】条件 (iv) 所依据的现有限制：见第 2 节表 A/表 B 及 [macrolimits 数据](https://doi.org/10.5281/zenodo.21892125)
 - 【文献证实】2026 年综述的总体判断："for masses well below a microgram (~10¹⁸ GeV), terrestrial detectors have largely excluded the parameter space where dark matter has a cross-section large enough to multiscatter" — [Bramante 2026](https://arxiv.org/abs/2602.23708)
 - 【文献证实】地面探测器已能探到宇宙学限制以上的截面，"reducing the need for rocket- or space-based experiments" — [Cappiello et al. 2021](https://arxiv.org/abs/2008.10646)
@@ -262,12 +262,12 @@
 - **HXMT/HE 的事例数**：取 ρ = 0.3 GeV/cm³、平均速度 3×10⁷ cm/s，平面探测器单侧通量 n v̄/4 = 2.25×10⁶ f/m_GeV cm⁻² s⁻¹；HE 面积 5103 cm²、活时间 9.4 yr × 0.6 ≈ 1.8×10⁸ s，A·T ≈ 9×10¹¹ cm² s，穿过晶体的粒子数 N_cross ≈ 2×10¹⁸ f/m_GeV。本底 B ≈ 500 c/s × 1.8×10⁸ s ≈ 9×10¹⁰，5σ 调制需 S ≈ 2×10⁶（f_mod = 0.75）到 5×10⁶（f_mod = 0.3）。于是统计极限为 **m_max ≈ (4–10)×10¹¹ f GeV，或 f_min ≈ (1–2.4)×10⁻¹² × m_GeV**（理想情况，未计系统误差）。
 - **与既有大气层以上实验的曝光对比**：Skylab 的 A·T·f_g = 4.8×10¹⁰ cm² s，N ≈ 4.3×10¹⁷ f/m（取 2.3 事例得 m_max = 1.9×10¹⁷ GeV，取 150 事例得 2.9×10¹⁵ GeV，分别与 Picker 2026 和 Bhoonah 2021 吻合）；即 HXMT/HE 的几何曝光只有 Skylab 的约 5 倍，而 Skylab 是无本底径迹探测器。XQC 的 N ≈ 7.7×10⁷ f/m，HXMT 是它的 2.6×10¹⁰ 倍。Chicago 的 N ≈ 1.3×10¹³ f/m，但无本底，所以其 f 灵敏度 m/(1.3×10¹² GeV) 与 HXMT 的理想调制灵敏度 10⁻¹² m 相同——在大气遮蔽线以下 HXMT 对它没有优势。
 - **f = 1、contact：无窗口。** HXMT 可及区在各质量处的现状：10⁴ GeV（σ_c 3×10⁻²²–5×10⁻²⁰）被 gas cloud/MW satellites/Lyman-α（> 1.3×10⁻²⁴）与 XQC（> 4×10⁻²²）覆盖；10⁶ GeV 被 Chicago（至 3.4×10⁻²¹）、gas 等（> 1.5×10⁻²²）覆盖；10⁸–10¹² GeV 被 DEAP（1.06×10⁻²³–2.4×10⁻¹⁸）、Chicago、Skylab（≥ 1.7×10⁻¹⁹）、Ohya 覆盖。唯一的保留意见是第 2 节所述"只信 CMB"时的窄带（σ_c/m ≈ 3×10⁻²⁷–1.6×10⁻²⁶ cm²/GeV、m ≈ 10³–10⁷ GeV）：若 f = 1 的暗物质落在此带，HE 晶体中的事例率将是 N_cross/T ≈ 10¹⁰/m_GeV s⁻¹（10⁶ GeV 时 ~10⁴ s⁻¹），远超实测总计数率，无需调制分析即可排除——这是一个"平凡但从未发表"的直接排除，价值在于不依赖结构形成与气体云模型。
-- **f = 1、per-nucleon：条件性窗口 A。** 若不采信 IMP 7/8、IMAX、Pioneer 11 的旧 recast，则 m ≈ 10⁵–10⁷·⁵ GeV、σ_n/m ≈ 4.5×10⁻³²–2.8×10⁻³⁰ cm²/GeV 为空白。A⁴ 约定下这类粒子穿过铝蒙皮几乎无损、在 NaI/CsI 中全吸收，每事例沉积 0.5 MeV × (m/10³ GeV)（未淬灭），f = 1 时事例率同样是 10³–10⁵ s⁻¹ 量级，可被 HXMT 的总计数率直接排除。理论动机弱于 contact 情形（需要在超核尺度截面上仍保持 A⁴ 相干的模型，如 loosely bound composites）。
+- **f = 1、per-nucleon：条件性窗口 A。** 若不采信 IMP 7/8、IMAX、Pioneer 11 的旧 recast，则 m ≈ 10⁵–10⁷·⁵ GeV、σ_n/m ≈ 4.5×10⁻³²–2.8×10⁻³⁰ cm²/GeV 为空白。A⁴ 约定下这类粒子穿过铝蒙皮几乎无损、在 NaI/CsI 中全吸收，每事例沉积 0.5 MeV × (m/10³ GeV)（未淬灭），f = 1 时事例率同样是 10³–10⁵ s⁻¹ 量级，可被 HXMT 的总计数率直接排除。理论动机弱于 contact 情形（需要在超核尺度截面上仍保持 A⁴ 相干的模型，如 loosely bound composites）。另需注意这块空白对两类暗物质其实已另有间接排除：会自湮灭的被地球热流限制覆盖（Mack et al. 2007，~1–10¹⁰ GeV），不湮灭且能塌缩成黑洞的被天体"存活"限制覆盖（Ray 2023 正是把 10⁷ GeV、10⁻²⁴ cm² 作为"其它探针未排除"的例子）；只有既不湮灭、又因有内部结构而不塌缩的复合体才真正留在窗口 A 中。
 - **无本底飞行时间搜索（≥ 10 事例）：无窗口。** 取多模块共线几何效率 ε ≈ 0.03–0.3，10 事例对应 m ≈ (0.6–6)×10¹⁶ f GeV。该质量区 σ_c ≥ 10⁻²³ cm² 已被 DEAP（至 1.2×10¹⁹ GeV）、XENON1T/LZ 多次散射、Ohya（至 4×10²⁰ GeV）、Skylab、mica 覆盖；即使对亚成分，这些无本底实验的 f 灵敏度（例如 10¹³ GeV 处 DEAP ~10⁻⁶、Ohya ~2.5×10⁻⁸、Skylab ~5×10⁻⁵，取自公开数据）也优于 HXMT 飞行时间法的 ~2×10⁻⁴–2×10⁻³。
 - **亚成分窗口 W1（HE，contact）**：
   - 质量：下限 ~10³ GeV（动能过阈），上限 ~6×10⁷ GeV（更高质量处"大气遮蔽线以上"的全部区域 σ_c > 3×10⁻²⁷ m 已落入 Skylab 的 σ_c ≥ 1.7×10⁻¹⁹ cm² 灵敏区，而 Skylab 对 f 的灵敏度到 10⁻⁹ 量级）。
   - 截面：max[3×10⁻²² cm²（NaI；CsI 可到 5×10⁻²³）, ~3×10⁻²⁷ cm² × m_GeV（大气遮蔽线；其下地面探测器同样可及）] ≤ σ_c ≤ min[1.7×10⁻¹⁹ cm²（Skylab 下沿，m > 10⁶ GeV 时）, ~3×10⁻²⁴ cm² × m_GeV（卫星自屏蔽与银盘拖曳）]。例：10⁴ GeV：3×10⁻²²–3×10⁻²⁰；10⁵ GeV：3×10⁻²²–1.7×10⁻¹⁹；10⁶ GeV：3×10⁻²¹–1.7×10⁻¹⁹；10⁷ GeV：3×10⁻²⁰–1.7×10⁻¹⁹ cm²。
-  - 丰度：f 介于 HXMT 统计极限 ~10⁻¹² m_GeV 与现有上限之间；现有上限见第 5 节（gas cloud：f < 1.4×10⁻²⁸ m_GeV/σ_c；XQC：f ≲ 10⁻⁶ m_GeV，仅 m ≤ 10⁵ GeV；IMP 7/8 若成立：f ≲ m/10¹⁰ GeV，仅 σ_c ≳ 10⁻²⁰ cm²）。
+  - 丰度：f 介于 HXMT 统计极限 ~10⁻¹² m_GeV 与现有上限之间；现有上限见第 5 节（gas cloud：f < 1.4×10⁻²⁸ m_GeV/σ_c；XQC：f ≲ (10⁻⁶–10⁻⁵) m_GeV，仅 m ≤ 10⁵ GeV；IMP 7/8 若成立：f ≲ m/10¹⁰ GeV，仅 σ_c ≳ 10⁻²⁰ cm²）。
 - **亚成分窗口 W2（LE/ME 硅探测器及 HE 单次散射，强子型截面）**：核几何饱和截面（4πR_A² ≈ 1.0×10⁻²⁴ cm²（N）、1.7×10⁻²⁴（Si）、4.6×10⁻²⁴（I））下，m ≲ 300 GeV 的粒子在大气中热化（46 次碰撞，每次平均损失 2m m_A/(m+m_A)²），只有大气层以上的探测器能看到；硅反冲能上限（v = 776 km/s）为 27 keV（10 GeV）、100 keV（30 GeV）、220 keV（100 GeV）。若 ME 为 ~220 g 硅（952 cm² × 1 mm，凭记忆、未核实）、LE 为 ~4.5 g 硅（384 cm² × ~50 μm，凭记忆、未核实），活时间 10⁸ s，则曝光分别约 2.6×10⁵ 与 5×10³ g·day（CRESST 地表运行为 0.046 g·day，JWST NIRSpec 单探测器 0.05 g），统计上可达 f ~ 10⁻⁸–10⁻⁹（ME）与 10⁻⁷–10⁻⁸（LE），而现有 XQC 限制在 f = 10⁻³ 时已消失。HE 的 NaI 对 m ≳ 50–100 GeV 的高速尾部单次反冲（Na 至 ~200 keV、I 至 ~330 keV）也可能过 20 keVee 阈值。此项完全依赖仪器参数、阈值与淬灭，需仪器方向的研究者核实。
 - 【猜测】"晚形成"漏洞：CMB、Lyman-α、MW satellites 限制探测的是 z ≳ 10³ 时期的暗物质-重子耦合；若复合体在此之后才组装成大截面状态（综述指出 loosely bound 复合体的小束缚能意味着较晚形成；Picker et al. 明确以"macro 在相关宇宙学时期之前已形成"为前提），则 f = 1 在大气遮蔽带内只受 gas cloud 与 XQC/Skylab 等今日探针约束，卫星直接搜索的价值会相应提高。未找到文献对此做定量讨论。
 
@@ -283,10 +283,10 @@
 ## 5. 亚成分情形：各约束如何随 f 标度？对稀有强相互作用遗迹已有哪些限制？HXMT 能到多小的 f？
 
 ### Takeaway
-通量受限型限制（直接探测的右边界、XQC、Skylab、Chicago、DEAP）随 f 线性变弱，overburden ceiling 几乎不变，gas cloud 型加热限制按 σ/m ∝ 1/f 变弱，CMB 限制在 f ≳ 2% 时 ∝ 1/f、f ≲ 0.4% 时完全消失；因此 f ≲ 10⁻²–10⁻³ 时"大气遮蔽线以上"重新打开，而现有大气层以上实验缩放后很弱（XQC 约 f ≳ 10⁻⁶ m_GeV）。HXMT/HE 在 m = 10⁴、10⁶ GeV 的不透明区理想统计可达 f ~ 10⁻⁸、10⁻⁶，比现有限制低 2–6 个量级；m = 10² GeV 时 HE 因动能不足无灵敏度。
+通量受限型限制（直接探测的右边界、XQC、Skylab、Chicago、DEAP）随 f 线性变弱，overburden ceiling 几乎不变，gas cloud 型加热限制按 σ/m ∝ 1/f 变弱，CMB 限制在 f ≳ 2% 时 ∝ 1/f、f ≲ 0.4% 时完全消失；因此 f ≲ 10⁻²–10⁻³ 时"大气遮蔽线以上"重新打开，而现有大气层以上实验缩放后很弱（XQC 只能排除 f ≳ (10⁻⁶–10⁻⁵) m_GeV）。HXMT/HE 在 m = 10⁴、10⁶ GeV 的不透明区理想统计可达 f ~ 10⁻⁸、10⁻⁶，比现有限制低 2–6 个量级；m = 10² GeV 时 HE 因动能不足无灵敏度。
 
 ### Cited Findings
-- 【文献证实】CMB：f_χ ≳ 2% 时截面上限大致按 1/f_χ 放宽且与质量无关；更小的 f 允许更大截面，当强耦合亚成分的能量密度接近重子密度的测量不确定度时与重子不可区分，限制"entirely relax"，发生在 f_χ ≲ 0.4%（与由氦丰度得到的 ~0.6% 一致），f_χ ≲ 0.2% 时完全消失；该结果以 n = −4、1 MeV 为例导出，但作者指出任何在复合时期把亚成分与重子紧耦合的相互作用都有此特征 — [Boddy, Gluscevic, Poulin, Kovetz, Kamionkowski & Barkana 2018, arXiv:1808.00001](https://arxiv.org/abs/1808.00001)
+- 【文献证实】CMB：原文称 f_χ ≳ 2% 时"the limit roughly scales with f_χ, independent of the DM mass"（即截面上限随 f 减小成比例放宽，其图 8 给出 f_χ = 1、0.1、0.01 三条曲线）；更小的 f 允许更大截面，当强耦合亚成分的能量密度接近重子密度的测量不确定度时与重子不可区分，限制"entirely relax"，发生在 f_χ ≲ 0.4%（与由氦丰度得到的 ~0.6% 一致），f_χ ≲ 0.2% 时完全消失；该结果以 n = −4、1 MeV 为例导出，但作者指出任何在复合时期把亚成分与重子紧耦合的相互作用都有此特征 — [Boddy, Gluscevic, Poulin, Kovetz, Kamionkowski & Barkana 2018, arXiv:1808.00001](https://arxiv.org/abs/1808.00001)
 - 【文献证实】f 缩放规则（per-nucleon，m = 0.1–100 GeV）：下排除边界 σ^lo → σ^lo/f_χ；上边界由 overburden 的阈值条件决定，"the local DM density does not enter at all"，故不缩放。其图 1 显示：f_χ = 10⁻³ 时 Lyman-α 与 XQC 区域已消失，只剩 CRESST 地表、EDELWEISS 地表的小块、杜瓦加热、钽同质异能素（右上角）、深地与 CDMS 浅站；f_χ = 10⁻⁶ 时 σ_n ≳ 10⁻³⁰ cm² 以上只剩 CRESST 地表的一小条；f_χ = 10⁻⁹ 时该区基本全空 — [McKeen et al. 2022](https://arxiv.org/abs/2202.08840)
 - 【文献证实】宏观暗物质的 f 依赖：多次散射型限制按 1/m 水平缩放（f_DM 等值线近似位于恒定质量）；单次散射型的 f_DM 等值线位于恒定 m/σ；gas cloud 加热 ∝ σ/m，其对 f_DM 的标度与低质量直接探测相同，允许的 f_DM 沿对角线无界增长，直到 macro 稀少到加热不再连续 — [Picker et al. 2026](https://arxiv.org/abs/2609.05626)
 - 【文献证实】公开数据中各实验可排除的最小 f（contact）：Skylab 在 10⁸ GeV 为 4×10⁻¹⁰、10¹⁰ GeV 为 4.6×10⁻⁸、10¹² GeV 为 4×10⁻⁶、10¹⁴ GeV 为 4×10⁻⁴（即 f_min ≈ m/2.3×10¹⁷ GeV，仅 σ_c ≥ 1.7×10⁻¹⁹ cm²）；DEAP 在 10¹⁰ GeV 为 9×10⁻¹⁰、10¹³ GeV 为 9×10⁻⁷；Ohya 在 10¹³ GeV 为 2.5×10⁻⁸；gas cloud 在 f = 10⁻²、10⁻⁴、10⁻⁶ 时的下沿分别为 σ_c/m ≈ 1.5×10⁻²⁶、1.5×10⁻²⁴、1.5×10⁻²² cm²/GeV — [macrolimits v1.0.0](https://doi.org/10.5281/zenodo.21892125)
@@ -314,7 +314,7 @@
 | Lyman-α、MW satellites | 未见文献给出 f 依赖 | 类比混合暗物质，预期百分之几以下失效（猜测） |
 | 银盘稳定性 | 对 f ≪ 1 不成约束 | 但 σ/m ≳ 10⁻²⁴ 的成分会被拖成共转 |
 
-- 现有大气层以上实验缩放到亚成分：XQC 穿过吸收体的粒子数 ≈ 7.7×10⁷ f/m_GeV，> 4 keV 通道观测到 60 个事例，吸收体不透明（σ_c ≳ 1.4×10⁻²⁰ cm²）时得 f ≲ 10⁻⁶ m_GeV（10² GeV：~10⁻⁴；10⁴ GeV：~10⁻²；10⁵ GeV：~0.1），截面更小时再按 1/σ 变弱；IMP 7/8 若成立为 f ≲ m/10¹⁰ GeV（σ_c ≳ 10⁻²⁰ cm²）；RRS 的探测器很小，缩放后更弱；Skylab 对 f 很灵敏但只在 σ_c ≥ 1.7×10⁻¹⁹ cm²。
+- 现有大气层以上实验缩放到亚成分：XQC 穿过吸收体的粒子数 ≈ 7.7×10⁷ f/m_GeV，> 4 keV 通道观测到 60 个事例，吸收体不透明（σ_c ≳ 1.4×10⁻²⁰ cm²）时得 f ≲ 10⁻⁶ m_GeV（10² GeV：~10⁻⁴；10⁴ GeV：~10⁻²；10⁵ GeV：~0.1），截面更小时再按 1/σ 变弱；若改用 Erickcek et al. 发表的 f = 1 右边界 10⁵ GeV 作为通量极限（CSV 中 f < 1 的 XQC 行即如此处理），则为 f ≲ 10⁻⁵ m_GeV，再弱 10 倍；IMP 7/8 若成立为 f ≲ m/10¹⁰ GeV（σ_c ≳ 10⁻²⁰ cm²）；RRS 的探测器很小，缩放后更弱；Skylab 对 f 很灵敏但只在 σ_c ≥ 1.7×10⁻¹⁹ cm²。
 - CSV 并集给出的亚成分开放区（contact；括号内为不采信 IMP 7/8 估计时的上端）：
 
 | m (GeV) | f = 10⁻² | f = 10⁻⁴ | f = 10⁻⁶ |
@@ -329,19 +329,19 @@
 
 | m | HXMT f_min（统计） | 现有上限 | 是否低于现有限制 |
 |---|---|---|---|
-| 10² GeV | 无灵敏度（动能 50 keV，淬灭后 < 20 keVee） | XQC ~10⁻⁴（contact 不透明区） | 否（HE）；LE/ME 见 W2 |
-| 10⁴ GeV | ~(1–2.4)×10⁻⁸ | XQC ~10⁻²；gas cloud 10⁻⁴–10⁻²（σ_c/m = 10⁻²⁴–10⁻²⁶）；IMP 7/8 估计 ~10⁻⁶（σ_c ≳ 10⁻²⁰） | 是，低 2–6 个量级 |
+| 10² GeV | 无灵敏度（动能 50 keV，淬灭后 < 20 keVee） | XQC ~10⁻⁴–10⁻³（contact 不透明区） | 否（HE）；LE/ME 见 W2 |
+| 10⁴ GeV | ~(1–2.4)×10⁻⁸ | XQC ~10⁻²–0.1；gas cloud 10⁻⁴–10⁻²（σ_c/m = 10⁻²⁴–10⁻²⁶）；IMP 7/8 估计 ~10⁻⁶（σ_c ≳ 10⁻²⁰） | 是，低 2–6 个量级 |
 | 10⁶ GeV | ~(1–2.4)×10⁻⁶ | gas cloud 10⁻³–0.1（σ_c = 10⁻¹⁹–10⁻²¹）；IMP 7/8 估计 ~10⁻⁴；Skylab 仅 3–6×10⁻¹⁹ cm² 窄带内到 ~2×10⁻⁹ | 是，低 2–5 个量级（σ_c < 3×10⁻¹⁹ cm²） |
 
   若系统误差使灵敏度劣化 10²–10³ 倍，则 10⁴ GeV 处仍可达 10⁻⁶–10⁻⁵，相对 gas cloud/XQC 仍有 1–4 个量级的增益，但相对 IMP 7/8 估计值的优势消失。
 - 对"既不带电也不与核束缚"的中性不透明复合体，重同位素搜索与地球束缚种群实验（杜瓦、钽、离子阱、加速器上散射）没有直接约束力：前者要求束缚，后者针对 GeV–百 GeV 的热化种群。
-- Colored-DM hybrid（12.5 TeV）一类重强子型遗迹：按几何饱和截面它能到达浅层探测器，本笔记粗估 CDMS-I 浅站数据（15.8 kg·day 量级、27 个事例）对它的灵敏度可达 f ~ 10⁻⁹–10⁻⁸，远强于 HXMT/HE 单次散射的 ~10⁻⁶；所以 HXMT 对 ≳ 3 TeV 的强子型遗迹没有独特价值。此估算未在文献中找到对应结果，需专门核对。
+- Colored-DM hybrid（12.5 TeV）一类重强子型遗迹：按几何饱和截面它能到达浅层探测器，本笔记粗估 CDMS-I 浅站数据（99.4 live days、27 个候选事例；锗靶质量按 0.5 kg 量级取，凭记忆、未核实）对它的灵敏度可达 f ~ 10⁻⁹–10⁻⁸，远强于 HXMT/HE 单次散射的 ~10⁻⁶；所以 HXMT 对 ≳ 3 TeV 的强子型遗迹没有独特价值。此估算未在文献中找到对应结果，需专门核对。
 
 ### Gaps
 - Lyman-α 与 MW satellites 限制对 f 的依赖没有找到文献；表中"百分之几以下失效"只是类比。
 - 中性重复合体（10³–10⁸ GeV）被大气/地壳挡住后的地球束缚种群及其可观测效应没有文献。
 - IMP 7/8 的曝光与本底未知，"f ≲ m/10¹⁰ GeV"只是把其 f = 1 质量上限当作通量极限的反推。
-- XQC 对亚成分的 contact 限制没有文献给出，这里的 10⁻⁶ m_GeV 是由事例数和几何面积的估算。
+- XQC 对亚成分的 contact 限制没有文献给出，这里的 (10⁻⁶–10⁻⁵) m_GeV 是由事例数、几何面积和已发表的 f = 1 质量上限做的估算。
 
 ---
 
@@ -353,7 +353,7 @@
 ### Cited Findings
 - 【文献证实】卫星/气球轨道调制的原始提案：把屏蔽最薄的一面指向天鹅座，地球遮挡使信号率随轨道强烈调制；"a satellite-borne experiment could look for orbital modulations of higher frequencies"；以 0.1 gram-month 曝光、10⁹ 本底事例为例给出 5σ 调制发现范围 — [Emken et al. 2019](https://arxiv.org/abs/1905.06348)
 - 【文献证实】JWST：用 NIRSpec HgCdTe 探测器（单探测器质量 0.05037 g）的暗场定标图像，对经超轻 dark photon 作用的 sub-GeV 暗物质-电子散射给出限制；"For a 0.4% subcomponent ... we disfavor all previously allowed parameter space at high cross sections, and constrain some parameter regions for subcomponent fractions as low as ∼0.01%"；其图 1 在 f = 0.4% 下并列了 XQC、RRS、分子云、加速器、CMB N_eff、BBN 与地面直接探测 — [Du, Essig, Rauscher & Xu 2024, arXiv:2412.13131](https://arxiv.org/abs/2412.13131)
-- 【文献证实】DarkNESS：6U 立方星搭载 skipper-CCD（活性质量约 2 g），目标之一是强相互作用 sub-GeV 暗物质的电子反冲；观测指向天鹅座，"As the NanoSatellite orbits Earth, planetary shadowing is expected to result in a modulated signature in the instrument's low-energy event rate"；设想约 450 次、每次 10 分钟的观测得到 0.1 gram-month 曝光，假设 f_χ = 0.01% 与 10⁹ 个本底事例；屏蔽仅 ~50 nm 铝（保守取 10 μm 硅）；已通过 CDR，经 Firefly Aerospace DREAM 2.0 获得发射机会 — [DarkNESS 2025, arXiv:2505.16981](https://arxiv.org/abs/2505.16981)；早先预期 2025 年末发射 — [DarkNESS 2024, arXiv:2412.12084](https://arxiv.org/abs/2412.12084)
+- 【文献证实】DarkNESS：搭载 skipper-CCD 的纳卫星（活性质量约 2 g），目标之一是强相互作用 sub-GeV 暗物质的电子反冲；观测指向天鹅座，"As the NanoSatellite orbits Earth, planetary shadowing is expected to result in a modulated signature in the instrument's low-energy event rate"；设想约 450 次、每次 10 分钟的观测得到 0.1 gram-month 曝光，假设 f_χ = 0.01% 与 10⁹ 个本底事例；屏蔽仅 ~50 nm 铝（保守取 10 μm 硅）；已通过 CDR，经 Firefly Aerospace DREAM 2.0 获得发射机会 — [DarkNESS 2025, arXiv:2505.16981](https://arxiv.org/abs/2505.16981)；早先预期 2025 年末发射 — [DarkNESS 2024, arXiv:2412.12084](https://arxiv.org/abs/2412.12084)
 - 【文献证实】纳卫星数据库（2026 年 1 月更新）仍把 DarkNESS 列为未发射、预计 2026 年由 Firefly Alpha 发射 — [nanosats.eu](https://www.nanosats.eu/sat/darkness)
 - 【文献证实】Micro-X 探空火箭的暗物质构型针对的是 keV 惰性中微子的 X 射线线 — [Micro-X 2019, arXiv:1908.09010](https://arxiv.org/abs/1908.09010)
 - 【文献证实】带 f 依赖的宏观暗物质约束汇编与公开代码/数据；重新计算了白矮星、小行星、土星环限制，统一处理 Skylab、Ohya、Mica — [Picker et al. 2026](https://arxiv.org/abs/2609.05626)
@@ -361,8 +361,8 @@
 - 【文献证实】Mica 的熔融径迹建模与 X 射线荧光读出，并指出旧 mica 排除限"not reliable in the high–scattering cross-section regime" — [Boukhtouchen et al. 2026](https://arxiv.org/abs/2606.02579)
 - 【文献证实】综述：地下探测器、符合阵列与旧数据 recast 合起来"constrain dark matter across nearly twenty orders of magnitude in mass and six in cross section"；下一步是低阈值、更大活性体积和大体积中微子探测器的专门分析 — [Bramante 2026](https://arxiv.org/abs/2602.23708)
 - 【文献证实】其它新探针：磁悬浮粒子首次搜索 10⁶–10¹⁵ GeV、经轻媒介子作用的超重暗物质 — [Uitenbroek et al. 2026, arXiv:2608.20464](https://arxiv.org/abs/2608.20464)；单次散射搜索的截面 ceiling 与"neutrino roof" — [Raj & Mondal 2024, arXiv:2406.17015](https://arxiv.org/abs/2406.17015)；DUNE、CYGNUS 等千吨级探测器的多次散射前景 — [Aggarwal & Raj 2024, arXiv:2410.22168](https://arxiv.org/abs/2410.22168)；反应堆中子上散射地球束缚暗物质 — [Ema, Pospelov & Ray 2024, arXiv:2402.03431](https://arxiv.org/abs/2402.03431)
-- 【文献证实】地球遮挡调制在地下实验中的应用仍在发展：DAMA/LIBRA-phase1 的地球遮挡周日效应分析 — [Bernabei et al. 2015, arXiv:1505.05336](https://arxiv.org/abs/1505.05336)；液氩/液氙探测器的 Earth-shielding 调制形状检验并应用于 DarkSide-50 数据 — ["Dark Matter Weather" 2026, arXiv:2607.20620](https://arxiv.org/abs/2607.20620)
-- 【文献证实】Snowmass 2021 超重暗物质白皮书：把直接探测分为弱接触作用与长程力两类，图 2 给出两种标度下的现状；总结强调多次散射分析、未来 DARWIN/Argo、机械传感器（Windchime）与古岩石，未提出星载闪烁体方案 — [Carney et al. 2022](https://arxiv.org/abs/2203.06508)
+- 【文献证实】地球遮挡调制在地下实验中的应用仍在发展：DAMA/LIBRA-phase1 的地球遮挡周日效应分析 — [Bernabei et al. 2015, arXiv:1505.05336](https://arxiv.org/abs/1505.05336)；液氩/液氙探测器的 Earth-shielding 调制形状检验并应用于 DarkSide-50 数据 — [Kozynets, Leane & Smirnov 2026, arXiv:2607.20620](https://arxiv.org/abs/2607.20620)
+- 【文献证实】Snowmass 2021 超重暗物质白皮书：把直接探测分为弱接触作用与长程力两类，图 2 给出两种标度下的现状；总结强调多次散射分析、未来 DARWIN/Argo、机械传感器（Windchime）与古岩石，全文未出现星载闪烁体方案 — [Carney et al. 2022](https://arxiv.org/abs/2203.06508)
 
 ### Inferences
 - 【推断】对引用 Cappiello et al. 2021（INSPIRE 共 45 篇）、Erickcek et al. 2007（129 篇，筛 2023 年后）与 Emken et al. 2019（214 篇，筛 2022 年后并按 satellite/space/orbit/balloon 等词过滤）的文献做了逐条浏览，空间直接探测只有 JWST 与 DarkNESS 两项，且都是 sub-GeV 电子反冲；没有发现用天文卫星闪烁体或半导体探测器做重复合暗物质调制搜索的论文。因此 F10 的"思想"并非首创（Emken 2019 → DarkNESS），但"用已有十年卫星数据、针对 TeV 以上核反冲/多次散射"的实现在文献中是空白。
@@ -389,13 +389,13 @@ H1 在 contact 约定下成立（f = 1 时大气遮蔽区已被 Lyman-α、MW sa
 - 【文献证实】（早先说法）10⁸–10¹³ GeV、σ_c ≥ 10⁻²³ cm² 的现有排除：DEAP 1.0×10⁻²³–2.4×10⁻¹⁸ cm²（m = 8.3×10⁶–1.2×10¹⁹ GeV） — [DEAP-3600 2022](https://arxiv.org/abs/2108.09405)；Chicago 至 4×10¹² GeV — [Cappiello et al. 2021](https://arxiv.org/abs/2008.10646)；Skylab 与 Ohya — [Bhoonah et al. 2021](https://arxiv.org/abs/2012.13406)；这些实验在 10¹³ GeV 处可排除的最小 f 为 DEAP 9×10⁻⁷、Ohya 2.5×10⁻⁸、Skylab 4.7×10⁻⁵ — [macrolimits v1.0.0](https://doi.org/10.5281/zenodo.21892125)
 
 ### Inferences
-- 【推断】**H1 裁决：contact 约定下成立，但有三点限定。** (1) 起决定作用的是 Lyman-α、MW satellites 与 gas cloud，而不是 CMB：Planck CMB 单独的限制（1.6×10⁻²⁶ cm²/GeV）比大气遮蔽线（(1–7)×10⁻²⁷）高，留有一条约半个到一个量级宽的带。(2) 这些天体物理限制都是从 ≤ 100 GeV–1 TeV 按 ∝ m 外推到 10⁸ GeV 的，彼此相差 0.5–1 dex，gas cloud 限制有过争议，最新汇编出于谨慎也未把宇宙学限制画入图中。(3) 在 per-nucleon（A⁴）约定下 H1 的"宇宙学版本"不成立——宇宙学限制比大气遮蔽线高 3–5 个量级，该区域是靠 XQC 与未经同行评议的 IMP 7/8 等旧 recast、A⁴ 增强的 gas cloud 关闭的。此外，"地面浅层探测器 + 深地多次散射搜索把遮蔽线以下接满"这一半也成立：Chicago、CDMS-I、DEAP、XENON1T、LZ 合起来在 f = 1 下没有留缝。
-- 【推断】**H2 裁决：成立，并可量化。** f ≲ 10⁻²–10⁻³ 时大气遮蔽线以上重新打开（上界由 gas cloud 的 σ/m ≲ 1.4×10⁻²⁸/f cm²/GeV 给出，f ≲ 0.4% 时无 CMB 限制）；XQC 缩放后只有 f ≲ 10⁻⁶ m_GeV，RRS 更弱，Skylab 只管 σ_c ≥ 1.7×10⁻¹⁹ cm²，IMP 7/8 的可靠性存疑。HXMT/HE 的理想统计灵敏度 f ~ 10⁻¹² m_GeV 在 10³–6×10⁷ GeV、3×10⁻²²–1.7×10⁻¹⁹ cm² 内比这些限制低 2–6 个量级。但需要说明："卫星的巨大曝光"这一论据要打折——HE 的几何曝光只有 Skylab 的约 5 倍、与无本底的 Chicago 探测器在 f 灵敏度上持平；HXMT 的独特之处不在曝光，而在于它位于大气层以上、能量阈值比蚀刻塑料低三个量级（3×10⁻²² 对 1.7×10⁻¹⁹ cm²）。
+- 【推断】**H1 裁决：contact 约定下成立，但有三点限定。** (1) 起决定作用的是 Lyman-α、MW satellites 与 gas cloud，而不是 CMB：Planck CMB 单独的限制（1.6×10⁻²⁶ cm²/GeV）比大气遮蔽线（(1–7)×10⁻²⁷）高，留有一条约半个到一个量级宽的带。(2) 其中两项宇宙学限制（Lyman-α、MW satellites）是从 ≤ 100 GeV 按 ∝ m 外推到 10⁸ GeV 的，不同分析之间相差 0.5–1 dex，最新汇编出于谨慎未把宇宙学限制画入图中；gas cloud 限制是直接对高质量 contact 截面计算的，但最初版本受到过质疑，且两个版本之间相差约 5 倍。(3) 在 per-nucleon（A⁴）约定下 H1 的"宇宙学版本"不成立——宇宙学限制比大气遮蔽线高 3–5 个量级，该区域是靠 XQC 与未经同行评议的 IMP 7/8 等旧 recast、A⁴ 增强的 gas cloud 关闭的。此外，"地面浅层探测器 + 深地多次散射搜索把遮蔽线以下接满"这一半也成立：Chicago、CDMS-I、DEAP、XENON1T、LZ 合起来在 f = 1 下没有留缝。
+- 【推断】**H2 裁决：成立，并可量化。** f ≲ 10⁻²–10⁻³ 时大气遮蔽线以上重新打开（上界由 gas cloud 的 σ/m ≲ 1.4×10⁻²⁸/f cm²/GeV 给出，f ≲ 0.4% 时无 CMB 限制）；XQC 缩放后只能排除到 f ~ (10⁻⁶–10⁻⁵) m_GeV，RRS 更弱，Skylab 只管 σ_c ≥ 1.7×10⁻¹⁹ cm²，IMP 7/8 的可靠性存疑。HXMT/HE 的理想统计灵敏度 f ~ 10⁻¹² m_GeV 在 10³–6×10⁷ GeV、3×10⁻²²–1.7×10⁻¹⁹ cm² 内比这些限制低 2–6 个量级。但需要说明："卫星的巨大曝光"这一论据要打折——HE 的几何曝光只有 Skylab 的约 5 倍、与无本底的 Chicago 探测器在 f 灵敏度上持平；HXMT 的独特之处不在曝光，而在于它位于大气层以上、能量阈值比蚀刻塑料低三个量级（3×10⁻²² 对 1.7×10⁻¹⁹ cm²）。
 - 【推断】**H3 裁决：成立。** 追踪约定时还需注意：(a) contact 图的纵轴常仍标作 σ_χN 或 σ_nχ；(b) 几何截面有 πR² 与 4πR² 两种写法；(c) 旧文献（Starkman 1990、McGuire-Steinhardt 2001、Erickcek 2007 图 9、Mack 2007、Kavanagh 2018 的 high-altitude 区）全部是相干 A² 标度，不能直接搬到 contact 图上，换算因子在重暗物质时为 A⁴（Si：6×10⁵；I：2.6×10⁸），且上、下沿要分别用 overburden 核与探测器核；(d) 宇宙学限制约束的是 σ_p，在两种约定下数值相同，但与其它限制的相对位置完全不同——这正是 H1 结论随约定翻转的原因。
 - 【推断】**对早先"m ~ 10¹³ GeV、σ ≳ 10⁻²² cm²"说法的裁决：不成立，应撤回。** (1) 统计上：按单侧通量与 5σ 调制判据，f = 1 的质量上限是 (4–10)×10¹¹ GeV，不是 10¹³ GeV（早先估计漏了平面探测器的 1/4 几何因子并用了 1σ 级的判据）。(2) 物理上：10⁸–10¹³ GeV、σ_c ≥ 10⁻²³ cm² 对 f = 1 已被 DEAP-3600、Chicago、Skylab、Ohya、gas cloud 完全排除，而且这些无本底实验对亚成分的灵敏度（10¹³ GeV 处 10⁻⁵–10⁻⁸）远高于 HXMT 在该质量的统计极限（f ≳ 1）。(3) 早先所说"Skylab 蚀刻阈值 10⁻¹⁵ cm²"应为 ~2×10⁻¹⁹ cm²，"增量区间 10⁻²²–10⁻¹⁵"相应缩为 10⁻²²–2×10⁻¹⁹。(4) 正确的表述：HXMT/HE 的潜在新贡献集中在 m ≈ 10³–6×10⁷ GeV、σ_c ≈ 3×10⁻²²（CsI 可到 5×10⁻²³）–1.7×10⁻¹⁹ cm²、σ_c/m ≈ 3×10⁻²⁷–3×10⁻²⁴ cm²/GeV 的**稀有亚成分**，可达 f ~ 10⁻⁹–10⁻⁵（理想统计）；对 f = 1 只能提供对天体物理限制的直接复核（靠总计数率即可），以及在 per-nucleon 约定下取代未经同行评议的 IMP 7/8 结果。
 - 【推断】科学意义的坦率评估：W1 是一块真实存在、目前只有气体云加热和一枚 100 秒探空火箭约束的参数空间，零结果可以在若干固定 f 的 (m, σ) 图上画出新的排除区，并且是首个来自天文卫星闪烁体的此类限制；但没有任何已发表模型明确预言该处的遗迹，理论动机属于"质量函数尾部/暗核低质量端"这类一般性论证。若 IMP 7/8 的旧 recast 被认为可信，W1 在 σ_c ≳ 10⁻²⁰ cm² 的部分增益缩小到 2–3 个量级。
 
 ### Gaps
-- H1 的结论依赖把 ≤ 1 TeV 的宇宙学限制外推 5–7 个量级质量；没有文献在该质量区直接计算过，也没有文献讨论复合体晚形成时这些限制是否仍适用。
+- H1 的结论在宇宙学一侧依赖把 ≤ 1 TeV 的限制外推 5–7 个量级质量（没有文献在该质量区直接计算过，也没有文献讨论复合体晚形成时这些限制是否仍适用），在今日宇宙一侧只依赖 gas cloud 加热这一种探针。
 - 没有找到 f ≪ 1 时 Lyman-α/MW satellites 限制的定量结果，H2 中"f ≲ 10⁻²–10⁻³ 重新打开"的上端由 gas cloud 的 1/f 标度决定，而该限制本身有约 5 倍的版本差异。
 - 本笔记所有 HXMT 灵敏度数字都是理想统计极限，未含系统误差、真实屏蔽质量模型、淬灭与电子学饱和；这些由其他方向的调研负责。

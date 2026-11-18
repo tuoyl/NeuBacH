@@ -1,0 +1,9 @@
+model,source,visible_fraction,correlation,degradation_if_fitted,bias_S0_per_unit_step_cts,separation_from_apex_deg
+const,Cyg X-1,0.71623,0.83324,1.8086,1.5477,16.174
+const,Cyg X-3,0.72834,0.86543,1.9959,1.5781,7.6701
+const,Crab,0.66768,-0.32023,1.0556,-0.61989,97.229
+const,Galactic centre,0.6741,0.21852,1.0248,0.42487,87.519
+D,Cyg X-1,0.71623,0.83652,1.825,1.7605,16.174
+D,Cyg X-3,0.72834,0.85386,1.9212,1.7176,7.6701
+D,Crab,0.66768,-0.52272,1.173,-1.217,97.229
+D,Galactic centre,0.6741,0.48003,1.1399,1.0838,87.519

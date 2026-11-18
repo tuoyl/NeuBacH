@@ -1,1 +1,149 @@
 timeline: 2466720 bins of 120 s (3426 d); SAA fraction 0.0863, 8.72 SAA passes/day, mean pass 14.3 min
+sidereal scan: 160 s; max snr fraction 0.9952
+anti-sidereal scan: 142 s; max |snr fraction| 0.0224
+extended-sidereal scan: max |snr fraction| 0.0467
+{'term': 'cos(LT)cos(yr)', 'true_apex_template_bias_S0_per_unit_rms': -2.3121036373781827, 'max_abs_equiv_S0_sidereal': 3.5077227240735955, 'max_abs_equiv_S0_anti-sidereal': 3.3662174049106963}
+{'term': 'cos(LT)sin(yr)', 'true_apex_template_bias_S0_per_unit_rms': 2.402345699885137, 'max_abs_equiv_S0_sidereal': 3.295817459385931, 'max_abs_equiv_S0_anti-sidereal': 3.449353985948537}
+{'term': 'sin(LT)cos(yr)', 'true_apex_template_bias_S0_per_unit_rms': 2.470672777529558, 'max_abs_equiv_S0_sidereal': 3.4586935658160693, 'max_abs_equiv_S0_anti-sidereal': 3.319354490560322}
+{'term': 'sin(LT)sin(yr)', 'true_apex_template_bias_S0_per_unit_rms': 2.1628978968947354, 'max_abs_equiv_S0_sidereal': 3.3449717321130006, 'max_abs_equiv_S0_anti-sidereal': 3.500063667791352}
+{'term': 'cos(LT) [static]', 'true_apex_template_bias_S0_per_unit_rms': 0.0010171414061578214, 'max_abs_equiv_S0_sidereal': 0.001044818416433391, 'max_abs_equiv_S0_anti-sidereal': 0.0005792062158051009}
+{'term': 'cos(LT)(1+0.033cos(yr-perihelion))', 'true_apex_template_bias_S0_per_unit_rms': 0.06750313811288382, 'max_abs_equiv_S0_sidereal': 0.0788040676443682, 'max_abs_equiv_S0_anti-sidereal': 0.08139048337877168}
+{
+ "model": "D",
+ "dt": 120.0,
+ "live_time_s": 270462480.0,
+ "r_eff_true": 0.2207441033981403,
+ "apex_ra": 313.63509364807123,
+ "apex_dec": 47.5355860958004,
+ "windmap": {
+  "best_snr_fraction": 0.9960469495698867,
+  "peak_ra_offset_deg": 0.0,
+  "peak_dec_deg": 46.0,
+  "amplitude_at_true_apex": 0.9975444937928482,
+  "fwhm_ra_deg": 116.21277311596326,
+  "fwhm_ra_on_sky_deg": 78.45898034855693,
+  "fwhm_dec_deg": NaN,
+  "localisation_68": {
+   "5sigma": {
+    "level": 0.9528903399657277,
+    "ra_halfwidth_deg": [
+     15.989885047754491,
+     17.987693737887138
+    ],
+    "ra_halfwidth_on_sky_deg": [
+     10.795285605013467,
+     12.144070498072374
+    ],
+    "dec_halfwidth_deg": [
+     36.83019492850758,
+     48.6651190079852
+    ]
+   },
+   "10sigma": {
+    "level": 0.9884331034521254,
+    "ra_halfwidth_deg": [
+     7.388635026466376,
+     9.378538784742336
+    ],
+    "ra_halfwidth_on_sky_deg": [
+     4.98830511311975,
+     6.33175313247217
+    ],
+    "dec_halfwidth_deg": [
+     24.50039450278794,
+     22.18166045922564
+    ]
+   },
+   "20sigma": {
+    "level": 0.997120855262791,
+    "ra_halfwidth_deg": [
+     3.1834985938630487,
+     5.171568550673299
+    ],
+    "ra_halfwidth_on_sky_deg": [
+     2.1492822769690023,
+     3.491492237979784
+    ],
+    "dec_halfwidth_deg": [
+     12.604300730533701,
+     10.457789236745008
+    ]
+   }
+  },
+  "snr_fraction_at_antiapex": -0.8043876993956498,
+  "anti_sidereal_max_abs_snr_fraction": 0.022416476496580625,
+  "anti_sidereal_rms_snr_fraction": 0.007990636200842642,
+  "extended_sidereal_max_abs_snr_fraction": 0.04666535135822548,
+  "snr_fraction_at_Cyg X-1": 0.9413481328658316,
+  "separation_from_apex_Cyg X-1_deg": 16.173917407419765,
+  "snr_fraction_at_Cyg X-3": 0.9864713808999025,
+  "separation_from_apex_Cyg X-3_deg": 7.670090479889074,
+  "snr_fraction_at_Crab": -0.6450634504723138,
+  "separation_from_apex_Crab_deg": 97.22870974442135,
+  "snr_fraction_at_Galactic centre": 0.5818723605317732,
+  "separation_from_apex_Galactic centre_deg": 87.51882851710431
+ },
+ "seasonal_diurnal_frames": [
+  {
+   "term": "cos(LT)cos(yr)",
+   "true_apex_template_bias_S0_per_unit_rms": -2.3121036373781827,
+   "max_abs_equiv_S0_sidereal": 3.5077227240735955,
+   "max_abs_equiv_S0_anti-sidereal": 3.3662174049106963
+  },
+  {
+   "term": "cos(LT)sin(yr)",
+   "true_apex_template_bias_S0_per_unit_rms": 2.402345699885137,
+   "max_abs_equiv_S0_sidereal": 3.295817459385931,
+   "max_abs_equiv_S0_anti-sidereal": 3.449353985948537
+  },
+  {
+   "term": "sin(LT)cos(yr)",
+   "true_apex_template_bias_S0_per_unit_rms": 2.470672777529558,
+   "max_abs_equiv_S0_sidereal": 3.4586935658160693,
+   "max_abs_equiv_S0_anti-sidereal": 3.319354490560322
+  },
+  {
+   "term": "sin(LT)sin(yr)",
+   "true_apex_template_bias_S0_per_unit_rms": 2.1628978968947354,
+   "max_abs_equiv_S0_sidereal": 3.3449717321130006,
+   "max_abs_equiv_S0_anti-sidereal": 3.500063667791352
+  },
+  {
+   "term": "cos(LT) [static]",
+   "true_apex_template_bias_S0_per_unit_rms": 0.0010171414061578214,
+   "max_abs_equiv_S0_sidereal": 0.001044818416433391,
+   "max_abs_equiv_S0_anti-sidereal": 0.0005792062158051009
+  },
+  {
+   "term": "cos(LT)(1+0.033cos(yr-perihelion))",
+   "true_apex_template_bias_S0_per_unit_rms": 0.06750313811288382,
+   "max_abs_equiv_S0_sidereal": 0.0788040676443682,
+   "max_abs_equiv_S0_anti-sidereal": 0.08139048337877168
+  }
+ ],
+ "occultation": {
+  "const": {
+   "joint_degradation_all_four": 2.094252187489616,
+   "joint_degradation_cyg_pair": 2.082997405414317
+  },
+  "D": {
+   "joint_degradation_all_four": 2.128038740641245,
+   "joint_degradation_cyg_pair": 2.061248821066258
+  },
+  "ideal_same_direction_correlation_uniform_sphere": 0.8899398434266802
+ },
+ "runtime_s": 456.727432012558
+}
+{'model': 'const', 'source': 'Cyg X-1', 'visible_fraction': 0.7162291789973974, 'correlation': 0.8332356974633998, 'degradation_if_fitted': 1.8085865699827455, 'bias_S0_per_unit_step_cts': 1.5476850478713295, 'separation_from_apex_deg': 16.173917407419765}
+{'model': 'const', 'source': 'Cyg X-3', 'visible_fraction': 0.7283426521859889, 'correlation': 0.865427112262174, 'degradation_if_fitted': 1.9958691796460868, 'bias_S0_per_unit_step_cts': 1.578135125265635, 'separation_from_apex_deg': 7.670090479889074}
+{'model': 'const', 'source': 'Crab', 'visible_fraction': 0.6676838872438055, 'correlation': -0.3202318545257101, 'degradation_if_fitted': 1.0555881148842186, 'bias_S0_per_unit_step_cts': -0.619885500108074, 'separation_from_apex_deg': 97.22870974442135}
+{'model': 'const', 'source': 'Galactic centre', 'visible_fraction': 0.6741013393059178, 'correlation': 0.2185158439708417, 'degradation_if_fitted': 1.0247650872335092, 'bias_S0_per_unit_step_cts': 0.42487281034301694, 'separation_from_apex_deg': 87.51882851710431}
+{'model': 'D', 'source': 'Cyg X-1', 'visible_fraction': 0.7162291789973974, 'correlation': 0.8365169468865816, 'degradation_if_fitted': 1.825013830429931, 'bias_S0_per_unit_step_cts': 1.7604865177442186, 'separation_from_apex_deg': 16.173917407419765}
+{'model': 'D', 'source': 'Cyg X-3', 'visible_fraction': 0.7283426521859889, 'correlation': 0.853864285963044, 'degradation_if_fitted': 1.9212454325211057, 'bias_S0_per_unit_step_cts': 1.717580288902123, 'separation_from_apex_deg': 7.670090479889074}
+{'model': 'D', 'source': 'Crab', 'visible_fraction': 0.6676838872438055, 'correlation': -0.5227159736020803, 'degradation_if_fitted': 1.173011036604054, 'bias_S0_per_unit_step_cts': -1.2169842354769906, 'separation_from_apex_deg': 97.22870974442135}
+{'model': 'D', 'source': 'Galactic centre', 'visible_fraction': 0.6741013393059178, 'correlation': 0.480034360008285, 'degradation_if_fitted': 1.1399263116346579, 'bias_S0_per_unit_step_cts': 1.0837650761135804, 'separation_from_apex_deg': 87.51882851710431}
+total runtime 457 s
+
+real	7m37.772s
+user	15m4.760s
+sys	1m28.327s

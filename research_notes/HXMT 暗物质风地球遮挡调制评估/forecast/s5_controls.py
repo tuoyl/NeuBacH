@@ -313,7 +313,7 @@ def make_figure():
     l5, l10 = w["localisation_68"]["5sigma"], w["localisation_68"]["10sigma"]
     txt = (
         f"Nuisance model {summ['model']}, all non-SAA data, {summ['dt']:.0f}-s bins\n\n"
-        f"FWHM of the beam:  {w['fwhm_ra_on_sky_deg']:.0f} deg along RA (on the sky),  {w['fwhm_dec_deg']:.0f} deg along Dec\n"
+        f"FWHM of the beam:  {w['fwhm_ra_on_sky_deg']:.0f} deg along RA (on the sky),  " + ("> 90" if w['fwhm_dec_deg'] != w['fwhm_dec_deg'] else f"{w['fwhm_dec_deg']:.0f}") + " deg along Dec\n"
         f"68% localisation, 5 sigma detection:   RA -{l5['ra_halfwidth_on_sky_deg'][1]:.0f}/+{l5['ra_halfwidth_on_sky_deg'][0]:.0f} deg (sky),"
         f"  Dec -{l5['dec_halfwidth_deg'][1]:.0f}/+{l5['dec_halfwidth_deg'][0]:.0f} deg\n"
         f"68% localisation, 10 sigma detection:  RA -{l10['ra_halfwidth_on_sky_deg'][1]:.0f}/+{l10['ra_halfwidth_on_sky_deg'][0]:.0f} deg (sky),"
