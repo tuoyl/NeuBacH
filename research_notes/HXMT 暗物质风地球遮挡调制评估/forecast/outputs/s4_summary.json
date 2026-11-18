@@ -51,9 +51,9 @@
    "full": {
     "Bbar": 500.0,
     "S_injected": 0.2,
-    "n_mc": 100,
-    "mean_estimate": -0.1965594285799248,
-    "std_estimate": 0.006692109642775664,
+    "n_mc": 200,
+    "mean_estimate": -0.19613682640409777,
+    "std_estimate": 0.00605209358161858,
     "fisher_sigma": 0.00615933234539973,
     "expected_signal_part": 0.19999999999999996,
     "predicted_bias_from_toy_bkg": -0.3964902845166005,
@@ -62,9 +62,9 @@
    "node": {
     "Bbar": 500.0,
     "S_injected": 0.2,
-    "n_mc": 100,
-    "mean_estimate": 0.24887999597163454,
-    "std_estimate": 0.006748925312849878,
+    "n_mc": 200,
+    "mean_estimate": 0.24928096686584944,
+    "std_estimate": 0.006090903242433641,
     "fisher_sigma": 0.0061726299481293006,
     "expected_signal_part": 0.19951066432750927,
     "predicted_bias_from_toy_bkg": 0.049438361606299115,
@@ -75,9 +75,9 @@
    "full": {
     "Bbar": 500.0,
     "S_injected": 0.2,
-    "n_mc": 100,
-    "mean_estimate": -0.3086612512305683,
-    "std_estimate": 0.006787495156748035,
+    "n_mc": 200,
+    "mean_estimate": -0.30822583238162904,
+    "std_estimate": 0.00611857506517107,
     "fisher_sigma": 0.006174220926709292,
     "expected_signal_part": 0.1999999999999997,
     "predicted_bias_from_toy_bkg": -0.5086091413481135,
@@ -86,9 +86,9 @@
    "node": {
     "Bbar": 500.0,
     "S_injected": 0.2,
-    "n_mc": 100,
-    "mean_estimate": 0.18368044133013536,
-    "std_estimate": 0.006840949402290156,
+    "n_mc": 200,
+    "mean_estimate": 0.18409300841415047,
+    "std_estimate": 0.006150331339349925,
     "fisher_sigma": 0.00618659830157912,
     "expected_signal_part": 0.19948516842400543,
     "predicted_bias_from_toy_bkg": -0.015748973490614073,
@@ -99,9 +99,9 @@
    "full": {
     "Bbar": 500.0,
     "S_injected": 0.2,
-    "n_mc": 100,
-    "mean_estimate": 0.1296788376640478,
-    "std_estimate": 0.008573397898066121,
+    "n_mc": 200,
+    "mean_estimate": 0.12994994453621636,
+    "std_estimate": 0.008114417615119543,
     "fisher_sigma": 0.008294200537947728,
     "expected_signal_part": 0.19999999999999898,
     "predicted_bias_from_toy_bkg": -0.0704785734046867,
@@ -110,9 +110,9 @@
    "node": {
     "Bbar": 500.0,
     "S_injected": 0.2,
-    "n_mc": 100,
-    "mean_estimate": 0.44340939942529234,
-    "std_estimate": 0.0085229278828008,
+    "n_mc": 200,
+    "mean_estimate": 0.4436449907245504,
+    "std_estimate": 0.008128703961361233,
     "fisher_sigma": 0.008300793326967476,
     "expected_signal_part": 0.1992038613638364,
     "predicted_bias_from_toy_bkg": 0.24398474790884953,
@@ -120,5 +120,5 @@
    }
   }
  },
- "runtime_s": 150.85998845100403
+ "runtime_s": 163.45210075378418
 }

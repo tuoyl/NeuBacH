@@ -55,3 +55,12 @@ D       npar=   2553 r_eff full/node=0.1960/0.1962 r_plain full/node=0.1763/0.17
 E       npar=  23526 r_eff full/node=0.1924/0.1925 r_plain full/node=0.1732/0.1737 deg(const) full=1.487 deg(known) node=1.165 recov(node)=0.994 toy-bkg eps full/node=-2.3e-04/-3.2e-05 [0.7 s]
 E66     npar= 121816 r_eff full/node=0.1734/0.1737 r_plain full/node=0.1577/0.1582 deg(const) full=1.649 deg(known) node=1.291 recov(node)=0.994 toy-bkg eps full/node=-1.8e-04/+3.1e-05 [0.8 s]
 F       npar=   4509 r_eff full/node=0.1174/0.1168 r_plain full/node=0.1126/0.1121 deg(const) full=2.437 deg(known) node=1.920 recov(node)=0.995 toy-bkg eps full/node=-3.9e-04/-6.3e-05 [1.7 s]
+R       npar=  26511 r_eff full/node=0.1021/0.1018 r_plain full/node=0.0980/0.0978 deg(const) full=2.802 deg(known) node=2.203 recov(node)=0.994 toy-bkg eps full/node=+1.5e-05/+7.7e-05 [5.5 s]
+MC model D, template full: mean -0.1961 (pred -0.1965 = signal 0.2000 + toy-bkg leak -0.3965), std 0.0061 (Fisher 0.0062)
+MC model D, template node: mean +0.2493 (pred +0.2489 = signal 0.1995 + toy-bkg leak +0.0494), std 0.0061 (Fisher 0.0062)
+MC model E, template full: mean -0.3082 (pred -0.3086 = signal 0.2000 + toy-bkg leak -0.5086), std 0.0061 (Fisher 0.0062)
+MC model E, template node: mean +0.1841 (pred +0.1837 = signal 0.1995 + toy-bkg leak -0.0157), std 0.0062 (Fisher 0.0062)
+MC model R, template full: mean +0.1299 (pred +0.1295 = signal 0.2000 + toy-bkg leak -0.0705), std 0.0081 (Fisher 0.0083)
+MC model R, template node: mean +0.4436 (pred +0.4432 = signal 0.1992 + toy-bkg leak +0.2440), std 0.0081 (Fisher 0.0083)
+
+total runtime 164 s
