@@ -1,0 +1,203 @@
+{
+ "tle": {
+  "tle_file_present": true,
+  "checksum_ok": true,
+  "epoch_jd": 2461363.09089513,
+  "inclination_deg": 43.0151,
+  "raan_deg": 42.5245,
+  "eccentricity": 0.0030427,
+  "mean_motion_rev_day": 15.19646738,
+  "a_km": 6886.978222867228,
+  "apogee_alt_km": 529.7982315059455,
+  "perigee_alt_km": 487.88821422851044,
+  "mean_alt_above_equatorial_radius_km": 508.8412228672287,
+  "mean_alt_above_mean_radius_km": 515.9782228672284,
+  "sgp4_nodedot_deg_day": -5.580473860290355,
+  "sgp4_node_period_days": 64.51065071045221,
+  "sgp4_arglat_period_min": 94.64851884842905,
+  "j2_formula_nodedot_deg_day_at_tle_a": -5.569076222657181,
+  "sgp4_radius_min_max_km": [
+   6858.198996275442,
+   6908.952345379296
+  ],
+  "circular_model_vs_sgp4_max_sep_deg_2days": 0.46473418798516863,
+  "circular_model_vs_sgp4_rms_sep_deg_2days": 0.29662090032114236,
+  "earth_half_angle_deg_at_tle_alt": 67.68029402534282
+ },
+ "nominal_orbit": {
+  "a_km": 6921.0,
+  "inc_deg": 43.0,
+  "kepler_period_min": 95.50211815557677,
+  "nodal_period_min": 95.35226349575575,
+  "raan_rate_deg_day": -5.475193015485339,
+  "node_precession_period_days": 65.75110666999717,
+  "node_period_relative_to_sun_days": 55.72030581665692,
+  "orbital_speed_kms": 7.588998434594857,
+  "earth_half_angle_deg": 67.00393923560704,
+  "orbits_per_node_cycle": 992.9663977930669
+ },
+ "apex_sun_only": {
+  "ra_deg": 313.63509364807123,
+  "dec_deg": 47.5355860958004,
+  "speed": 250.590961728471,
+  "mean_speed_ref": 354.11952078029304
+ },
+ "P1_check": {
+  "max_abs_residual": 4.440892098500626e-16,
+  "max_abs_diff_latterm_vs_sinlat_sindelta": 1.1102230246251565e-16,
+  "rms_node_term": 0.41844496140931076,
+  "rms_lat_term": 0.3552498243966148,
+  "corr_node_lat": 0.0015903456220869262
+ },
+ "template_static": {
+  "mean": 0.704478523011186,
+  "min": 0.12982855204003219,
+  "max": 0.9872278539835964,
+  "rms_total": 0.25786798556085117,
+  "rms_Omega_independent": 0.1597011438443803,
+  "rms_Omega_dependent": 0.20246343529637123,
+  "variance_fraction_Omega_dependent": 0.6164506966438138,
+  "max_abs_T0u_minus_T0lat": 1.135060653711939e-05,
+  "legendre_a0": 0.6953293651837804,
+  "legendre_a1": 0.4497310160591198,
+  "rms_of_template_minus_dipole_approx": 0.07565664662210556,
+  "dipole_rms_node_part": 0.18808259304205097,
+  "psi_range_deg": [
+   4.539457078740743,
+   175.46054292125928
+  ]
+ },
+ "ram_effect": {
+  "rms": 0.006133961199413125,
+  "max_abs": 0.012103063497262083,
+  "rms_relative_to_Omega_dependent": 0.030296636972666564,
+  "corr_with_shadow_template": 2.2949672235092468e-17,
+  "open_sky_ram_amplitude": 0.014070388529856094
+ },
+ "orbital_harmonics": {
+  "mean_amp_h1": 0.32275518978496043,
+  "mean_amp_h2": 0.07483853104799551,
+  "mean_amp_h3": 0.005114187308354927,
+  "mean_amp_h4": 0.007059742990619082,
+  "max_amp_h1": 0.44175688121785195,
+  "max_amp_h2": 0.11347054233527598
+ },
+ "depth_vs_node": {
+  "p2p_max": 0.8593925433145329,
+  "p2p_min": 0.01024559143672188,
+  "p2p_mean": 0.6341976115950294,
+  "node_offset_of_max_deg": 270.5,
+  "node_offset_of_min_deg": 90.5,
+  "orbit_mean_T_min": 0.6588447644494299,
+  "orbit_mean_T_max": 0.786592528211846
+ },
+ "annual": {
+  "v_max": 266.2481522000484,
+  "day_of_v_max": 152.0,
+  "v_min": 237.21576277138803,
+  "day_of_v_min": 336.75,
+  "open_flux_rel_max": 1.0296132805089222,
+  "open_flux_rel_min": 0.9756515670834165,
+  "open_flux_semi_amplitude": 0.026980856712752854,
+  "apex_shift_max_deg": 6.9140247065955664,
+  "apex_ra_range": [
+   303.5811630792734,
+   323.12117387653973
+  ],
+  "apex_dec_range": [
+   41.62362123348884,
+   54.07886422401051
+  ],
+  "depth_full_min": 0.0032806951758916902,
+  "depth_full_max": 0.9085592912940964,
+  "depth_static_min": 0.01082084077659562,
+  "depth_static_max": 0.8593852676054963,
+  "max_abs_depth_change_from_annual": 0.11252061858467499
+ },
+ "annual_monthly": [
+  {
+   "month": 1,
+   "v": 241.37651579429033,
+   "ra": 303.64853461456187,
+   "dec": 48.16520981688408,
+   "open_flux_rel": 0.983127972047185
+  },
+  {
+   "month": 2,
+   "v": 248.31928831754124,
+   "ra": 304.46193524706536,
+   "dec": 44.794285498231794,
+   "open_flux_rel": 0.9958127075671862
+  },
+  {
+   "month": 3,
+   "v": 255.36521113293654,
+   "ra": 307.119760567256,
+   "dec": 42.65133491721355,
+   "open_flux_rel": 1.008907090650921
+  },
+  {
+   "month": 4,
+   "v": 261.94159500928527,
+   "ra": 311.1755897667148,
+   "dec": 41.64807451165857,
+   "open_flux_rel": 1.021362742371067
+  },
+  {
+   "month": 5,
+   "v": 265.6252042405313,
+   "ra": 315.3835063595237,
+   "dec": 42.04017116745916,
+   "open_flux_rel": 1.0284075945169753
+  },
+  {
+   "month": 6,
+   "v": 265.9267616808911,
+   "ra": 319.3090036970788,
+   "dec": 43.650298306155975,
+   "open_flux_rel": 1.028991244525061
+  },
+  {
+   "month": 7,
+   "v": 262.85436539511755,
+   "ra": 322.06661970815605,
+   "dec": 46.08617758381628,
+   "open_flux_rel": 1.0231082065233446
+  },
+  {
+   "month": 8,
+   "v": 256.898216904311,
+   "ra": 323.1181093350601,
+   "dec": 49.10042128785248,
+   "open_flux_rel": 1.0117995609147095
+  },
+  {
+   "month": 9,
+   "v": 249.4545276993165,
+   "ra": 321.57549883952885,
+   "dec": 51.994582539497316,
+   "open_flux_rel": 0.9979032413199375
+  },
+  {
+   "month": 10,
+   "v": 242.62921071138058,
+   "ra": 317.30706372077987,
+   "dec": 53.81739971530011,
+   "open_flux_rel": 0.9854049797636135
+  },
+  {
+   "month": 11,
+   "v": 238.04400309359843,
+   "ra": 311.1525334338169,
+   "dec": 53.76913022036482,
+   "open_flux_rel": 0.9771358122024797
+  },
+  {
+   "month": 12,
+   "v": 237.52436155272295,
+   "ra": 306.0230896980231,
+   "dec": 51.64617121258688,
+   "open_flux_rel": 0.9762045904302186
+  }
+ ]
+}
