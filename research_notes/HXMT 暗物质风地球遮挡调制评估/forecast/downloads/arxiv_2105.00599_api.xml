@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/mxD+fczHYZf9s/tTwxu0+vebdsU</id>
+  <title>arXiv Query: search_query=&amp;id_list=2105.00599&amp;start=0&amp;max_results=10</title>
+  <updated>2026-11-18T19:44:40Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2105.00599" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2105.00599v3</id>
+    <title>Recommended conventions for reporting results from direct dark matter searches</title>
+    <updated>2025-06-18T21:09:46Z</updated>
+    <link href="https://arxiv.org/abs/2105.00599v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2105.00599v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The field of dark matter detection is a highly visible and highly competitive one. In this paper, we propose recommendations for presenting dark matter direct detection results particularly suited for weak-scale dark matter searches, although we believe the spirit of the recommendations can apply more broadly to searches for other dark matter candidates, such as very light dark matter or axions. To translate experimental data into a final published result, direct detection collaborations must make a series of choices in their analysis, ranging from how to model astrophysical parameters to how to make statistical inferences based on observed data. While many collaborations follow a standard set of recommendations in some areas, for example the expected flux of dark matter particles (to a large degree based on a paper from Lewin and Smith in 1995), in other areas, particularly in statistical inference, they have taken different approaches, often from result to result by the same collaboration. We set out a number of recommendations on how to apply the now commonly used Profile Likelihood Ratio method to direct detection data. In addition, updated recommendations for the Standard Halo Model astrophysical parameters and relevant neutrino fluxes are provided. The authors of this note include members of the DAMIC, DarkSide, DARWIN, DEAP, LZ, NEWS-G, PandaX, PICO, SBC, SENSEI, SuperCDMS, and XENON collaborations, and these collaborations provided input to the recommendations laid out here. Wide-spread adoption of these recommendations will make it easier to compare and combine future dark matter results.</summary>
+    <category term="hep-ex" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-05-03T02:06:25Z</published>
+    <arxiv:comment>20 pages, 8 figures, 4 tables, version 2 to match publication. Version 3 to reflect erratum regarding Section 2.2.1</arxiv:comment>
+    <arxiv:primary_category term="hep-ex"/>
+    <arxiv:journal_ref>European Physical Journal C, 81, 907 (2021)</arxiv:journal_ref>
+    <author>
+      <name>D. Baxter</name>
+    </author>
+    <author>
+      <name>I. M. Bloch</name>
+    </author>
+    <author>
+      <name>E. Bodnia</name>
+    </author>
+    <author>
+      <name>X. Chen</name>
+    </author>
+    <author>
+      <name>J. Conrad</name>
+    </author>
+    <author>
+      <name>P. Di Gangi</name>
+    </author>
+    <author>
+      <name>J. E. Y. Dobson</name>
+    </author>
+    <author>
+      <name>D. Durnford</name>
+    </author>
+    <author>
+      <name>S. J. Haselschwardt</name>
+    </author>
+    <author>
+      <name>A. Kaboth</name>
+    </author>
+    <author>
+      <name>R. F. Lang</name>
+    </author>
+    <author>
+      <name>Q. Lin</name>
+    </author>
+    <author>
+      <name>W. H. Lippincott</name>
+    </author>
+    <author>
+      <name>J. Liu</name>
+    </author>
+    <author>
+      <name>A. Manalaysay</name>
+    </author>
+    <author>
+      <name>C. McCabe</name>
+    </author>
+    <author>
+      <name>K. D. Mora</name>
+    </author>
+    <author>
+      <name>D. Naim</name>
+    </author>
+    <author>
+      <name>R. Neilson</name>
+    </author>
+    <author>
+      <name>I. Olcina</name>
+    </author>
+    <author>
+      <name>M. -C. Piro</name>
+    </author>
+    <author>
+      <name>M. Selvi</name>
+    </author>
+    <author>
+      <name>B. von Krosigk</name>
+    </author>
+    <author>
+      <name>S. Westerdale</name>
+    </author>
+    <author>
+      <name>Y. Yang</name>
+    </author>
+    <author>
+      <name>N. Zhou</name>
+    </author>
+    <arxiv:doi>10.1140/epjc/s10052-021-09655-y</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1140/epjc/s10052-021-09655-y" title="doi"/>
+  </entry>
+</feed>
