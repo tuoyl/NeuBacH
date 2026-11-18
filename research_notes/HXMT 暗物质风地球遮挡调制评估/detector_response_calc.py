@@ -9,7 +9,12 @@ Insight-HXMT 各子探测器对慢速（beta~1e-3）、大质量、强相互作�
 本脚本只做"量级 + 不确定带"的估算，全部物理输入在下面集中列出并注明来源：
   [M]  = measured / 文献实测或仪器论文给出的数（来源见笔记中的 URL）
   [I]  = inference / 由 [M] 推出的假设或外推（笔记中逐条说明）
-运行:  python3 detector_response_calc.py            (约 1 分钟, 仅依赖 numpy)
+两种散射模型:
+  模型 A (默认, ff=False): 纯接触/几何截面, 无靶核形状因子, 反冲谱在 [0, E_max] 平坦;
+  模型 B (ff=True)       : 再乘靶核 Helm 形状因子 F^2 (DEAP-3600 Model I 的保守做法).
+未建模: 风的方向性与地球遮挡、卫星物质对粒子的减速(仅表 G1 给解析上限)、核反冲脉冲形状偏移、
+        晶体倒角/封装等几何细节、级联重叠区(sigma >~ 1e-18 cm^2)的额外淬灭.
+运行:  python3 detector_response_calc.py            (约 5 分钟, 仅依赖 numpy; 随机种子固定)
 """
 import numpy as np
 
