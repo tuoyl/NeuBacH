@@ -1,0 +1,1 @@
+timeline: 2466720 bins of 120 s (3426 d); SAA fraction 0.0863, 8.72 SAA passes/day, mean pass 14.3 min

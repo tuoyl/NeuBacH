@@ -71,8 +71,8 @@ MODEL_LABELS = {
     "H": "H: E + f(pointing dir. in local frame)",
     "F": "F: C + per-pointing visible/occulted offsets",
     "G": "G: C + per-pointing f(Earth angle)",
-    "R": "R: F + f(Sun phase,beta) + lat x season + f(Earth angle, COR)",
-    "K": "K: G + f(Sun phase,beta) + lat x season + f(Earth angle, COR)",
+    "R": "R: E + per-pointing vis/occ + f(Sun phase,beta) + lat x season + zen x poly(COR)",
+    "K": "K: G + f(Sun phase,beta) + lat x season + zen x poly(COR)",
 }
 PERIODS = {"E": 365.25, "E180": 180.0, "E90": 90.0, "E66": 65.75, "E30": 30.0, "E10": 10.0}
 LEAK_MODELS = ("const", "A", "A_fine", "B", "C", "C2", "D", "E", "E66", "H", "F", "G", "R", "K")
@@ -88,10 +88,15 @@ def lat_season_block(lat_rad, ann_phase, nlat=18, latmax=45.0):
     return sp.csr_matrix((vals, (rows, cols)), shape=(N, 2 * nlat))
 
 
-def zen_cor_block(zen_deg, cor, nzen=12, cor_edges=(0, 2, 4, 6, 8, 10, 12, 99)):
+def zen_poly_block(zen_deg, cor, nzen=12, deg=2):
+    """(pointing-zenith-angle bin) x (1, COR, COR^2): Earth-angle profile whose amplitude varies smoothly with COR."""
     iz = np.minimum((zen_deg / 180.0 * nzen).astype(np.int64), nzen - 1)
-    ic = np.clip(np.searchsorted(np.array(cor_edges), cor, side="right") - 1, 0, len(cor_edges) - 2)
-    return NU.onehot(iz * (len(cor_edges) - 1) + ic, nzen * (len(cor_edges) - 1))
+    c = np.asarray(cor, dtype=float) / 10.0
+    N = len(iz)
+    rows = np.concatenate([np.arange(N)] * (deg + 1))
+    cols = np.concatenate([iz * (deg + 1) + k for k in range(deg + 1)])
+    vals = np.concatenate([c ** k for k in range(deg + 1)])
+    return sp.csr_matrix((vals, (rows, cols)), shape=(N, nzen * (deg + 1)))
 
 
 class Blocks:
@@ -126,8 +131,11 @@ class Blocks:
             v = NU.onehot(*NU.pointing_dir_bins(tl["point_zen"][idx], tl["point_az"][idx]))
         elif name == "latseason":
             v = lat_season_block(tl["lat"][idx], tl["doy_phase"][idx])
-        elif name == "zencor":
-            v = zen_cor_block(tl["point_zen"][idx], tl["COR"][idx])
+        elif name == "zenpoly":
+            v = zen_poly_block(tl["point_zen"][idx], tl["COR"][idx])
+        elif name == "Zvis":
+            i, n = NU.compress(tl["obs"][idx].astype(np.int64) * 2 + (tl["elv"][idx] > 0))
+            v = NU.onehot(i, n)
         else:
             raise KeyError(name)
         self._c[name] = v
@@ -167,10 +175,12 @@ class Blocks:
             ib, nb = NU.earth_angle_bins(tl["point_zen"][idx])
             return obs * nb + ib, self.stack("Zmap", "tsaa", "lt", "beta")
         if name == "R":
-            return obs * 2 + (tl["elv"][idx] > 0), self.stack("Zmap", "tsaa", "lt", "sun2d", "latseason", "zencor")
+            m, nmap = self.get("map")
+            return (m + nmap * NU.period_index(tl["t"][idx], 365.25),
+                    self.stack("Zvis", "tsaa", "lt", "sun2d", "latseason", "zenpoly"))
         if name == "K":
             ib, nb = NU.earth_angle_bins(tl["point_zen"][idx])
-            return obs * nb + ib, self.stack("Zmap", "tsaa", "lt", "sun2d", "latseason", "zencor")
+            return obs * nb + ib, self.stack("Zmap", "tsaa", "lt", "sun2d", "latseason", "zenpoly")
         raise KeyError(name)
 
 
@@ -233,7 +243,15 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dt", type=float, default=60.0, help="time-bin length in seconds")
     ap.add_argument("--quick", action="store_true", help="skip the heavy models (E10, H, F, G, R, K) and the MC")
+    ap.add_argument("--figure-only", action="store_true", help="redraw fig5 from outputs/s4_fisher_table.csv")
     args = ap.parse_args()
+    if args.figure_only:
+        with open(os.path.join(OUT, "s4_fisher_table.csv")) as f:
+            rws = []
+            for r_ in csv.DictReader(f):
+                rws.append({k: (float(v) if k not in ("scenario", "model", "label") else v) for k, v in r_.items()})
+        make_figure(rws)
+        return
     t_start = time.time()
 
     tl = TL.build(args.dt)
@@ -306,6 +324,9 @@ def main():
                 out[f"r_eff_{k}"] = math.sqrt(I / tlive)
                 out[f"r_plain_{k}"] = float(np.sqrt((r * r).mean()))
                 out[f"recov_{k}"] = float((W * r * T_full[idx]).sum() / I)
+                # deterministic bias from the part of the toy background the model cannot absorb
+                out[f"toybkg_bias_over_B_{k}"] = float((W * r * bb).sum() / I)
+                out[f"toybkg_eps_{k}"] = out[f"toybkg_bias_over_B_{k}"] * out[f"r_plain_{k}"]
             if m in ("none", "const"):
                 base[m] = out
             for k in templates:
@@ -315,7 +336,8 @@ def main():
             print(f"{m:7s} npar={npar:7d} r_eff full/node={out['r_eff_full']:.4f}/{out['r_eff_node']:.4f} "
                   f"r_plain full/node={out['r_plain_full']:.4f}/{out['r_plain_node']:.4f} "
                   f"deg(const) full={out['deg_vs_const_full']:.3f} deg(known) node={out['deg_vs_known_node']:.3f} "
-                  f"recov(node)={out['recov_node']:.3f} [{time.time() - t0:.1f} s]")
+                  f"recov(node)={out['recov_node']:.3f} toy-bkg eps full/node={out['toybkg_eps_full']:+.1e}/"
+                  f"{out['toybkg_eps_node']:+.1e} [{time.time() - t0:.1f} s]")
             # ---- leakage of un-modelled toy terms (first two scenarios) ----
             if sc in (first, second) and m in LEAK_MODELS:
                 if terms is None:
@@ -331,31 +353,32 @@ def main():
                     resid_store[m]["idx"], resid_store[m]["W"] = idx, W
 
     # ---- Monte-Carlo validation of the Fisher error (all non-SAA) ----------
+    # The same Poisson realisations are analysed with every stored estimator.
     mc = {}
-    if not args.quick:
+    if not args.quick and resid_store:
         rng = np.random.default_rng(123)
-        Bbar, S_inj, nmc = 500.0, 0.2, 40
-        for m, st in resid_store.items():
-            idx, W = st["idx"], st["W"]
-            bb = b_all[idx] / b_all[idx].mean()
-            mu = (Bbar * bb + S_inj * T_full[idx]) * dt
-            ests = {k: np.empty(nmc) for k in ("full", "node")}
-            wr = {k: W * st[k][0] / st[k][1] for k in ("full", "node")}       # estimator weights
-            for j in range(nmc):
-                y = rng.poisson(mu) / dt
-                for k in ests:
-                    ests[k][j] = (wr[k] * y).sum()
-            mc[m] = {}
-            for k in ests:
-                sig_fisher = math.sqrt(Bbar / st[k][1])
-                bias_bkg = Bbar * float((wr[k] * bb).sum())
-                recov = S_inj * float((wr[k] * T_full[idx]).sum())
-                mc[m][k] = dict(Bbar=Bbar, S_injected=S_inj, n_mc=nmc, mean_estimate=float(ests[k].mean()),
-                                std_estimate=float(ests[k].std(ddof=1)), fisher_sigma=sig_fisher,
-                                expected_signal_part=recov, predicted_bias_from_toy_bkg=bias_bkg,
-                                bias_over_Bbar=bias_bkg / Bbar)
-                print(f"MC model {m}, template {k}: mean {ests[k].mean():+.4f} (pred {recov + bias_bkg:+.4f} = signal "
-                      f"{recov:.4f} + toy-bkg leak {bias_bkg:+.4f}), std {ests[k].std(ddof=1):.4f} (Fisher {sig_fisher:.4f})")
+        Bbar, S_inj, nmc = 500.0, 0.2, 200
+        any_m = next(iter(resid_store))
+        idx, W = resid_store[any_m]["idx"], resid_store[any_m]["W"]
+        bb = b_all[idx] / b_all[idx].mean()
+        mu = (Bbar * bb + S_inj * T_full[idx]) * dt
+        wr = {(m, k): W * st[k][0] / st[k][1] for m, st in resid_store.items() for k in ("full", "node")}
+        ests = {key: np.empty(nmc) for key in wr}
+        for j in range(nmc):
+            y = rng.poisson(mu) / dt
+            for key in wr:
+                ests[key][j] = (wr[key] * y).sum()
+        for (m, k), e in ests.items():
+            I = resid_store[m][k][1]
+            sig_fisher = math.sqrt(Bbar / I)
+            bias_bkg = Bbar * float((wr[(m, k)] * bb).sum())
+            recov = S_inj * float((wr[(m, k)] * T_full[idx]).sum())
+            mc.setdefault(m, {})[k] = dict(
+                Bbar=Bbar, S_injected=S_inj, n_mc=nmc, mean_estimate=float(e.mean()),
+                std_estimate=float(e.std(ddof=1)), fisher_sigma=sig_fisher, expected_signal_part=recov,
+                predicted_bias_from_toy_bkg=bias_bkg, bias_over_Bbar=bias_bkg / Bbar)
+            print(f"MC model {m}, template {k}: mean {e.mean():+.4f} (pred {recov + bias_bkg:+.4f} = signal "
+                  f"{recov:.4f} + toy-bkg leak {bias_bkg:+.4f}), std {e.std(ddof=1):.4f} (Fisher {sig_fisher:.4f})")
     summary["mc_validation"] = mc
 
     # ---- write tables ---------------------------------------------------
@@ -383,50 +406,57 @@ def make_figure(rows):
     scs = ["all non-SAA", "good time ~50% (ELV>10, SAA margins)", "good time strict (+ COR>8)"]
     cols = [P.BLUE, P.ORANGE, P.AQUA]
     marks = ["o", "s", "D"]
+    dodge = [0.2, 0.0, -0.2]
     order = ["const", "A", "A_fine", "B", "C", "C2", "D", "E", "H", "F", "G", "R", "K"]
     get = lambda sc, m, key: next((r[key] for r in rows if r["scenario"] == sc and r["model"] == m), None)
     present = [m for m in order if get(scs[0], m, "r_eff_full") is not None]
-    fig, axs = plt.subplots(1, 3, figsize=(15.0, 5.6), gridspec_kw=dict(width_ratios=[1.3, 1.3, 1.0]))
-    for ax, key, title in ((axs[0], "deg_vs_const_full", "(a) Full template:\nsigma(S0) / sigma(free constant only)"),
-                           (axs[1], "deg_vs_known_node", "(b) Omega-dependent part only:\nsigma / sigma(background known)")):
-        y = np.arange(len(present))[::-1]
-        for sc, col, mk in zip(scs, cols, marks):
+    fig, axs = plt.subplots(1, 3, figsize=(15.5, 6.2), gridspec_kw=dict(width_ratios=[1.25, 1.25, 1.0]))
+    handles = []
+    for ax, key, title in ((axs[0], "deg_vs_const_full", "(a) Full template:\nsigma(S0) relative to 'free constant only'"),
+                           (axs[1], "deg_vs_known_node", "(b) Omega-dependent part:\nsigma relative to 'background known'")):
+        y = np.arange(len(present))[::-1].astype(float)
+        handles = []
+        for sc, col, mk, dy in zip(scs, cols, marks, dodge):
             xs, ys = [], []
             for m, yy in zip(present, y):
                 v = get(sc, m, key)
                 if v is not None:
                     xs.append(v)
-                    ys.append(yy)
-            ax.plot(xs, ys, mk, color=col, ms=7, mec=P.SURFACE, mew=1.2, label=sc, ls="none")
+                    ys.append(yy + dy)
+            h, = ax.plot(xs, ys, mk, color=col, ms=6.5, mec=P.SURFACE, mew=1.0, label=sc, ls="none")
+            handles.append(h)
+        xmax = max(get(scs[0], m, key) for m in present)
         for m, yy in zip(present, y):
             v = get(scs[0], m, key)
-            ax.text(v, yy + 0.26, f"{v:.2f}", fontsize=7.5, color=P.INK2, ha="center", va="bottom")
+            ax.text(v + 0.012 * xmax, yy + dodge[0], f"{v:.2f}", fontsize=7.5, color=P.INK2, ha="left", va="center")
         ax.set_yticks(y)
         ax.set_yticklabels([MODEL_LABELS[m] for m in present], fontsize=7.8)
-        ax.set_ylim(-0.6, len(present) - 0.2)
+        ax.set_ylim(-0.7, len(present) - 0.3)
         ax.set_xlabel("degradation factor of the amplitude uncertainty")
-        ax.set_title(title, fontsize=9.6)
-        ax.set_xlim(left=0.9)
+        ax.set_title(title, fontsize=9.4)
+        ax.set_xlim(0.92, xmax * 1.09)
         ax.grid(axis="y", visible=False)
     axs[1].set_yticklabels([])
-    axs[0].legend(loc="lower right", fontsize=7.8)
+    fig.legend(handles, scs, loc="upper center", ncol=3, bbox_to_anchor=(0.5, 0.995), fontsize=8.5,
+               title="data selection (value labels: all non-SAA)", title_fontsize=8.5)
     ax = axs[2]
     per = [(365.25, "E"), (180.0, "E180"), (90.0, "E90"), (65.75, "E66"), (30.0, "E30"), (10.0, "E10")]
     pts = [(p, get(scs[0], m, "deg_vs_const_full")) for p, m in per if get(scs[0], m, "deg_vs_const_full") is not None]
     xs, ys = [p for p, _ in pts], [v for _, v in pts]
-    ax.plot(xs, ys, "-o", color=P.BLUE, ms=7, mec=P.SURFACE, mew=1.2)
+    ax.plot(xs, ys, "-o", color=P.BLUE, ms=6.5, mec=P.SURFACE, mew=1.0)
     for xx, yy in zip(xs, ys):
-        ax.text(xx, yy + 0.12, f"{yy:.2f}", fontsize=7.5, color=P.INK2, ha="center", va="bottom")
+        if xx in (10.0, 30.0, 65.75, 365.25):
+            ax.text(xx, yy + 0.13, f"{yy:.2f}", fontsize=7.5, color=P.INK2, ha="center", va="bottom")
     ax.axvline(65.75, color=P.AXIS, lw=0.8)
     ax.set_ylim(0.9, max(ys) * 1.12)
-    ax.text(70, max(ys) * 1.08, "nodal precession\nperiod 65.7 d", fontsize=7.5, color=P.INK2, va="top")
+    ax.text(72, max(ys) * 1.08, "nodal precession\nperiod 65.7 d", fontsize=7.5, color=P.INK2, va="top")
     ax.set_xscale("log")
-    ax.set_xlabel("interval over which the geographic map is re-fitted (days)")
+    ax.set_xlabel("map re-fit interval (days)")
     ax.set_ylabel("degradation factor (full template, all non-SAA)")
-    ax.set_title("(c) Cost of letting the map drift\n(model D with the map free per interval)", fontsize=9.6)
-    fig.tight_layout(rect=(0, 0.03, 1, 1))
+    ax.set_title("(c) Model D with the map\nre-fitted per interval", fontsize=9.4)
+    fig.tight_layout(rect=(0, 0.03, 1, 0.91))
     P.note(fig, "Simulation (forecast): exact Fisher marginalisation on 60-s bins, 2017-06-15 to 2026-11-01, toy background and "
-                "SIMULATED pointing history. Printed values: 'all non-SAA'.")
+                "SIMULATED pointing history (not the real HXMT observation log).")
     fig.savefig(os.path.join(FIG, "fig5_degradation_factors.png"))
     plt.close(fig)
 

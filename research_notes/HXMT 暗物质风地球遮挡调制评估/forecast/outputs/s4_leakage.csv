@@ -503,90 +503,90 @@ all non-SAA,G,node,toy bkg component: activation 36min,7.4956e-04,1.0327e-04
 all non-SAA,G,node,toy bkg component: activation 13h,-6.6698e-04,-9.1896e-05
 all non-SAA,G,node,per-pointing source flux x visibility step,9.4468e-03,1.3016e-03
 all non-SAA,G,node,"Earth in FOV: max(0,-cos zen) x h(COR)",-9.1333e-02,-1.2584e-02
-all non-SAA,R,full,diurnal cos(LT),2.6813e-04,4.0053e-05
-all non-SAA,R,full,diurnal sin(LT),7.7693e-03,1.1606e-03
-all non-SAA,R,full,diurnal x annual: cos(LT)cos(yr),-3.1530e+00,-4.7099e-01
-all non-SAA,R,full,diurnal x annual: cos(LT)sin(yr),1.9854e+00,2.9658e-01
-all non-SAA,R,full,diurnal x annual: sin(LT)cos(yr),2.6198e+00,3.9135e-01
-all non-SAA,R,full,diurnal x annual: sin(LT)sin(yr),1.6059e+00,2.3989e-01
-all non-SAA,R,full,"sunlit sub-satellite point: max(0, sin elev)",6.5440e-03,9.7752e-04
-all non-SAA,R,full,eclipse flag,7.5846e-03,1.1330e-03
-all non-SAA,R,full,sin(beta),-4.3152e-04,-6.4459e-05
-all non-SAA,R,full,N-S x annual: sin(lat)cos(yr),-8.9455e-04,-1.3363e-04
-all non-SAA,R,full,N-S x annual: sin(lat)sin(yr),-2.9157e-04,-4.3554e-05
-all non-SAA,R,full,h(COR) x 11-yr solar cycle,-2.7859e-03,-4.1615e-04
-all non-SAA,R,full,h(COR) x 27-d solar rotation (phase-wandering),2.5956e-02,3.8772e-03
-all non-SAA,R,full,"h(COR) x Forbush decreases (6/yr, 5-d recovery)",2.5849e-02,3.8612e-03
-all non-SAA,R,full,storm episodes x (L > 2),-6.8521e-03,-1.0235e-03
-all non-SAA,R,full,toy bkg component: prompt ~ f(COR),-1.3659e-03,-2.0404e-04
-all non-SAA,R,full,toy bkg component: activation 6min,8.7325e-04,1.3044e-04
-all non-SAA,R,full,toy bkg component: activation 36min,2.8143e-03,4.2039e-04
-all non-SAA,R,full,toy bkg component: activation 13h,-3.5609e-04,-5.3192e-05
-all non-SAA,R,full,per-pointing source flux x visibility step,-2.1600e-15,-3.2265e-16
-all non-SAA,R,full,"Earth in FOV: max(0,-cos zen) x h(COR)",-4.4262e-03,-6.6118e-04
-all non-SAA,R,node,diurnal cos(LT),6.0193e-04,8.9836e-05
-all non-SAA,R,node,diurnal sin(LT),2.1261e-04,3.1731e-05
-all non-SAA,R,node,diurnal x annual: cos(LT)cos(yr),-3.2555e+00,-4.8588e-01
-all non-SAA,R,node,diurnal x annual: cos(LT)sin(yr),1.9366e+00,2.8904e-01
-all non-SAA,R,node,diurnal x annual: sin(LT)cos(yr),2.5440e+00,3.7968e-01
-all non-SAA,R,node,diurnal x annual: sin(LT)sin(yr),1.6722e+00,2.4957e-01
-all non-SAA,R,node,"sunlit sub-satellite point: max(0, sin elev)",6.9942e-03,1.0439e-03
-all non-SAA,R,node,eclipse flag,7.8064e-03,1.1651e-03
-all non-SAA,R,node,sin(beta),-3.0964e-04,-4.6212e-05
-all non-SAA,R,node,N-S x annual: sin(lat)cos(yr),2.9521e-04,4.4059e-05
-all non-SAA,R,node,N-S x annual: sin(lat)sin(yr),-5.8865e-04,-8.7853e-05
-all non-SAA,R,node,h(COR) x 11-yr solar cycle,-1.4232e-03,-2.1241e-04
-all non-SAA,R,node,h(COR) x 27-d solar rotation (phase-wandering),2.0405e-02,3.0454e-03
-all non-SAA,R,node,"h(COR) x Forbush decreases (6/yr, 5-d recovery)",2.8485e-02,4.2514e-03
-all non-SAA,R,node,storm episodes x (L > 2),-8.0116e-03,-1.1957e-03
-all non-SAA,R,node,toy bkg component: prompt ~ f(COR),2.4968e-03,3.7264e-04
-all non-SAA,R,node,toy bkg component: activation 6min,2.1704e-03,3.2393e-04
-all non-SAA,R,node,toy bkg component: activation 36min,1.4662e-03,2.1882e-04
-all non-SAA,R,node,toy bkg component: activation 13h,-1.0690e-03,-1.5955e-04
-all non-SAA,R,node,per-pointing source flux x visibility step,2.0083e-16,2.9973e-17
-all non-SAA,R,node,"Earth in FOV: max(0,-cos zen) x h(COR)",-2.7414e-03,-4.0915e-04
-all non-SAA,K,full,diurnal cos(LT),2.5388e-03,3.2341e-04
-all non-SAA,K,full,diurnal sin(LT),1.2100e-02,1.5414e-03
-all non-SAA,K,full,diurnal x annual: cos(LT)cos(yr),-3.5081e+00,-4.4689e-01
-all non-SAA,K,full,diurnal x annual: cos(LT)sin(yr),1.8179e+00,2.3158e-01
-all non-SAA,K,full,diurnal x annual: sin(LT)cos(yr),2.3506e+00,2.9944e-01
-all non-SAA,K,full,diurnal x annual: sin(LT)sin(yr),1.7018e+00,2.1679e-01
-all non-SAA,K,full,"sunlit sub-satellite point: max(0, sin elev)",9.9624e-03,1.2691e-03
-all non-SAA,K,full,eclipse flag,9.8210e-03,1.2511e-03
-all non-SAA,K,full,sin(beta),-4.1915e-04,-5.3395e-05
-all non-SAA,K,full,N-S x annual: sin(lat)cos(yr),-1.2860e-03,-1.6382e-04
-all non-SAA,K,full,N-S x annual: sin(lat)sin(yr),-8.3074e-04,-1.0583e-04
-all non-SAA,K,full,h(COR) x 11-yr solar cycle,1.8102e-03,2.3060e-04
-all non-SAA,K,full,h(COR) x 27-d solar rotation (phase-wandering),-7.7146e-04,-9.8276e-05
-all non-SAA,K,full,"h(COR) x Forbush decreases (6/yr, 5-d recovery)",7.5552e-03,9.6245e-04
-all non-SAA,K,full,storm episodes x (L > 2),-8.7702e-03,-1.1172e-03
-all non-SAA,K,full,toy bkg component: prompt ~ f(COR),-1.6775e-03,-2.1369e-04
-all non-SAA,K,full,toy bkg component: activation 6min,3.1854e-04,4.0579e-05
-all non-SAA,K,full,toy bkg component: activation 36min,2.6439e-03,3.3681e-04
-all non-SAA,K,full,toy bkg component: activation 13h,6.1446e-04,7.8275e-05
-all non-SAA,K,full,per-pointing source flux x visibility step,5.0691e-03,6.4575e-04
-all non-SAA,K,full,"Earth in FOV: max(0,-cos zen) x h(COR)",-1.1309e-02,-1.4406e-03
-all non-SAA,K,node,diurnal cos(LT),2.5977e-03,3.3144e-04
-all non-SAA,K,node,diurnal sin(LT),1.7038e-03,2.1740e-04
+all non-SAA,R,full,diurnal cos(LT),1.9753e-04,2.9397e-05
+all non-SAA,R,full,diurnal sin(LT),7.8742e-03,1.1719e-03
+all non-SAA,R,full,diurnal x annual: cos(LT)cos(yr),-3.1567e+00,-4.6979e-01
+all non-SAA,R,full,diurnal x annual: cos(LT)sin(yr),1.9857e+00,2.9553e-01
+all non-SAA,R,full,diurnal x annual: sin(LT)cos(yr),2.6176e+00,3.8957e-01
+all non-SAA,R,full,diurnal x annual: sin(LT)sin(yr),1.6027e+00,2.3852e-01
+all non-SAA,R,full,"sunlit sub-satellite point: max(0, sin elev)",6.5329e-03,9.7225e-04
+all non-SAA,R,full,eclipse flag,7.5590e-03,1.1250e-03
+all non-SAA,R,full,sin(beta),-4.5389e-04,-6.7549e-05
+all non-SAA,R,full,N-S x annual: sin(lat)cos(yr),-8.9256e-04,-1.3283e-04
+all non-SAA,R,full,N-S x annual: sin(lat)sin(yr),-3.0096e-04,-4.4791e-05
+all non-SAA,R,full,h(COR) x 11-yr solar cycle,6.6530e-03,9.9013e-04
+all non-SAA,R,full,h(COR) x 27-d solar rotation (phase-wandering),2.4908e-02,3.7070e-03
+all non-SAA,R,full,"h(COR) x Forbush decreases (6/yr, 5-d recovery)",2.9159e-02,4.3395e-03
+all non-SAA,R,full,storm episodes x (L > 2),-6.5735e-03,-9.7829e-04
+all non-SAA,R,full,toy bkg component: prompt ~ f(COR),-1.1745e-03,-1.7479e-04
+all non-SAA,R,full,toy bkg component: activation 6min,-5.7637e-04,-8.5778e-05
+all non-SAA,R,full,toy bkg component: activation 36min,1.5620e-03,2.3246e-04
+all non-SAA,R,full,toy bkg component: activation 13h,6.1159e-04,9.1020e-05
+all non-SAA,R,full,per-pointing source flux x visibility step,5.0982e-14,7.5873e-15
+all non-SAA,R,full,"Earth in FOV: max(0,-cos zen) x h(COR)",-3.5418e-03,-5.2711e-04
+all non-SAA,R,node,diurnal cos(LT),5.3862e-04,8.0093e-05
+all non-SAA,R,node,diurnal sin(LT),2.7531e-04,4.0939e-05
+all non-SAA,R,node,diurnal x annual: cos(LT)cos(yr),-3.2592e+00,-4.8464e-01
+all non-SAA,R,node,diurnal x annual: cos(LT)sin(yr),1.9368e+00,2.8800e-01
+all non-SAA,R,node,diurnal x annual: sin(LT)cos(yr),2.5411e+00,3.7786e-01
+all non-SAA,R,node,diurnal x annual: sin(LT)sin(yr),1.6695e+00,2.4825e-01
+all non-SAA,R,node,"sunlit sub-satellite point: max(0, sin elev)",7.0004e-03,1.0410e-03
+all non-SAA,R,node,eclipse flag,7.7796e-03,1.1568e-03
+all non-SAA,R,node,sin(beta),-3.3551e-04,-4.9890e-05
+all non-SAA,R,node,N-S x annual: sin(lat)cos(yr),3.0204e-04,4.4913e-05
+all non-SAA,R,node,N-S x annual: sin(lat)sin(yr),-5.9494e-04,-8.8468e-05
+all non-SAA,R,node,h(COR) x 11-yr solar cycle,5.9038e-03,8.7789e-04
+all non-SAA,R,node,h(COR) x 27-d solar rotation (phase-wandering),1.9362e-02,2.8791e-03
+all non-SAA,R,node,"h(COR) x Forbush decreases (6/yr, 5-d recovery)",3.2780e-02,4.8743e-03
+all non-SAA,R,node,storm episodes x (L > 2),-7.8481e-03,-1.1670e-03
+all non-SAA,R,node,toy bkg component: prompt ~ f(COR),3.2457e-04,4.8264e-05
+all non-SAA,R,node,toy bkg component: activation 6min,1.0485e-03,1.5590e-04
+all non-SAA,R,node,toy bkg component: activation 36min,5.9568e-04,8.8578e-05
+all non-SAA,R,node,toy bkg component: activation 13h,1.2023e-04,1.7878e-05
+all non-SAA,R,node,per-pointing source flux x visibility step,7.4292e-14,1.1047e-14
+all non-SAA,R,node,"Earth in FOV: max(0,-cos zen) x h(COR)",-3.1270e-03,-4.6498e-04
+all non-SAA,K,full,diurnal cos(LT),2.5351e-03,3.2294e-04
+all non-SAA,K,full,diurnal sin(LT),1.2102e-02,1.5417e-03
+all non-SAA,K,full,diurnal x annual: cos(LT)cos(yr),-3.5080e+00,-4.4688e-01
+all non-SAA,K,full,diurnal x annual: cos(LT)sin(yr),1.8179e+00,2.3159e-01
+all non-SAA,K,full,diurnal x annual: sin(LT)cos(yr),2.3506e+00,2.9945e-01
+all non-SAA,K,full,diurnal x annual: sin(LT)sin(yr),1.7020e+00,2.1682e-01
+all non-SAA,K,full,"sunlit sub-satellite point: max(0, sin elev)",9.9547e-03,1.2681e-03
+all non-SAA,K,full,eclipse flag,9.8137e-03,1.2502e-03
+all non-SAA,K,full,sin(beta),-4.1937e-04,-5.3424e-05
+all non-SAA,K,full,N-S x annual: sin(lat)cos(yr),-1.2850e-03,-1.6370e-04
+all non-SAA,K,full,N-S x annual: sin(lat)sin(yr),-8.2660e-04,-1.0530e-04
+all non-SAA,K,full,h(COR) x 11-yr solar cycle,1.5049e-03,1.9171e-04
+all non-SAA,K,full,h(COR) x 27-d solar rotation (phase-wandering),-1.0150e-03,-1.2930e-04
+all non-SAA,K,full,"h(COR) x Forbush decreases (6/yr, 5-d recovery)",7.3946e-03,9.4199e-04
+all non-SAA,K,full,storm episodes x (L > 2),-8.9037e-03,-1.1342e-03
+all non-SAA,K,full,toy bkg component: prompt ~ f(COR),-1.3951e-03,-1.7773e-04
+all non-SAA,K,full,toy bkg component: activation 6min,3.0994e-04,3.9483e-05
+all non-SAA,K,full,toy bkg component: activation 36min,2.7080e-03,3.4497e-04
+all non-SAA,K,full,toy bkg component: activation 13h,6.9421e-04,8.8436e-05
+all non-SAA,K,full,per-pointing source flux x visibility step,5.0731e-03,6.4626e-04
+all non-SAA,K,full,"Earth in FOV: max(0,-cos zen) x h(COR)",-9.5108e-03,-1.2116e-03
+all non-SAA,K,node,diurnal cos(LT),2.5932e-03,3.3087e-04
+all non-SAA,K,node,diurnal sin(LT),1.7061e-03,2.1769e-04
 all non-SAA,K,node,diurnal x annual: cos(LT)cos(yr),-3.6102e+00,-4.6064e-01
-all non-SAA,K,node,diurnal x annual: cos(LT)sin(yr),1.7647e+00,2.2517e-01
-all non-SAA,K,node,diurnal x annual: sin(LT)cos(yr),2.2787e+00,2.9075e-01
-all non-SAA,K,node,diurnal x annual: sin(LT)sin(yr),1.7652e+00,2.2522e-01
-all non-SAA,K,node,"sunlit sub-satellite point: max(0, sin elev)",1.0281e-02,1.3117e-03
-all non-SAA,K,node,eclipse flag,9.9891e-03,1.2745e-03
-all non-SAA,K,node,sin(beta),-2.6624e-04,-3.3971e-05
-all non-SAA,K,node,N-S x annual: sin(lat)cos(yr),3.9821e-04,5.0809e-05
-all non-SAA,K,node,N-S x annual: sin(lat)sin(yr),-1.2362e-03,-1.5772e-04
-all non-SAA,K,node,h(COR) x 11-yr solar cycle,2.7185e-03,3.4686e-04
-all non-SAA,K,node,h(COR) x 27-d solar rotation (phase-wandering),-1.0390e-02,-1.3257e-03
-all non-SAA,K,node,"h(COR) x Forbush decreases (6/yr, 5-d recovery)",1.1104e-02,1.4168e-03
-all non-SAA,K,node,storm episodes x (L > 2),-1.0381e-02,-1.3245e-03
-all non-SAA,K,node,toy bkg component: prompt ~ f(COR),3.6977e-03,4.7179e-04
-all non-SAA,K,node,toy bkg component: activation 6min,2.1603e-03,2.7563e-04
-all non-SAA,K,node,toy bkg component: activation 36min,7.4235e-04,9.4719e-05
-all non-SAA,K,node,toy bkg component: activation 13h,-4.4164e-04,-5.6350e-05
-all non-SAA,K,node,per-pointing source flux x visibility step,5.6788e-03,7.2458e-04
-all non-SAA,K,node,"Earth in FOV: max(0,-cos zen) x h(COR)",-8.8081e-03,-1.1238e-03
+all non-SAA,K,node,diurnal x annual: cos(LT)sin(yr),1.7650e+00,2.2519e-01
+all non-SAA,K,node,diurnal x annual: sin(LT)cos(yr),2.2788e+00,2.9076e-01
+all non-SAA,K,node,diurnal x annual: sin(LT)sin(yr),1.7654e+00,2.2525e-01
+all non-SAA,K,node,"sunlit sub-satellite point: max(0, sin elev)",1.0298e-02,1.3140e-03
+all non-SAA,K,node,eclipse flag,1.0015e-02,1.2778e-03
+all non-SAA,K,node,sin(beta),-2.6621e-04,-3.3967e-05
+all non-SAA,K,node,N-S x annual: sin(lat)cos(yr),4.0339e-04,5.1470e-05
+all non-SAA,K,node,N-S x annual: sin(lat)sin(yr),-1.2339e-03,-1.5743e-04
+all non-SAA,K,node,h(COR) x 11-yr solar cycle,1.8989e-03,2.4228e-04
+all non-SAA,K,node,h(COR) x 27-d solar rotation (phase-wandering),-1.0668e-02,-1.3611e-03
+all non-SAA,K,node,"h(COR) x Forbush decreases (6/yr, 5-d recovery)",1.1898e-02,1.5181e-03
+all non-SAA,K,node,storm episodes x (L > 2),-1.0720e-02,-1.3678e-03
+all non-SAA,K,node,toy bkg component: prompt ~ f(COR),7.1678e-04,9.1455e-05
+all non-SAA,K,node,toy bkg component: activation 6min,2.2274e-03,2.8419e-04
+all non-SAA,K,node,toy bkg component: activation 36min,8.0871e-04,1.0318e-04
+all non-SAA,K,node,toy bkg component: activation 13h,-3.3693e-04,-4.2989e-05
+all non-SAA,K,node,per-pointing source flux x visibility step,5.6765e-03,7.2427e-04
+all non-SAA,K,node,"Earth in FOV: max(0,-cos zen) x h(COR)",-8.7315e-03,-1.1141e-03
 "good time ~50% (ELV>10, SAA margins)",const,full,diurnal cos(LT),1.3594e-01,3.3351e-02
 "good time ~50% (ELV>10, SAA margins)",const,full,diurnal sin(LT),5.1383e-01,1.2606e-01
 "good time ~50% (ELV>10, SAA margins)",const,full,diurnal x annual: cos(LT)cos(yr),-1.5099e+00,-3.7043e-01
@@ -923,45 +923,45 @@ all non-SAA,K,node,"Earth in FOV: max(0,-cos zen) x h(COR)",-8.8081e-03,-1.1238e
 "good time ~50% (ELV>10, SAA margins)",F,node,toy bkg component: activation 13h,-1.3700e-03,-2.2694e-04
 "good time ~50% (ELV>10, SAA margins)",F,node,per-pointing source flux x visibility step,2.1581e-16,3.5748e-17
 "good time ~50% (ELV>10, SAA margins)",F,node,"Earth in FOV: max(0,-cos zen) x h(COR)",2.2892e-02,3.7921e-03
-"good time ~50% (ELV>10, SAA margins)",R,full,diurnal cos(LT),-6.5887e-04,-1.0067e-04
-"good time ~50% (ELV>10, SAA margins)",R,full,diurnal sin(LT),4.5017e-03,6.8781e-04
-"good time ~50% (ELV>10, SAA margins)",R,full,diurnal x annual: cos(LT)cos(yr),-3.1731e+00,-4.8482e-01
-"good time ~50% (ELV>10, SAA margins)",R,full,diurnal x annual: cos(LT)sin(yr),2.0167e+00,3.0813e-01
-"good time ~50% (ELV>10, SAA margins)",R,full,diurnal x annual: sin(LT)cos(yr),2.6820e+00,4.0979e-01
-"good time ~50% (ELV>10, SAA margins)",R,full,diurnal x annual: sin(LT)sin(yr),1.5864e+00,2.4239e-01
-"good time ~50% (ELV>10, SAA margins)",R,full,"sunlit sub-satellite point: max(0, sin elev)",5.2713e-03,8.0539e-04
-"good time ~50% (ELV>10, SAA margins)",R,full,eclipse flag,5.6825e-03,8.6823e-04
-"good time ~50% (ELV>10, SAA margins)",R,full,sin(beta),7.8725e-04,1.2028e-04
-"good time ~50% (ELV>10, SAA margins)",R,full,N-S x annual: sin(lat)cos(yr),-2.8790e-04,-4.3989e-05
-"good time ~50% (ELV>10, SAA margins)",R,full,N-S x annual: sin(lat)sin(yr),-1.1666e-03,-1.7825e-04
-"good time ~50% (ELV>10, SAA margins)",R,full,h(COR) x 11-yr solar cycle,-3.7546e-02,-5.7367e-03
-"good time ~50% (ELV>10, SAA margins)",R,full,h(COR) x 27-d solar rotation (phase-wandering),5.4104e-03,8.2665e-04
-"good time ~50% (ELV>10, SAA margins)",R,full,"h(COR) x Forbush decreases (6/yr, 5-d recovery)",2.1591e-02,3.2989e-03
-"good time ~50% (ELV>10, SAA margins)",R,full,storm episodes x (L > 2),3.3526e-02,5.1224e-03
-"good time ~50% (ELV>10, SAA margins)",R,full,toy bkg component: prompt ~ f(COR),-5.7897e-04,-8.8461e-05
-"good time ~50% (ELV>10, SAA margins)",R,full,toy bkg component: activation 6min,1.4946e-03,2.2836e-04
-"good time ~50% (ELV>10, SAA margins)",R,full,toy bkg component: activation 36min,2.5459e-03,3.8899e-04
-"good time ~50% (ELV>10, SAA margins)",R,full,toy bkg component: activation 13h,-6.3916e-04,-9.7657e-05
-"good time ~50% (ELV>10, SAA margins)",R,full,per-pointing source flux x visibility step,-2.6729e-15,-4.0840e-16
-"good time ~50% (ELV>10, SAA margins)",R,full,"Earth in FOV: max(0,-cos zen) x h(COR)",-2.3201e-02,-3.5448e-03
-"good time ~50% (ELV>10, SAA margins)",R,node,diurnal cos(LT),-2.3329e-04,-3.5592e-05
-"good time ~50% (ELV>10, SAA margins)",R,node,diurnal sin(LT),-2.7570e-03,-4.2062e-04
-"good time ~50% (ELV>10, SAA margins)",R,node,diurnal x annual: cos(LT)cos(yr),-3.3042e+00,-5.0411e-01
-"good time ~50% (ELV>10, SAA margins)",R,node,diurnal x annual: cos(LT)sin(yr),1.9429e+00,2.9642e-01
-"good time ~50% (ELV>10, SAA margins)",R,node,diurnal x annual: sin(LT)cos(yr),2.5775e+00,3.9324e-01
-"good time ~50% (ELV>10, SAA margins)",R,node,diurnal x annual: sin(LT)sin(yr),1.6734e+00,2.5530e-01
-"good time ~50% (ELV>10, SAA margins)",R,node,"sunlit sub-satellite point: max(0, sin elev)",5.8995e-03,9.0007e-04
-"good time ~50% (ELV>10, SAA margins)",R,node,eclipse flag,5.7916e-03,8.8361e-04
-"good time ~50% (ELV>10, SAA margins)",R,node,sin(beta),9.1627e-04,1.3979e-04
-"good time ~50% (ELV>10, SAA margins)",R,node,N-S x annual: sin(lat)cos(yr),7.5465e-04,1.1513e-04
-"good time ~50% (ELV>10, SAA margins)",R,node,N-S x annual: sin(lat)sin(yr),-1.4707e-03,-2.2438e-04
-"good time ~50% (ELV>10, SAA margins)",R,node,h(COR) x 11-yr solar cycle,-3.6010e-02,-5.4939e-03
-"good time ~50% (ELV>10, SAA margins)",R,node,h(COR) x 27-d solar rotation (phase-wandering),2.8706e-03,4.3796e-04
-"good time ~50% (ELV>10, SAA margins)",R,node,"h(COR) x Forbush decreases (6/yr, 5-d recovery)",2.6089e-02,3.9803e-03
-"good time ~50% (ELV>10, SAA margins)",R,node,storm episodes x (L > 2),3.2465e-02,4.9531e-03
-"good time ~50% (ELV>10, SAA margins)",R,node,toy bkg component: prompt ~ f(COR),2.8278e-03,4.3142e-04
-"good time ~50% (ELV>10, SAA margins)",R,node,toy bkg component: activation 6min,1.8932e-03,2.8884e-04
-"good time ~50% (ELV>10, SAA margins)",R,node,toy bkg component: activation 36min,2.6045e-04,3.9737e-05
-"good time ~50% (ELV>10, SAA margins)",R,node,toy bkg component: activation 13h,-1.3869e-03,-2.1160e-04
-"good time ~50% (ELV>10, SAA margins)",R,node,per-pointing source flux x visibility step,3.1494e-16,4.8050e-17
-"good time ~50% (ELV>10, SAA margins)",R,node,"Earth in FOV: max(0,-cos zen) x h(COR)",-2.2981e-02,-3.5061e-03
+"good time ~50% (ELV>10, SAA margins)",R,full,diurnal cos(LT),-7.5644e-04,-1.1492e-04
+"good time ~50% (ELV>10, SAA margins)",R,full,diurnal sin(LT),4.6464e-03,7.0588e-04
+"good time ~50% (ELV>10, SAA margins)",R,full,diurnal x annual: cos(LT)cos(yr),-3.1744e+00,-4.8225e-01
+"good time ~50% (ELV>10, SAA margins)",R,full,diurnal x annual: cos(LT)sin(yr),2.0187e+00,3.0668e-01
+"good time ~50% (ELV>10, SAA margins)",R,full,diurnal x annual: sin(LT)cos(yr),2.6806e+00,4.0723e-01
+"good time ~50% (ELV>10, SAA margins)",R,full,diurnal x annual: sin(LT)sin(yr),1.5856e+00,2.4088e-01
+"good time ~50% (ELV>10, SAA margins)",R,full,"sunlit sub-satellite point: max(0, sin elev)",5.3046e-03,8.0587e-04
+"good time ~50% (ELV>10, SAA margins)",R,full,eclipse flag,5.8172e-03,8.8374e-04
+"good time ~50% (ELV>10, SAA margins)",R,full,sin(beta),7.2888e-04,1.1073e-04
+"good time ~50% (ELV>10, SAA margins)",R,full,N-S x annual: sin(lat)cos(yr),-1.7508e-04,-2.6598e-05
+"good time ~50% (ELV>10, SAA margins)",R,full,N-S x annual: sin(lat)sin(yr),-1.1199e-03,-1.7013e-04
+"good time ~50% (ELV>10, SAA margins)",R,full,h(COR) x 11-yr solar cycle,2.8555e-03,4.3380e-04
+"good time ~50% (ELV>10, SAA margins)",R,full,h(COR) x 27-d solar rotation (phase-wandering),2.7590e-03,4.1915e-04
+"good time ~50% (ELV>10, SAA margins)",R,full,"h(COR) x Forbush decreases (6/yr, 5-d recovery)",2.7115e-02,4.1192e-03
+"good time ~50% (ELV>10, SAA margins)",R,full,storm episodes x (L > 2),3.3301e-02,5.0590e-03
+"good time ~50% (ELV>10, SAA margins)",R,full,toy bkg component: prompt ~ f(COR),-1.2000e-03,-1.8231e-04
+"good time ~50% (ELV>10, SAA margins)",R,full,toy bkg component: activation 6min,3.0472e-04,4.6292e-05
+"good time ~50% (ELV>10, SAA margins)",R,full,toy bkg component: activation 36min,2.0747e-03,3.1518e-04
+"good time ~50% (ELV>10, SAA margins)",R,full,toy bkg component: activation 13h,7.1973e-04,1.0934e-04
+"good time ~50% (ELV>10, SAA margins)",R,full,per-pointing source flux x visibility step,-1.2647e-13,-1.9213e-14
+"good time ~50% (ELV>10, SAA margins)",R,full,"Earth in FOV: max(0,-cos zen) x h(COR)",-2.3686e-02,-3.5983e-03
+"good time ~50% (ELV>10, SAA margins)",R,node,diurnal cos(LT),-3.2746e-04,-4.9678e-05
+"good time ~50% (ELV>10, SAA margins)",R,node,diurnal sin(LT),-2.6681e-03,-4.0477e-04
+"good time ~50% (ELV>10, SAA margins)",R,node,diurnal x annual: cos(LT)cos(yr),-3.3058e+00,-5.0151e-01
+"good time ~50% (ELV>10, SAA margins)",R,node,diurnal x annual: cos(LT)sin(yr),1.9443e+00,2.9496e-01
+"good time ~50% (ELV>10, SAA margins)",R,node,diurnal x annual: sin(LT)cos(yr),2.5753e+00,3.9069e-01
+"good time ~50% (ELV>10, SAA margins)",R,node,diurnal x annual: sin(LT)sin(yr),1.6735e+00,2.5388e-01
+"good time ~50% (ELV>10, SAA margins)",R,node,"sunlit sub-satellite point: max(0, sin elev)",5.9441e-03,9.0176e-04
+"good time ~50% (ELV>10, SAA margins)",R,node,eclipse flag,5.9334e-03,9.0012e-04
+"good time ~50% (ELV>10, SAA margins)",R,node,sin(beta),8.5240e-04,1.2931e-04
+"good time ~50% (ELV>10, SAA margins)",R,node,N-S x annual: sin(lat)cos(yr),9.1463e-04,1.3875e-04
+"good time ~50% (ELV>10, SAA margins)",R,node,N-S x annual: sin(lat)sin(yr),-1.3636e-03,-2.0687e-04
+"good time ~50% (ELV>10, SAA margins)",R,node,h(COR) x 11-yr solar cycle,1.8963e-03,2.8768e-04
+"good time ~50% (ELV>10, SAA margins)",R,node,h(COR) x 27-d solar rotation (phase-wandering),4.2011e-04,6.3733e-05
+"good time ~50% (ELV>10, SAA margins)",R,node,"h(COR) x Forbush decreases (6/yr, 5-d recovery)",3.2687e-02,4.9587e-03
+"good time ~50% (ELV>10, SAA margins)",R,node,storm episodes x (L > 2),3.2267e-02,4.8950e-03
+"good time ~50% (ELV>10, SAA margins)",R,node,toy bkg component: prompt ~ f(COR),3.3563e-04,5.0918e-05
+"good time ~50% (ELV>10, SAA margins)",R,node,toy bkg component: activation 6min,1.2125e-03,1.8394e-04
+"good time ~50% (ELV>10, SAA margins)",R,node,toy bkg component: activation 36min,1.9266e-04,2.9227e-05
+"good time ~50% (ELV>10, SAA margins)",R,node,toy bkg component: activation 13h,1.2010e-04,1.8220e-05
+"good time ~50% (ELV>10, SAA margins)",R,node,per-pointing source flux x visibility step,-1.5330e-13,-2.3256e-14
+"good time ~50% (ELV>10, SAA margins)",R,node,"Earth in FOV: max(0,-cos zen) x h(COR)",-2.4039e-02,-3.6469e-03

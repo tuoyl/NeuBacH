@@ -1,0 +1,64 @@
+{
+ "unshadowed": {
+  "disc_rel_chi0": 1.4646090153387024,
+  "disc_rel_chi90": 0.7442154992510275,
+  "disc_ratio_0_over_90": 1.9679904769689331,
+  "disc_ratio_0_over_90_w300": 2.1565083056538294,
+  "disc_ratio_0_over_90_w500": 2.6816145575041634,
+  "csi_ratio_0_over_90": 1.4629562157468439,
+  "csi_rel_chi0": 1.2511568176429984,
+  "csi_rel_chi90": 0.8552250601733004,
+  "veto_top_over_side_chi0": 2.2139892865900492,
+  "veto_top_over_side_chi90": 0.7488002084321308,
+  "isotropic_check_disc_mean": 0.9990682175262449,
+  "effective_areas_cm2": {
+   "nai_one_disc_orientation_avg": 146.98726627983243,
+   "nai_18": 2645.770793036984,
+   "nai_one_disc_faces_only": 141.75,
+   "csi_one_orientation_avg": 201.45462891144547,
+   "csi_18": 3626.1833204060185,
+   "veto_panel_crossings": 12750.0
+  }
+ },
+ "shadowed_thin_disc": [
+  {
+   "case": "isotropic detector (sphere)",
+   "mean": 0.7044785584589355,
+   "unshadowed": 1.0,
+   "rms_node_part": 0.20246342458344918,
+   "p2p_max_over_nodes": 0.8573191646104017
+  },
+  {
+   "case": "pointing = apex (chi = 0)",
+   "mean": 1.0374950056226733,
+   "unshadowed": 1.4646090153387024,
+   "rms_node_part": 0.34425811532924416,
+   "p2p_max_over_nodes": 1.3813417675950046,
+   "corr_node_part_with_isotropic": 0.9970955545207928
+  },
+  {
+   "case": "chi = 45 deg (towards equatorial-plane direction)",
+   "mean": 0.7999078408517541,
+   "unshadowed": 1.1332684310266412,
+   "rms_node_part": 0.26274195351032587,
+   "p2p_max_over_nodes": 1.0297752475023385,
+   "corr_node_part_with_isotropic": 0.9366754872490567
+  },
+  {
+   "case": "chi = 90 deg, in the equatorial plane",
+   "mean": 0.5203072363774625,
+   "unshadowed": 0.7442154992510275,
+   "rms_node_part": 0.12510528531582157,
+   "p2p_max_over_nodes": 0.5763669804927253,
+   "corr_node_part_with_isotropic": 0.9717848534403266
+  },
+  {
+   "case": "chi = 90 deg, towards the celestial pole side",
+   "mean": 0.5193984424269239,
+   "unshadowed": 0.7442154992510275,
+   "rms_node_part": 0.12506347371501075,
+   "p2p_max_over_nodes": 0.5754012907526915,
+   "corr_node_part_with_isotropic": 0.965618956406663
+  }
+ ]
+}
