@@ -22,6 +22,7 @@ python3 s4_nuisance_fisher.py       # Task 5: Fisher marginalisation, leakage, M
 python3 s5_controls.py              # Task 6: wind-map PSF, anti-sidereal null test, occultation, fig4 (~8 min)
 python3 s6_sensitivity.py           # Task 7: sensitivity tables (reads s4 output if present)          (<1 s)
 python3 s7_sensitivity_plot.py      # Task 8: (mass, cross-section) plot, fig6                         (~10 s)
+python3 s8_subcomponent.py          # sub-component (f << 1): f_min vs mass, (m, sigma) at fixed f, fig7, fig8 (~10 s)
 ```
 
 **One command to redraw the sensitivity plot** (e.g. after `../existing_constraints.csv` has been updated):
@@ -38,6 +39,13 @@ top of `sensitivity_lib.py`.
 
 Other options: `s4_nuisance_fisher.py --quick` (skips heavy models and the MC), `--figure-only` (redraw fig5 from
 the saved table), `--dt 120`; `s5_controls.py --step 15 --model E`.
+
+**Sub-component (f << 1) figures and tables** (notes: `../subcomponent_sensitivity.md`; needs only numpy + matplotlib; writes
+`outputs/s8_tables.md`, `outputs/s8_summary.json`; inputs taken from the notes are at the top of the script):
+
+```
+python3 s8_subcomponent.py
+```
 
 ## Files
 
@@ -63,6 +71,8 @@ the saved table), `--dt 120`; `s5_controls.py --step 15 --model E`.
 4. `fig4_windmap_psf.png` — all-sky map of recovered significance for an injected signal (PSF), anti-sidereal null map, cuts.
 5. `fig5_degradation_factors.png` — degradation factors per nuisance model and data selection; cost of re-fitting the map.
 6. `fig6_sensitivity_mass_sigma.png` — projected reach in (mass, contact cross-section) with analytic lines and existing limits.
+7. `fig7_fmin_vs_mass.png` — minimum detectable halo fraction f of a rare strongly-interacting sub-component vs mass (three systematics scenarios, two form-factor branches) with existing limits on f.
+8. `fig8_subcomponent_m_sigma.png` — HXMT-accessible region in (mass, contact cross-section) at fixed f = 1e-3 and 1e-6 with the f-dependent rows of `../existing_constraints.csv`.
 S1. `figS1_orientation.png` — pointing dependence of crossing rates (supplementary).
 
 ## Main simplifications (see the notes for the full list)
